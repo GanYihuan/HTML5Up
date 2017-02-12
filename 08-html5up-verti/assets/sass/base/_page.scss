@@ -1,0 +1,39 @@
+/* Basic */
+
+// MSIE: Required for IEMobile.
+@-ms-viewport {
+  width: device-width;
+}
+
+// Ensures page width is always >=320px.
+@include breakpoint(xsmall) {
+  html, body {
+    min-width: 320px;
+  }
+}
+
+body {
+  //http://www.w3school.com.cn/cssref/pr_overflow-style.asp
+  //overflow-style 规定溢出元素的首选滚动方法。
+  //scrollbar为溢出元素添加滚动条。
+  //move	用户能够直接移动元素的内容。通常，用户能够用鼠标拖动内容。
+  //marquee	内容自主移动，不需任何用户代理对其控制。
+  -ms-overflow-style: scrollbar;
+
+  // Prevents animation/transition "flicker" on page load.
+  // Automatically added/removed by js/main.js.
+  &.is-loading {
+    *, *:before, *:after {
+      @include vendor('animation', 'none !important');
+      @include vendor('transition', 'none !important');
+    }
+  }
+
+  //self
+  background-color: #f7f7f7;
+  background-position: 0% 0%, 0% 0%;
+  background-size: 100% 30em, auto;
+  background-repeat: repeat-x, repeat;
+  @include vendor('background-image', ('linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0))', 'url("images/bg01.png")'));
+  //self
+}

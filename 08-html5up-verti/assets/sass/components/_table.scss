@@ -1,0 +1,33 @@
+/* Tables */
+
+table {
+  width: 100%;
+
+  &.default {
+    width: 100%;
+
+    tr {
+      border-top: solid 1px #eee;
+
+      &:first-child {
+        border-top: 0;
+      }
+    }
+
+    td {
+      padding: 0.5em 1em 0.5em 1em;
+    }
+
+    th {
+      text-align: left;
+      padding: 0.5em 1em 0.5em 1em;
+      font-weight: 800;
+      margin: 0 0 1em 0;
+    }
+
+    thead {
+      background: #404248;
+      color: #fff;
+    }
+  }
+}
