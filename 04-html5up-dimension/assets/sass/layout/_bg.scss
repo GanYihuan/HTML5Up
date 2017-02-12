@@ -1,0 +1,70 @@
+///
+/// Dimension by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* BG */
+
+#bg {
+  @include vendor('transform', 'scale(1.0)');
+  //隐藏被旋转的 div 元素的背面：
+  -webkit-backface-visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+
+  // 背景被拉前清晰,拉后模糊，
+  &:before, &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &:before {
+    @include vendor('transition', 'background-color #{_duration(bg)} ease-in-out');
+    @include vendor('transition-delay', '#{_duration(intro)}');
+    //渐变颜色，防止刺眼的图片
+    background-image: linear-gradient(0deg, #{_palette(bg-overlay)}, #{_palette(bg-overlay)}), url('../../images/overlay.png');
+    background-size: auto;
+    backgrond-position: center;
+    background-repeat: no-repeat;
+    z-index: 2;
+  }
+
+  &:after {
+    @include vendor('transform', 'scale(1.125)');
+    //模糊处理动画
+    @include vendor('transition', (
+            'transform #{_duration(article)} ease-in-out',
+            'filter #{_duration(article)} ease-in-out'
+    ));
+    background-image: url('../../images/bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+
+  body.is-article-visible & {
+    &:after {
+      @include vendor('transform', 'scale(1.0825)');
+      //给图像设置高斯模糊，值越大越模糊；
+      @include vendor('filter', 'blur(0.2rem)');
+    }
+  }
+
+  //界面加载前，图片黑色
+  body.is-loading & {
+    &:before {
+      background-color: _palette(bg-alt);
+    }
+  }
+}

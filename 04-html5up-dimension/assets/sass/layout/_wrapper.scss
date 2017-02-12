@@ -1,0 +1,41 @@
+///
+/// Dimension by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* Wrapper */
+
+#wrapper {
+  @include vendor('display', 'flex');
+  //column：主轴为垂直方向，起点在上沿。
+  @include vendor('flex-direction', 'column');
+  //center：交叉轴的中点对齐。
+  @include vendor('align-items', 'center');
+  //space-between：两端对齐，项目之间的间隔都相等。
+  @include vendor('justify-content', 'space-between');
+  position: relative;
+  //相对于视口的高度。视口被均分为100单位的vh
+  min-height: 100vh;
+  width: 100%;
+  padding: 4rem 2rem;
+  z-index: 3;
+
+  //背景放置位置
+  &:before {
+    content: '';
+    display: block;
+  }
+
+  @include breakpoint(xlarge) {
+    padding: 3rem 2rem;
+  }
+
+  @include breakpoint(small) {
+    padding: 2rem 1rem;
+  }
+
+  @include breakpoint(xsmall) {
+    padding: 1rem;
+  }
+}
