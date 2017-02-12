@@ -1,0 +1,60 @@
+/* Button */
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button,
+.button {
+  @include vendor('transition', 'background-color .25s ease-in-out');
+  -webkit-appearance: none;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  color: #fff !important;
+  background: #d52349;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: 0;
+
+  &:hover {
+    background: #e53359;
+  }
+
+  &:active {
+    background: #c51349;
+  }
+
+  @include breakpoint(desktop) {
+    font-size: 1.1em;
+    padding: 0.65em 1.5em 0.65em 1.5em;
+
+    &.big {
+      font-size: 1.5em;
+      padding: 0.75em 1.5em 0.75em 1.5em;
+    }
+  }
+
+  //self
+  &.alt {
+    background: #252122;
+
+    &:hover {
+      background: #353132;
+    }
+
+    &:active {
+      background: #151112;
+    }
+  }
+
+  //self
+  &.icon {
+    &:before {
+      opacity: 0.35;
+      position: relative;
+      top: 0.05em;
+      margin-right: 0.75em;
+    }
+  }
+}

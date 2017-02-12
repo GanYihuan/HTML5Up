@@ -1,0 +1,35 @@
+/* Box */
+
+.box {
+
+  @include breakpoint(desktop){
+    padding: 2.75em 1.75em 2.75em 1.75em;
+
+    .image {
+      &.featured {
+        left: 1.75em;
+        top: 1.75em;
+        margin: -4.5em 0 4.25em -3.5em;
+      }
+    }
+
+    &.post {
+      header {
+        padding-top: 1em;
+        margin: 0 0 2em 0;
+      }
+
+      h2 {
+        font-size: 2.5em;
+        letter-spacing: -0.015em;
+      }
+
+      header {
+        > p {
+          margin-top: 1.25em;
+          font-size: 1.25em;
+        }
+      }
+    }
+  }
+}

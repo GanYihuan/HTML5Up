@@ -1,0 +1,35 @@
+@-ms-viewport {
+  width: device-width;
+}
+
+// MSIE: Prevents scrollbar from overlapping content.
+body {
+  -ms-overflow-style: scrollbar;
+}
+
+@include breakpoint(xsmall){
+  html, body{
+    min-width: 320px;
+  }
+}
+
+html {
+  height: 100%;
+}
+
+body{
+  height: 100%;
+  background: #252122;
+  //self
+  background-image: url('images/bg02.png');
+
+  //copy
+  // Prevents animation/transition "flicker" on page load.
+  // Automatically added/removed by js/main.js.
+  &.is-loading {
+    *, *:before, *:after {
+      @include vendor('animation', 'none !important');
+      @include vendor('transition', 'none !important');
+    }
+  }
+}
