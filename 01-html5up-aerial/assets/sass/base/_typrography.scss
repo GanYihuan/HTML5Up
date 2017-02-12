@@ -1,0 +1,45 @@
+body, input, select, textarea {
+  line-height: 1.75em;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15pt;
+  //font-weight 属性设置文本的粗细。
+  font-weight: 300 !important;
+  //letter-spacing 属性增加或减少字符间的空白（字符间距）。
+  letter-spacing: -0.025em;
+  color: _palette(fg);
+}
+
+//self start
+body {
+  //reset白色背景
+  background: _palette(bg);
+  //overflow 属性规定当内容溢出元素框时发生的事情。
+  overflow: hidden;
+
+  //最高层级动画
+  &.loading {
+    * {
+      @include vendor('animation', 'none !important');
+    }
+  }
+}
+//self end
+
+a {
+  //vendor 声明属性和值
+  //@param {string} $property Property.
+  //@param {mixed} $value String/list of value(s).
+  @include vendor('transition', (
+          'color #{_duration(transition)} ease-in-out',
+          'background-color #{_duration(transition)} ease-in-out',
+          'border-color 0.2s ease-in-out'
+  ));
+  border-bottom: dotted 1px;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    border-color: transparent;
+  }
+}
+

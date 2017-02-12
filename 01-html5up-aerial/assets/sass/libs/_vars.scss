@@ -1,0 +1,39 @@
+// Misc.
+//杂项
+$misc: (
+        bg: #348cb2 url("images/bg.jpg") 0% 100%,
+        bg-width: 1500px
+);
+
+// Duration.
+//持续时间
+$duration: (
+        wrapper: 3s,
+        bg: 60s,
+        overlay: 1.5s,
+        header: 1s,
+        nav-icons: 0.5s
+);
+
+// Size.
+$size: (
+        nav-icon-wrapper: 5.35em,
+        nav-icon: 1.75em
+);
+
+// Font.
+$font: (
+);
+
+// Palette.
+//调色板
+$palette: (
+        bg: #fff,
+        fg: #fff,
+        nav-icon: (
+                hover-bg: rgba(255, 255, 255, 0.175),
+                hover-fg: #fff,
+                active-bg: rgba(255, 255, 255, 0.35),
+                active-fg: #fff
+        )
+);
