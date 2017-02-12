@@ -1,0 +1,86 @@
+///
+/// Big Picture by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* List */
+
+ul {
+  //unuse
+  //默认带有 实心圆点的 li标签
+  &.default {
+    padding-left: 1em;
+    list-style: disc;
+
+    li {
+      padding-left: 0.5em;
+    }
+  }
+
+  &.icons {
+    cursor: default;
+
+    li {
+      display: inline-block;
+    }
+
+    a {
+      display: inline-block;
+      width: 2em;
+      height: 2em;
+      line-height: 2em;
+      text-align: center;
+      border: 0;
+    }
+  }
+  //unuse
+
+  //facebook icon
+  &.actions {
+    cursor: default;
+
+    li {
+      //横排
+      display: inline-block;
+      margin: 0 0 0 0.5em;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  //copyright
+  &.menu {
+    cursor: default;
+
+    li {
+      //横排
+      display: inline-block;
+      padding: 0 0 0 0.5em;
+      margin: 0 0 0 0.5em;
+      //竖线
+      border-left: solid 1px _palette(border);
+      line-height: 1em;
+
+      &:first-child {
+        border-left: 0;
+        padding-left: 0;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+//copy
+//unuse
+ol.default {
+  list-style: decimal;
+  padding-left: 1.25em;
+
+  li {
+    padding-left: 0.25em;
+  }
+}
+//unuse

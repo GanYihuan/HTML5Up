@@ -1,0 +1,78 @@
+///
+/// Big Picture by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* Gallery */
+
+.gallery {
+  @include vendor('display', 'flex');
+  //方块排列方式：换行，第一行在上方。
+  @include vendor('flex-wrap', 'wrap');
+  width: 45em;
+  max-width: 100%;
+  //居中布置
+  margin: 0 auto _size(element-margin);
+
+  article {
+    //方块动画效果
+    @include vendor('transition', (
+            'transform 1s ease',
+            'opacity 1s ease'
+    ));
+    @include vendor('transform', 'translateX(0)');
+    //方块动画效果
+    position: relative;
+    width: 50%;
+    opacity: 1.0;
+
+    .image {
+      display: block;
+      margin: 0;
+    }
+
+    //方块不规则聚合效果
+    @for $i from 1 through 23 {
+      &:nth-last-child(#{$i}n) {
+        @include vendor('transition-delay', '#{(0.05s * $i)}');
+      }
+
+      &:nth-last-child(#{$i + 1}n) {
+        @include vendor('transition-delay', '#{(0.05s * $i)}');
+      }
+    }
+  }
+
+  //
+  &.inactive {
+    article {
+      opacity: 0;
+
+      &.from-left {
+        @include vendor('transform', 'translateX(-14em)');
+      }
+
+      &.from-right {
+        @include vendor('transform', 'translateX(14em)');
+      }
+
+      &.from-top {
+        @include vendor('transform', 'translateY(-7em)');
+      }
+
+      &.from-bottom {
+        @include vendor('transform', 'translateY(7em)');
+      }
+    }
+  }
+
+  @include breakpoint(xsmall) {
+    @include vendor('flex-wrap', 'nowrap');
+    @include vendor('flex-direction', 'column');
+
+    article {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,196 @@
+///
+/// Big Picture by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* Basic */
+
+//copy
+// MSIE: Required for IEMobile.
+@-ms-viewport {
+  width: device-width;
+}
+
+// Ensures page width is always >=320px.
+@include breakpoint(xsmall) {
+  html, body {
+    min-width: 320px;
+  }
+}
+
+// MSIE: Prevents scrollbar from overlapping content.
+body {
+  //http://www.w3school.com.cn/cssref/pr_overflow-style.asp
+  //overflow-style 规定溢出元素的首选滚动方法。
+  //scrollbar为溢出元素添加滚动条。
+  //move	用户能够直接移动元素的内容。通常，用户能够用鼠标拖动内容。
+  //marquee	内容自主移动，不需任何用户代理对其控制。
+  -ms-overflow-style: scrollbar;
+
+  //copy
+  // Prevents animation/transition "flicker" on page load.
+  // Automatically added/removed by js/main.js.
+  &.is-loading {
+    *, *:before, *:after {
+      @include vendor('animation', 'none !important');
+      @include vendor('transition', 'none !important');
+    }
+  }
+}
+//copy
+
+//self
+html {
+  //配置成每个界面占一屏幕
+  height: 100%;
+}
+
+/* Spinner */
+//动画效果
+@include keyframes('spinner-rotate') {
+  0% {
+    @include vendor('transform', 'scale(1) rotate(0deg)');
+  }
+  100% {
+    @include vendor('transform', 'scale(1) rotate(360deg)');
+  }
+}
+
+@include keyframes('spinner-show') {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@include keyframes('spinner-hide') {
+  0% {
+    @include vendor('transform', 'scale(1) rotate(0deg)');
+    color: _palette(border);
+    z-index: 100001;
+  }
+
+  99% {
+    @include vendor('transform', 'scale(0.5) rotate(360deg)');
+    color: _palette(border);
+    z-index: 100001;
+  }
+
+  100% {
+    @include vendor('transform', 'scale(0.5) rotate(360deg)');
+    color: _palette(border);
+    z-index: -1;
+  }
+}
+
+@include keyframes('overlay-hide') {
+  0% {
+    opacity: 1;
+    z-index: 100000;
+  }
+
+  15% {
+    opacity: 1;
+    z-index: 100000;
+  }
+
+  99% {
+    opacity: 0;
+    z-index: 100000;
+  }
+
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+//设备像素密度测试，不同手机不同数值
+//(http://www.gbtags.com/gb/share/5307.htm)
+@media (-webkit-min-device-pixel-ratio: 2) {
+  body:before {
+    line-height: 2.025em;
+  }
+}
+
+body {
+  min-width: 320px;
+  height: 100%;
+  text-decoration: none;
+  background: _palette(bg);
+
+  //加载时冒出的等待图标
+  &:before {
+    //animation-name	指定要绑定到选择器的关键帧的名称(spinner-show)
+    //animation-duration	动画指定需要多少秒或毫秒完成(1.5s)
+    //animation-iteration-count	定义动画的播放次数。(1)
+    //animation-delay	设置动画在启动前的延迟间隔。(0.25s)
+    //animation-timing-function	设置动画将如何完成一个周期(ease)
+    //animation-direction	指定是否应该轮流反向播放动画。(forwards)
+    //加载一会变淡
+    @include vendor('animation', ('spinner-show 1.5s 1 0.25s ease forwards', 'spinner-hide 0.25s ease-in-out forwards !important'));
+    //transform-origin 属性允许您改变被转换元素的位置。旋转轴点(x,y)
+    @include vendor('transform-origin', '50% 50%');
+    //CSS3里面加入了一个“-webkit-font-smoothing”属性。这个属性可以使页面上的字体抗锯齿,
+    //使用后字体看起来会更清晰舒服。加上之后就顿时感觉页面小清晰了。
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: block;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -1em 0 0 -1em;
+    width: 2em;
+    height: 2em;
+    z-index: -1;
+    line-height: 2em;
+    //方块图标转换为圆形图标
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2em;
+    text-align: center;
+    //text-transform 属性控制文本的大小写。
+    text-transform: none !important;
+    color: _palette(border);
+    opacity: 0;
+    cursor: default;
+    //content 属性与 :before 及 :after 伪元素配合使用，来插入生成内容。
+    // 在此插入了font-aswesome图标等待内容fa-circle-o-notch
+    content: '\f1ce';
+  }
+
+  //添加一个闪光效果,每次加载都闪瞎狗眼
+  &:after {
+    @include vendor('animation', 'overlay-hide 1.5s ease-in forwards !important');
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: #fff;
+    opacity: 0;
+    content: '';
+  }
+
+  //
+  &.is-loading {
+    &:before {
+      //加载时冒出的等待图标,动画转圈
+      @include vendor('animation', ('spinner-show 1.5s 1 0.25s ease forwards', 'spinner-rotate 0.75s infinite linear !important'));
+      z-index: 100001;
+    }
+
+    &:after {
+      @include vendor('animation', 'none !important');
+      opacity: 1;
+      z-index: 100000;
+    }
+  }
+}
+
