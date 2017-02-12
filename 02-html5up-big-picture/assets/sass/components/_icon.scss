@@ -1,0 +1,33 @@
+///
+/// Big Picture by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* Icon */
+
+.icon {
+  @include icon;
+  border-bottom: none;
+  position: relative;
+
+  //self
+  text-decoration: none;
+
+  &:before {
+    display: inline-block;
+    line-height: 1;
+    text-decoration: none;
+    font-family: FontAwesome;
+    font-size: 1.25em;
+    font-style: normal;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  //self
+
+  > .label {
+    display: none;
+  }
+}

@@ -1,0 +1,214 @@
+///
+/// Big Picture by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* Main */
+
+.main {
+  @include vendor('display', 'flex');
+  position: relative;
+  margin: 0;
+  overflow-x: hidden;
+
+  > .content {
+    width: 45em;
+    max-width: calc(100% - 4em);
+    margin: 0 auto;
+
+    //居底部的向下箭头
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &.fullscreen {
+    min-height: 100%;
+  }
+
+  //第一屏
+  &.style1 {
+    //(flex)align-items: 属性定义项目在交叉轴上如何对齐。
+    //垂直居中
+    @include vendor('align-items', 'center');
+    //justify-content: 属性定义了项目在主轴上的对齐方式。
+    //水平居中
+    @include vendor('justify-content', 'center');
+    text-align: center;
+    padding: 3em 0;
+
+    h2 {
+      font-size: 4.25em;
+      line-height: 1em;
+    }
+
+    > .content {
+      //淡入
+      @include vendor('transition', 'opacity #{_duration(fade-in)} ease');
+      @include vendor('transform', 'translateZ(0)');
+      opacity: 1.0;
+      margin: 0;
+    }
+
+    //不位于该屏时，消失
+    &.inactive > .content {
+      opacity: 0;
+    }
+  }
+
+  &.style2 {
+    //垂直居中
+    @include vendor('align-items', 'center');
+    //水平居中
+    @include vendor('justify-content', 'center');
+    padding: 3em 0 3em 0;
+    overflow: hidden;
+
+    > .content {
+      //白版动画
+      @include vendor('transition', 'transform #{_duration(fade-in)} ease');
+      @include vendor('transform', 'translateZ(0)');
+      position: relative;
+      margin: 0;
+      width: 35%;
+    }
+
+    &.left {
+      //起始位置
+      @include vendor('justify-content', 'flex-start');
+    }
+
+    &.right {
+      //起始位置
+      @include vendor('justify-content', 'flex-end');
+    }
+
+    //不位于该屏时，消失
+    &.inactive {
+      &.left > .content {
+        @include vendor('transform', 'translateX(-100%)');
+      }
+
+      &.right > .content {
+        @include vendor('transform', 'translateX(100%)');
+      }
+    }
+  }
+
+  &.style3 {
+    padding: 6em 0;
+    text-align: center;
+
+    .content > header {
+      margin-bottom: 2em;
+    }
+
+    &.primary {
+      background: _palette(bg);
+    }
+
+    &.secondary {
+      background: _palette(bg-alt);
+    }
+  }
+
+  &.dark {
+    color: _palette(dark, fg);
+
+    a {
+      color: inherit;
+    }
+
+    //导向按钮
+    .button.style2 {
+      border-color: _palette(dark, fg);
+
+      &:hover {
+        background-color: transparentize(_palette(dark, border), 0.875);
+      }
+
+      &:active {
+        background-color: transparentize(_palette(dark, border), 0.75);
+      }
+
+      &.down {
+        background-image: url('images/dark-arrow.svg');
+      }
+    }
+  }
+
+  //
+  body.is-touch & {
+    background-attachment: scroll !important;
+  }
+
+  @include breakpoint(xxlarge) {
+    &.style2 {
+      .content {
+        width: 40%;
+      }
+    }
+  }
+
+  @include breakpoint(large) {
+    &.style2 {
+      .content {
+        width: 50%;
+      }
+    }
+  }
+
+  @include breakpoint(medium) {
+    &.style2 {
+      .content {
+        width: 60%;
+      }
+    }
+  }
+
+  @include breakpoint(small) {
+    &.fullscreen {
+      height: auto !important;
+    }
+
+    &.style1 {
+      padding: 4em 15px 4em 15px;
+
+      h2 {
+        font-size: 3em;
+      }
+    }
+
+    &.style2 {
+      padding: 6em 15px 6em 15px;
+
+      &:before,
+      &:after {
+        display: none !important;
+      }
+
+      .button.anchored {
+        display: none;
+      }
+
+      .content {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+        @include vendor('transform', 'none');
+      }
+    }
+
+    &.style3 {
+      text-align: center;
+      padding: 3em 10px 3em 10px;
+    }
+  }
+
+  @include breakpoint(xsmall) {
+    > .content {
+      max-width: calc(100% - 1.5em);
+    }
+  }
+}

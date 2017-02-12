@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+//参数  根据需要改变
+@import 'libs/vars';
+//方法  (copy)
+@import 'libs/functions';
+//icon svg padding  (copy)
+@import 'libs/mixins';
+@import url('fontset.min.css');
+@import url('font-awesome.min.css');
+
+/*
+	Big Picture by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+//响应式框架
+@import "libs/skel";
+
+//框架 断点设置,相当与css的@media
+@include skel-breakpoints((
+        xxlarge: '(max-width: 1920px)',
+        xlarge: '(max-width: 1680px)',
+        large: '(max-width: 1280px)',
+        medium: '(max-width: 1000px)',
+        small: '(max-width: 736px)',
+        xsmall: '(max-width: 480px)',
+));
+
+//框架
+@include skel-layout((
+        //css reset (http://meyerweb.com/eric/tools/css/reset)
+        reset: 'full',
+        //?
+        boxModel: 'border'
+));
+
+// Base.
+// 自定义
+@import 'base/page';
+// 自定义
+@import 'base/typography';
+
+// Component.
+// 白色弹出框，设置padding
+@import 'components/box';
+//按钮
+@import 'components/button';
+//表单
+@import 'components/form';
+//底部图标 要配合'components/list'来写
+@import 'components/icon';
+//对底部图标处理
+@import 'components/list';
+//图片处理
+@import 'components/image';
+//对header footer处理
+@import 'components/section';
+@import 'components/table';
+//针对框架来修改
+@import 'components/poptrox-popup';
+//
+@import 'components/gallery';
+
+// Layout.
+//导航
+//自己发挥self
+@import 'layout/header';
+@import 'layout/main';
+@import 'layout/footer';
+
+/* Intro */
+#intro {
+  //http://www.w3school.com.cn/cssref/pr_background.asp
+  background: url('images/overlay.png'), url('../../images/intro.jpg');
+  //cover把背景图像扩展至足够大，以使背景图像完全覆盖背景区域。
+  //背景图像的某些部分也许无法显示在背景定位区域中。
+  background-size: 256px 256px, cover;
+  //fixed当页面的其余部分滚动时，背景图像不会移动。
+  background-attachment: fixed, fixed;
+  background-position: top left, bottom center;
+  background-repeat: repeat, no-repeat;
+}
+
+/* One */
+#one {
+  background: url('images/overlay.png'), url('../../images/one.jpg');
+  background-size: 256px 256px, cover;
+  background-attachment: fixed, fixed;
+  background-position: top left, center center;
+}
+
+/* Two */
+#two {
+  background: url('images/overlay.png'), url('../../images/two.jpg');
+  background-size: 256px 256px, cover;
+  background-attachment: fixed, fixed;
+  background-position: top left, center center;
+}
+
+/* Contact */
+#contact {
+  padding-bottom: 0;
+  overflow: hidden;
+
+  .box {
+    @include vendor('transition', 'transform #{_duration(fade-in)} ease');
+    @include vendor('transform', 'translateY(0)');
+    position: relative;
+  }
+
+  &.inactive {
+    .box {
+      @include vendor('transform', 'translateY(100%)');
+    }
+  }
+
+  @include breakpoint(small) {
+    .box {
+      padding-bottom: 2em;
+    }
+  }
+}
