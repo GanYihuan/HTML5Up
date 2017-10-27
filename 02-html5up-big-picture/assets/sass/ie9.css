@@ -12,14 +12,12 @@ body:before, body:after {
   content: '';
   display: block;
   clear: both; }
-
 .gallery article {
   float: left; }
 
 /* Main */
 .main.fullscreen {
   min-height: 0; }
-
 .main.style1 > .content {
   margin: 0 auto; }
 
@@ -27,3 +25,4 @@ body:before, body:after {
 .poptrox-popup .loader {
   display: none !important; }
 
+/*# sourceMappingURL=ie9.css.map */

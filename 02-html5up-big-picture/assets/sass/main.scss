@@ -1,9 +1,7 @@
 @charset "UTF-8";
 
-//参数  根据需要改变
-@import 'libs/vars';
-//方法  (copy)
-@import 'libs/functions';
+@import 'libs/vars'; // attribute parameter
+@import 'libs/functions'; // string unit mixed number
 //icon svg padding  (copy)
 @import 'libs/mixins';
 @import url('fontset.min.css');

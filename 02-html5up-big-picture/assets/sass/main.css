@@ -46,11 +46,9 @@ body {
 /* Basic */
 @-ms-viewport {
   width: device-width; }
-
 @media screen and (max-width: 480px) {
   html, body {
     min-width: 320px; } }
-
 body {
   -ms-overflow-style: scrollbar; }
   body.is-loading *, body.is-loading *:before, body.is-loading *:after {
@@ -78,7 +76,6 @@ html {
     -webkit-transform: scale(1) rotate(360deg);
     -ms-transform: scale(1) rotate(360deg);
     transform: scale(1) rotate(360deg); } }
-
 @-webkit-keyframes spinner-rotate {
   0% {
     -moz-transform: scale(1) rotate(0deg);
@@ -90,7 +87,6 @@ html {
     -webkit-transform: scale(1) rotate(360deg);
     -ms-transform: scale(1) rotate(360deg);
     transform: scale(1) rotate(360deg); } }
-
 @-ms-keyframes spinner-rotate {
   0% {
     -moz-transform: scale(1) rotate(0deg);
@@ -102,7 +98,6 @@ html {
     -webkit-transform: scale(1) rotate(360deg);
     -ms-transform: scale(1) rotate(360deg);
     transform: scale(1) rotate(360deg); } }
-
 @keyframes spinner-rotate {
   0% {
     -moz-transform: scale(1) rotate(0deg);
@@ -114,31 +109,26 @@ html {
     -webkit-transform: scale(1) rotate(360deg);
     -ms-transform: scale(1) rotate(360deg);
     transform: scale(1) rotate(360deg); } }
-
 @-moz-keyframes spinner-show {
   0% {
     opacity: 0; }
   100% {
     opacity: 1; } }
-
 @-webkit-keyframes spinner-show {
   0% {
     opacity: 0; }
   100% {
     opacity: 1; } }
-
 @-ms-keyframes spinner-show {
   0% {
     opacity: 0; }
   100% {
     opacity: 1; } }
-
 @keyframes spinner-show {
   0% {
     opacity: 0; }
   100% {
     opacity: 1; } }
-
 @-moz-keyframes spinner-hide {
   0% {
     -moz-transform: scale(1) rotate(0deg);
@@ -161,7 +151,6 @@ html {
     transform: scale(0.5) rotate(360deg);
     color: #e5e6e7;
     z-index: -1; } }
-
 @-webkit-keyframes spinner-hide {
   0% {
     -moz-transform: scale(1) rotate(0deg);
@@ -184,7 +173,6 @@ html {
     transform: scale(0.5) rotate(360deg);
     color: #e5e6e7;
     z-index: -1; } }
-
 @-ms-keyframes spinner-hide {
   0% {
     -moz-transform: scale(1) rotate(0deg);
@@ -207,7 +195,6 @@ html {
     transform: scale(0.5) rotate(360deg);
     color: #e5e6e7;
     z-index: -1; } }
-
 @keyframes spinner-hide {
   0% {
     -moz-transform: scale(1) rotate(0deg);
@@ -230,7 +217,6 @@ html {
     transform: scale(0.5) rotate(360deg);
     color: #e5e6e7;
     z-index: -1; } }
-
 @-moz-keyframes overlay-hide {
   0% {
     opacity: 1;
@@ -244,7 +230,6 @@ html {
   100% {
     opacity: 0;
     z-index: -1; } }
-
 @-webkit-keyframes overlay-hide {
   0% {
     opacity: 1;
@@ -258,7 +243,6 @@ html {
   100% {
     opacity: 0;
     z-index: -1; } }
-
 @-ms-keyframes overlay-hide {
   0% {
     opacity: 1;
@@ -272,7 +256,6 @@ html {
   100% {
     opacity: 0;
     z-index: -1; } }
-
 @keyframes overlay-hide {
   0% {
     opacity: 1;
@@ -286,11 +269,9 @@ html {
   100% {
     opacity: 0;
     z-index: -1; } }
-
 @media (-webkit-min-device-pixel-ratio: 2) {
   body:before {
     line-height: 2.025em; } }
-
 body {
   min-width: 320px;
   height: 100%;
@@ -425,7 +406,6 @@ h2 {
 @media screen and (max-width: 736px) {
   h2 {
     font-size: 1.5em; } }
-
 a {
   -moz-transition: color 0.2s ease-in-out;
   -webkit-transition: color 0.2s ease-in-out;
@@ -695,7 +675,6 @@ ul.default {
   list-style: disc; }
   ul.default li {
     padding-left: 0.5em; }
-
 ul.icons {
   cursor: default; }
   ul.icons li {
@@ -707,7 +686,6 @@ ul.icons {
     line-height: 2em;
     text-align: center;
     border: 0; }
-
 ul.actions {
   cursor: default; }
   ul.actions li {
@@ -715,7 +693,6 @@ ul.actions {
     margin: 0 0 0 0.5em; }
     ul.actions li:first-child {
       margin-left: 0; }
-
 ul.menu {
   cursor: default; }
   ul.menu li {
@@ -1555,3 +1532,4 @@ body {
     #contact .box {
       padding-bottom: 2em; } }
 
+/*# sourceMappingURL=main.css.map */
