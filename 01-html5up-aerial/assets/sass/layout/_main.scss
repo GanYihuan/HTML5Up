@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 #wrapper {
   @include vendor('animation',
           'wrapper #{_duration(wrapper)} forwards'

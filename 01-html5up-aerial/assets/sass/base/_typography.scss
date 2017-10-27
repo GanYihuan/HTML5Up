@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 body, input, select, textarea {
   line-height: 1.75em;
   font-family: 'Source Sans Pro', sans-serif;
@@ -9,7 +11,7 @@ body, input, select, textarea {
   color: _palette(fg);
 }
 
-//self start
+// ---- self start -----
 body {
   //reset白色背景
   background: _palette(bg);
@@ -23,7 +25,7 @@ body {
     }
   }
 }
-//self end
+// ----- self end ----
 
 a {
   //vendor 声明属性和值

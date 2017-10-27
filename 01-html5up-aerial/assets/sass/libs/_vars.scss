@@ -1,12 +1,12 @@
+@charset "UTF-8";
+
 // Misc.
-//杂项
 $misc: (
         bg: #348cb2 url("images/bg.jpg") 0% 100%,
         bg-width: 1500px
 );
 
 // Duration.
-//持续时间
 $duration: (
         wrapper: 3s,
         bg: 60s,
@@ -26,7 +26,6 @@ $font: (
 );
 
 // Palette.
-//调色板
 $palette: (
         bg: #fff,
         fg: #fff,

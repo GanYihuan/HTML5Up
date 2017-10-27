@@ -317,7 +317,6 @@ Header
     -webkit-transform: translate3d(-2250px,0,0);
     -ms-transform: translate3d(-2250px,0,0);
     transform: translate3d(-2250px,0,0); } }
-
 @-webkit-keyframes bg {
   0% {
     -moz-transform: translate3d(0,0,0);
@@ -329,7 +328,6 @@ Header
     -webkit-transform: translate3d(-2250px,0,0);
     -ms-transform: translate3d(-2250px,0,0);
     transform: translate3d(-2250px,0,0); } }
-
 @-ms-keyframes bg {
   0% {
     -moz-transform: translate3d(0,0,0);
@@ -341,7 +339,6 @@ Header
     -webkit-transform: translate3d(-2250px,0,0);
     -ms-transform: translate3d(-2250px,0,0);
     transform: translate3d(-2250px,0,0); } }
-
 @keyframes bg {
   0% {
     -moz-transform: translate3d(0,0,0);
@@ -353,7 +350,6 @@ Header
     -webkit-transform: translate3d(-2250px,0,0);
     -ms-transform: translate3d(-2250px,0,0);
     transform: translate3d(-2250px,0,0); } }
-
 #bg {
   background-size: 2250px auto;
   width: 6750px; }
@@ -364,50 +360,42 @@ Header
     opacity: 0; }
   100% {
     opacity: 1; } }
-
 @-webkit-keyframes wrapper {
   0% {
     opacity: 0; }
   100% {
     opacity: 1; } }
-
 @-ms-keyframes wrapper {
   0% {
     opacity: 0; }
   100% {
     opacity: 1; } }
-
 @keyframes wrapper {
   0% {
     opacity: 0; }
   100% {
     opacity: 1; } }
-
 /* Overlay */
 @-moz-keyframes overlay {
   0% {
     opacity: 0; }
   100% {
     opacity: 1; } }
-
 @-webkit-keyframes overlay {
   0% {
     opacity: 0; }
   100% {
     opacity: 1; } }
-
 @-ms-keyframes overlay {
   0% {
     opacity: 0; }
   100% {
     opacity: 1; } }
-
 @keyframes overlay {
   0% {
     opacity: 0; }
   100% {
     opacity: 1; } }
-
 /* Header */
 @-moz-keyframes header {
   0% {
@@ -422,7 +410,6 @@ Header
     -ms-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
     opacity: 1; } }
-
 @-webkit-keyframes header {
   0% {
     -moz-transform: translate3d(0,1em,0);
@@ -436,7 +423,6 @@ Header
     -ms-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
     opacity: 1; } }
-
 @-ms-keyframes header {
   0% {
     -moz-transform: translate3d(0,1em,0);
@@ -450,7 +436,6 @@ Header
     -ms-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
     opacity: 1; } }
-
 @keyframes header {
   0% {
     -moz-transform: translate3d(0,1em,0);
@@ -464,7 +449,6 @@ Header
     -ms-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
     opacity: 1; } }
-
 @-moz-keyframes nav-icons {
   0% {
     -moz-transform: translate3d(0,1em,0);
@@ -478,7 +462,6 @@ Header
     -ms-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
     opacity: 1; } }
-
 @-webkit-keyframes nav-icons {
   0% {
     -moz-transform: translate3d(0,1em,0);
@@ -492,7 +475,6 @@ Header
     -ms-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
     opacity: 1; } }
-
 @-ms-keyframes nav-icons {
   0% {
     -moz-transform: translate3d(0,1em,0);
@@ -506,7 +488,6 @@ Header
     -ms-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
     opacity: 1; } }
-
 @keyframes nav-icons {
   0% {
     -moz-transform: translate3d(0,1em,0);
@@ -520,12 +501,12 @@ Header
     -ms-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
     opacity: 1; } }
-
 /* Wide */
 @media screen and (max-width: 1680px) {
   /* Basic */
   body, input, select, textarea {
     font-size: 13pt; }
+
   /* BG */
   @-moz-keyframes bg {
     0% {
@@ -574,12 +555,12 @@ Header
   #bg {
     background-size: 1500px auto;
     width: 4500px; } }
-
 /* Normal */
 @media screen and (max-width: 1280px) {
   /* Basic */
   body, input, select, textarea {
     font-size: 12pt; }
+
   /* BG */
   @-moz-keyframes bg {
     0% {
@@ -628,14 +609,15 @@ Header
   #bg {
     background-size: 750px auto;
     width: 2250px; } }
-
 /* Mobile */
 @media screen and (max-width: 736px) {
   /* Basic */
   body {
     min-width: 320px; }
+
   body, input, select, textarea {
     font-size: 11pt; }
+
   /* BG */
   @-moz-keyframes bg {
     0% {
@@ -684,6 +666,7 @@ Header
   #bg {
     background-size: 300px auto;
     width: 900px; }
+
   /* Header */
   #header h1 {
     font-size: 2.5em; }
@@ -695,7 +678,6 @@ Header
       font-size: 1em; }
     #header nav a:active {
       font-size: 1em; } }
-
 /* Mobile (Portrait) */
 @media screen and (max-width: 480px) {
   /* BG */
@@ -746,7 +728,9 @@ Header
   #bg {
     background-size: 412.5px auto;
     width: 1237.5px; }
+
   /* Header */
   #header nav {
     padding: 0 1em; } }
 
+/*# sourceMappingURL=main.css.map */

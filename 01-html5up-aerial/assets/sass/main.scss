@@ -1,12 +1,8 @@
 @charset "UTF-8";
 
-// 照抄 start
-// vars自定义里面的属性参数
-@import 'libs/vars';
-// 带有单位字（符串）处理混合值
-@import 'libs/functions';
-@import 'libs/mixins';
-// 照抄 end
+@import 'libs/vars'; // attribute parameter
+@import 'libs/functions'; // string unit mixed number
+@import 'libs/mixins'; //
 @import url("fontset.css");
 @import url("font-awesome.min.css");
 /*
@@ -16,41 +12,38 @@
 */
 //A lightweight responsive framework for the www http://skel.io
 @import "libs/skel";
-
-//css 响应式断点
+// css 响应式断点
 @include skel-breakpoints((
-  //断点名字 加 大小
+  // 断点名字 加 大小
         wide: '(max-width: 1680px)',
         normal: '(max-width: 1280px)',
         mobile: '(max-width: 736px)',
         mobilep: '(max-width: 480px)'
 ));
-
 @include skel-layout((
-  //css reset
+  // css reset
         reset: 'full',
-  //?
+  // ?
         boxModel: 'border'
 ));
 
-//_mixins  _duration : 带有单位字（符串）处理混合值
+
+// _mixins  _duration : 带有单位字（符串）处理混合值
 $delay-wrapper: _duration(wrapper) - 1s;
 $delay-overlay: $delay-wrapper - 0.5s;
 $delay-header: $delay-overlay + _duration(overlay) - 0.75s;
 $delay-nav-icons: $delay-header + _duration(header) - 1s;
 $delay-nav-icon: 0.25s;
 
-@import "base/typrography";
-//copy
-@import "components/icon";
-
-//
+@import "base/typography";
+@import "components/icon";// copy
 @import "layout/header";
 @import "layout/footer";
 @import "layout/main";
 @import "layout/bg";
 
-//$$ 背景无限动画,向左移动
+
+// 背景无限动画,向左移动
 @mixin bg($width) {
   @include keyframes('bg') {
     0% {
@@ -68,8 +61,6 @@ $delay-nav-icon: 0.25s;
     width: ($width * 3);
   }
 }
-
-// 调用bg
 // 背景放大了1.5倍
 @include bg(_misc(bg-width) * 1.5);
 
@@ -194,3 +185,5 @@ $delay-nav-icon: 0.25s;
     }
   }
 }
+
+
