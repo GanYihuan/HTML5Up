@@ -37,10 +37,10 @@ $delay-nav-icon: 0.25s;
 
 @import "base/typography";
 @import "components/icon";// copy
+@import "layout/bg";
+@import "layout/main";
 @import "layout/header";
 @import "layout/footer";
-@import "layout/main";
-@import "layout/bg";
 
 
 // 背景无限动画,向左移动

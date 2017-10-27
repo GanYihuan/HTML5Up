@@ -2,15 +2,11 @@
 
 /* BG */
 #bg {
-  @include vendor('animation',
-          'bg #{_duration(bg)} linear infinite'
-  );
-  @include vendor('backface-visibility',
-          'hidden'
-  );
-  @include vendor('transform',
-          'translate3d(0,0,0)'
-  );
+  // animation: name duration timing-function delay iteration-count direction;
+  @include vendor('animation', 'bg #{_duration(bg)} linear infinite');
+  // backface-visibility当元素不面向屏幕时是否可见。
+  @include vendor('backface-visibility', 'hidden');
+  @include vendor('transform', 'translate3d(0,0,0)');
   /* Set your background with this */
   position: fixed;
   left: 0;
@@ -28,9 +24,8 @@
   width: 100%;
   height: 100%;
   opacity: 0;
-  @include vendor('animation',
-          'overlay #{_duration(overlay)} #{$delay-overlay} forwards'
-  );
+  // animation: name duration timing-function delay iteration-count direction;
+  @include vendor('animation', 'overlay #{_duration(overlay)} #{$delay-overlay} forwards');
   background-attachment: fixed, fixed;
   background-image: url('../images/overlay-pattern.png'), url('../images/overlay.svg');
   background-position: 0% 0%, 50% 50%;

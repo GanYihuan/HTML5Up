@@ -1,33 +1,26 @@
 @charset "UTF-8";
 
-/*
-Header
-*/
 
 #header {
-  //3个@include 包含状态
-  //forwards:是停在动画最后的的那个画面
+  // 3个@include 包含状态
+  // forwards:是停在动画最后的的那个画面
   @include vendor('animation',
           'header #{_duration(header)} #{$delay-header} forwards'
   );
-  //backface-visibility 属性定义当元素不面向屏幕时是否可见
+  // backface-visibility 属性定义当元素不面向屏幕时是否可见
   @include vendor('backface-visibility', 'hidden');
   @include vendor('transform', 'translate3d(0,0,0)');
-
-  //水平居中设置-行内元素   inline方便水平居中
+  // 水平居中设置-行内元素   inline方便水平居中
   display: inline-block;
   position: relative;
-
-  //预备动画空间
+  // 预备动画空间
   top: -1em;
   width: 90%;
-
-  //水平居中
+  // 水平居中
   text-align: center;
-  //垂直居中
+  // 垂直居中
   vertical-align: middle;
-
-  //装饰
+  // 装饰
   opacity: 0;
   cursor: default;
 
@@ -35,7 +28,7 @@ Header
     line-height: 1em;
     font-size: 4.35em;
     font-weight: 900;
-    //letter-spacing 属性增加或减少字符间的空白（字符间距）。
+    // letter-spacing 属性增加或减少字符间的空白（字符间距）。
     letter-spacing: -0.035em;
   }
 
@@ -52,14 +45,12 @@ Header
       @include vendor('animation',
               'nav-icons #{_duration(nav-icons)} ease-in-out forwards'
       );
-      //backface-visibility 属性定义当元素不面向屏幕时是否可见
+      // backface-visibility 属性定义当元素不面向屏幕时是否可见
       @include vendor('backface-visibility', 'hidden');
       @include vendor('transform', 'translate3d(0,0,0)');
-      //
       display: inline-block;
       position: relative;
       top: 0;
-      //
       width: _size(nav-icon-wrapper);
       height: _size(nav-icon-wrapper);
       line-height: _size(nav-icon-wrapper) * 1.1;
@@ -74,25 +65,27 @@ Header
     }
 
     a {
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      -webkit-touch-callout: none;
       display: inline-block;
       border: 0;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      // When a target is touched and held on iPhone OS, Safari displays a callout information about the link.
+      // This property allows disabling that behavior.
+      -webkit-touch-callout: none;
 
       &:before {
         @include vendor('transition', 'all 0.2s ease-in-out');
-        //a 为行间元素，为了能设计位置
+        // a 为行间元素，为了能对a进行设计
         display: block;
         position: relative;
         top: 0;
-        //圆
+        // 圆
         border: solid 1px _palette(fg);
         border-radius: 100%;
-        //圆的设置start
+        // ----- 圆的设置start -----
         width: 2.5em;
         height: 2.5em;
         line-height: 2.5em;
-        //圆的设置end
+        // ----- 圆的设置end -----
         font-size: _size(nav-icon);
         text-align: center;
       }
@@ -101,8 +94,8 @@ Header
         font-size: 1.1em;
 
         &:before {
-          background-color: _palette(nav-icon, hover-bg);
           color: _palette(nav-icon, hover-fg);
+          background-color: _palette(nav-icon, hover-bg);
         }
       }
 
@@ -111,8 +104,8 @@ Header
         background: none;
 
         &:before {
-          background-color: _palette(nav-icon, active-bg);
           color: _palette(nav-icon, active-fg);
+          background-color: _palette(nav-icon, active-bg);
         }
       }
 

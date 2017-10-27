@@ -4,7 +4,7 @@ body, input, select, textarea {
   line-height: 1.75em;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 15pt;
-  //font-weight 属性设置文本的粗细。
+  //font-weight 属性设置文本的粗细。 !important优先级最高
   font-weight: 300 !important;
   //letter-spacing 属性增加或减少字符间的空白（字符间距）。
   letter-spacing: -0.025em;
@@ -13,10 +13,10 @@ body, input, select, textarea {
 
 // ---- self start -----
 body {
-  //reset白色背景
-  background: _palette(bg);
   //overflow 属性规定当内容溢出元素框时发生的事情。
   overflow: hidden;
+  //reset白色背景
+  background: _palette(bg);
 
   //最高层级动画
   &.loading {
@@ -25,12 +25,13 @@ body {
     }
   }
 }
+
 // ----- self end ----
 
 a {
-  //vendor 声明属性和值
-  //@param {string} $property Property.
-  //@param {mixed} $value String/list of value(s).
+  // vendor 声明属性和值
+  // @param {string} $property Property.
+  // @param {mixed} $value String/list of value(s).
   @include vendor('transition', (
           'color #{_duration(transition)} ease-in-out',
           'background-color #{_duration(transition)} ease-in-out',

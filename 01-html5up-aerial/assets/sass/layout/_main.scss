@@ -1,9 +1,7 @@
 @charset "UTF-8";
 
 #wrapper {
-  @include vendor('animation',
-          'wrapper #{_duration(wrapper)} forwards'
-  );
+  @include vendor('animation', 'wrapper #{_duration(wrapper)} forwards');
   position: fixed;
   left: 0;
   top: 0;
@@ -23,9 +21,9 @@
 
   &:before {
     display: inline-block;
-    margin-right: 0;
     width: 1px;
     height: 100%;
+    margin-right: 0;
     //垂直居中-父元素高度确定的单行文本
     vertical-align: middle;
     content: '';
