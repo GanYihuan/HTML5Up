@@ -1,0 +1,195 @@
+@charset "UTF-8";
+
+// attribute parameter
+@import 'libs/vars';
+// string unit mixed number(copy)
+@import 'libs/functions';
+// icon svg padding
+@import 'libs/mixins';
+// (copy)
+@import url("fontset.css");
+// (copy)
+@import url("font-awesome.min.css");
+/*
+	Aerial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+//A lightweight responsive framework for the www http://skel.io
+@import "libs/skel";
+// css 响应式断点
+@include skel-breakpoints((
+  // 断点名字 加 大小
+        xxlarge: '(max-width: 1920px)',
+        xlarge: '(max-width: 1680px)',
+        large: '(max-width: 1280px)',
+        medium: '(max-width: 1000px)',
+        small: '(max-width: 736px)',
+        xsmall: '(max-width: 480px)'
+));
+@include skel-layout((
+  // css reset
+        reset: 'full',
+  // ?
+        boxModel: 'border'
+));
+
+// _mixins  _duration : 带有单位字（符串）处理混合值
+$delay-wrapper: _duration(wrapper) - 1s;
+$delay-overlay: $delay-wrapper - 0.5s;
+$delay-header: $delay-overlay + _duration(overlay) - 0.75s;
+$delay-nav-icons: $delay-header + _duration(header) - 1s;
+$delay-nav-icon: 0.25s;
+
+@import "base/typography";
+@import "components/icon"; // copy
+@import "layout/bg";
+@import "layout/main";
+@import "layout/header";
+@import "layout/footer";
+
+// 背景无限动画,向左移动
+@mixin bg($width) {
+  @include keyframes('bg') {
+    0% {
+      //vendor传入属性，返回值
+      @include vendor('transform', 'translate3d(0,0,0)');
+    }
+
+    100% {
+      @include vendor('transform', 'translate3d(#{$width * -1},0,0)');
+    }
+  }
+
+  #bg {
+    background-size: $width auto;
+    width: ($width * 3);
+  }
+}
+
+// 背景放大了1.5倍
+@include bg(_misc(bg-width) * 1.5);
+
+/* Wrapper */
+@include keyframes('wrapper') {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Overlay */
+@include keyframes('overlay') {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Header */
+// 向上动画
+@include keyframes('header') {
+  0% {
+    @include vendor('transform', 'translate3d(0,1em,0)');
+    opacity: 0;
+  }
+  100% {
+    @include vendor('transform', 'translate3d(0,0,0)');
+    opacity: 1;
+  }
+}
+
+// nav-icons
+// 向上动画
+@include keyframes('nav-icons') {
+  0% {
+    @include vendor('transform', 'translate3d(0,1em,0)');
+    opacity: 0;
+  }
+  100% {
+    @include vendor('transform', 'translate3d(0,0,0)');
+    opacity: 1;
+  }
+}
+
+/* Wide */
+@include breakpoint(xlarge) {
+  /* Basic */
+  body, input, select, textarea {
+    font-size: 13pt;
+  }
+
+  /* BG */
+  @include bg(_misc(bg-width));
+}
+
+/* Normal */
+@include breakpoint(large) {
+  /* Basic */
+  body, input, select, textarea {
+    //12PT就是12磅 12磅就是小4号字
+    font-size: 12pt;
+  }
+
+  /* BG */
+  @include bg(_misc(bg-width) * 0.5);
+}
+
+/* Mobile */
+@include breakpoint(small) {
+  /* Basic */
+  body {
+    min-width: 320px;
+  }
+
+  body, input, select, textarea {
+    font-size: 11pt;
+  }
+
+  /* BG */
+  @include bg(_misc(bg-width) * 0.2);
+
+  /* Header */
+  #header {
+    h1 {
+      font-size: 2.5em;
+    }
+
+    p {
+      font-size: 1em;
+    }
+
+    nav {
+      font-size: 1em;
+
+      a {
+        &:hover {
+          font-size: 1em;
+        }
+
+        &:active {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+}
+
+/* Mobile (Portrait) */
+@include breakpoint(xsmall) {
+  /* BG */
+  @include bg(_misc(bg-width) * 0.275);
+
+  /* Header */
+  #header {
+    nav {
+      padding: 0 1em;
+    }
+  }
+}
+
+

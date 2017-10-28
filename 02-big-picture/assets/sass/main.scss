@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+// attribute parameter
+@import 'libs/vars';
+// string unit mixed number(copy)
+@import 'libs/functions';
+// icon svg padding  (copy)
+@import 'libs/mixins';
+// (copy)
+@import url('fontset.min.css');
+// (copy)
+@import url('font-awesome.min.css');
+/*
+	Big Picture by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+// 响应式框架
+@import "libs/skel";
+// 框架 断点设置,相当与css的@media
+@include skel-breakpoints((
+        xxlarge: '(max-width: 1920px)',
+        xlarge: '(max-width: 1680px)',
+        large: '(max-width: 1280px)',
+        medium: '(max-width: 1000px)',
+        small: '(max-width: 736px)',
+        xsmall: '(max-width: 480px)'
+));
+// 框架
+@include skel-layout((
+  //css reset (http://meyerweb.com/eric/tools/css/reset)
+        reset: 'full',
+  //?
+        boxModel: 'border'
+));
+
+// Base.
+@import 'base/page'; // 自定义
+@import 'base/typography'; // 自定义
+
+// Component.
+@import 'components/box'; // 白色弹出框，设置padding
+@import 'components/button';
+@import 'components/form';
+@import 'components/icon'; // 底部图标 要配合'components/list'来写
+@import 'components/list'; // 对底部图标处理
+@import 'components/image'; // 图片处理
+@import 'components/section'; // 对header footer处理
+@import 'components/table';
+@import 'components/poptrox-popup'; // 针对框架来修改
+@import 'components/gallery';
+
+// Layout.
+// 导航
+// 自己发挥self
+@import 'layout/header';
+@import 'layout/main';
+@import 'layout/footer';
+
+/* Intro */
+#intro {
+  // background-color
+  // background-position        (x% y%, top left)
+  // background-size            (px, %, cover: 使背景图像完全覆盖背景区域, contain: 使其宽度和高度完全适应内容区域)
+  // background-repeat          (repeat, repeat-x)
+  // background-origin          规定背景图片的定位区域。(padding-box, border-box, content-box)
+  // background-clip            规定背景的绘制区域。(padding-box, border-box, content-box)
+  // background-attachment      规定背景图像是否固定或者随着页面的其余部分滚动。(scroll, fixed, inherit)
+  // background-image           规定要使用的背景图像。
+  background: url('images/overlay.png'), url('../../images/intro.jpg');
+  //cover把背景图像扩展至足够大，以使背景图像完全覆盖背景区域。
+  //背景图像的某些部分也许无法显示在背景定位区域中。
+  background-size: 256px 256px, cover;
+  //fixed当页面的其余部分滚动时，背景图像不会移动。
+  background-attachment: fixed, fixed;
+  background-position: top left, bottom center;
+  background-repeat: repeat, no-repeat;
+}
+
+/* One */
+#one {
+  background: url('images/overlay.png'), url('../../images/one.jpg');
+  background-size: 256px 256px, cover;
+  background-attachment: fixed, fixed;
+  background-position: top left, center center;
+}
+
+/* Two */
+#two {
+  background: url('images/overlay.png'), url('../../images/two.jpg');
+  background-size: 256px 256px, cover;
+  background-attachment: fixed, fixed;
+  background-position: top left, center center;
+}
+
+/* Contact */
+#contact {
+  padding-bottom: 0;
+  overflow: hidden;
+
+  .box {
+    // transition-property         
+    // transition-duration
+    // transition-timing-function     (linear, ease, ease-in, ease-out, ease-in-out, cubic-bezier(n,n,n,n))
+    // transition-delay
+    @include vendor('transition', 'transform #{_duration(fade-in)} ease');
+    // translate()，根据左(X轴)和顶部(Y轴)位置给定的参数，从当前元素位置移动。
+    // rotate()，在一个给定度数顺时针旋转的元素。负值是允许的，这样是元素逆时针旋转。
+    // scale()，该元素增加或减少的大小，取决于宽度（X轴）和高度（Y轴）的参数：
+    // skew() 包含两个参数值，分别表示X轴和Y轴倾斜的角度，如果第二个参数为空，则默认为0，参数为负表示向相反方向倾斜
+    @include vendor('transform', 'translateY(0)');
+    position: relative;
+  }
+
+  &.inactive {
+    .box {
+      @include vendor('transform', 'translateY(100%)');
+    }
+  }
+
+  @include breakpoint(small) {
+    .box {
+      padding-bottom: 2em;
+    }
+  }
+}

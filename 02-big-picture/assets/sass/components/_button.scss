@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+///
+/// Big Picture by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* Button */
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+.button,
+button {
+  //copy  参数不同
+  @include vendor('appearance', 'none');
+  @include vendor('transition', 'background-color #{_duration(transition)} ease-in-out');
+  display: inline-block;
+  position: relative;
+  padding: 0 2em;
+  border: 0;
+  border-radius: 3.5em;
+  height: 3.5em;
+  line-height: 3.5em;
+  text-align: center;
+  text-decoration: none;
+  color: _palette(accent1, fg);
+  background-color: _palette(accent1, bg);
+  cursor: pointer;
+  outline: 0;
+
+  &:hover {
+    background-color: lighten(_palette(accent1, bg), 5);
+  }
+
+  &:active {
+    background-color: darken(_palette(accent1, bg), 5);
+  }
+  //copy  参数不同
+
+  //self
+  //下拉按钮圆形
+  &.down {
+    padding: 0;
+    width: 5em;
+    height: 5em;
+    line-height: 4.5em;
+    //首行文本的缩进。使用负值，那么首行会被缩进到左边
+    text-indent: -10em;
+    background-image: url('images/dark-arrow.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+
+    //下拉按钮底部方形
+    &.anchored {
+      margin-left: -2.5em;
+      bottom: 0;
+      height: 4.5em;
+      border-bottom: 0;
+      //变成不规则
+      border-radius: 3em 3em 0 0;
+    }
+  }
+
+  // 针对不规则按钮定位
+  &.anchored {
+    position: absolute;
+    left: 50%;
+  }
+
+  //颜色边框设置
+  &.style2 {
+    border: 2px solid _palette(border);
+    color: inherit;
+    //变透明
+    background-color: transparent;
+
+    &:hover {
+      background-color: transparentize(_palette(border), 0.75);
+    }
+
+    &:active {
+      background-color: transparentize(_palette(border), 0.625);
+    }
+
+    &.down {
+      background-image: url('images/arrow.svg');
+    }
+  }
+  //self
+}
