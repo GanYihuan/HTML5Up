@@ -1,13 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 .gitignore
-.idea/.name
-.idea/HTML5Up.iml
-.idea/compiler.xml
-.idea/copyright/
-.idea/encodings.xml
-.idea/misc.xml
-.idea/modules.xml
-.idea/workspace.xml
+.idea
 01-aerial/assets/sass/ie8.css.map
 01-aerial/assets/sass/ie9.css.map
 02-big-picture/assets/sass/main.css.map
