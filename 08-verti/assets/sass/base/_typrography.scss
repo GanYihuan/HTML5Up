@@ -1,3 +1,6 @@
+@charset "UTF-8";
+
+
 /* Type */
 
 body, input, select, textarea {
@@ -17,12 +20,12 @@ a {
   }
 }
 
-b, strong {
+strong, b {
   font-weight: 600;
   color: #444;
 }
 
-i, em {
+em, i {
   font-style: italic;
 }
 

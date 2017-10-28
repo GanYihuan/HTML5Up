@@ -1,5 +1,5 @@
+@import url("fontset.min.css");
 @import url("font-awesome.min.css");
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
 /*
 	Eventually by HTML5 UP
 	html5up.net | @ajlkn
@@ -236,8 +236,8 @@ a {
     color: #1cb495 !important; }
 
 strong, b {
-  color: #fff;
-  font-weight: 700; }
+  font-weight: 700;
+  color: #fff; }
 
 em, i {
   font-style: italic; }
@@ -295,19 +295,19 @@ blockquote {
   padding: 0.5em 0 0.5em 2em; }
 
 code {
-  background: rgba(255, 255, 255, 0.125);
+  padding: 0.25em 0.65em;
+  margin: 0 0.25em;
   border-radius: 6px;
   border: solid 2px rgba(255, 255, 255, 0.35);
   font-family: "Courier New", monospace;
   font-size: 0.9em;
-  margin: 0 0.25em;
-  padding: 0.25em 0.65em; }
+  background: rgba(255, 255, 255, 0.125); }
 
 pre {
+  margin: 0 0 2em 0;
   -webkit-overflow-scrolling: touch;
   font-family: "Courier New", monospace;
-  font-size: 0.9em;
-  margin: 0 0 2em 0; }
+  font-size: 0.9em; }
   pre code {
     display: block;
     line-height: 1.75em;

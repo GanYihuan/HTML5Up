@@ -32,8 +32,8 @@ a {
           'color #{_duration(transition)} ease',
           'border-bottom #{_duration(transition)} ease'
   ));
-  text-decoration: none;
   border-bottom: dotted 1px;
+  text-decoration: none;
   color: inherit;
 
   &:hover {
@@ -55,7 +55,8 @@ em, i {
 p {
   margin: 0 0 _size(element-margin) 0;
 
-  //self start    split text screen   important
+  // ------ self start -----
+  // split text screen   important
   &.content {
     //columns: column-width column-count;
     //column-width
@@ -72,15 +73,15 @@ p {
     //justify	实现两端对齐文本效果。
     text-align: justify;
   }
-  //  self end
+  // ----- self end -----
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 (_size(element-margin) * 0.35) 0;
   font-weight: _font(weight);
-  color: _palette(fg-bold);
   line-height: 1.5;
   letter-spacing: _font(letter-spacing);
+  color: _palette(fg-bold);
 
   a {
     text-decoration: none;

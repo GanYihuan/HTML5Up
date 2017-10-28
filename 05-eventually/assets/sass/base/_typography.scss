@@ -12,7 +12,7 @@
 ///
 
 /* Type */
-//copy
+// copy
 body, input, select, textarea {
   line-height: 1.65em;
   font-family: _font(family);
@@ -59,8 +59,8 @@ a {
 }
 
 strong, b {
-  color: _palette(fg-bold);
   font-weight: _font(weight-bold);
+  color: _palette(fg-bold);
 }
 
 em, i {
@@ -133,20 +133,20 @@ blockquote {
 }
 
 code {
-   background: _palette(border-bg);
+   padding: 0.25em 0.65em;
+   margin: 0 0.25em;
    border-radius: _size(border-radius);
    border: solid _size(border-width) _palette(border);
    font-family: _font(family-fixed);
    font-size: 0.9em;
-   margin: 0 0.25em;
-   padding: 0.25em 0.65em;
- }
+   background: _palette(border-bg);
+}
 
 pre {
+  margin: 0 0 _size(element-margin) 0;
   -webkit-overflow-scrolling: touch;
   font-family: _font(family-fixed);
   font-size: 0.9em;
-  margin: 0 0 _size(element-margin) 0;
 
   code {
     display: block;

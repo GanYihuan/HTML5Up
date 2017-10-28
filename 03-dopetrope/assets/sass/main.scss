@@ -58,7 +58,7 @@
 //_page.scss start
 body {
   background: #252122;
-  background-image: url('images/bg02.png');
+  background-image: url('./../../images/pic02.jpg');
 
   &.is-loading * {
     @include vendor('transition', 'none !important');
