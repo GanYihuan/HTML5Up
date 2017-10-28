@@ -143,15 +143,15 @@ body {
     margin: -1em 0 0 -1em;
     width: 2em;
     height: 2em;
-    line-height: 2em;
     // 方块图标转换为圆形图标
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
     font-size: 2em;
     text-align: center;
-    // text-transform 属性控制文本的大小写。
     text-transform: none !important;
+    line-height: 2em;
+    // text-transform 属性控制文本的大小写。
     color: _palette(border);
     opacity: 0;
     cursor: default;
@@ -160,7 +160,7 @@ body {
     content: '\f1ce';
   }
 
-  // 添加一个闪光效果,每次加载都闪瞎狗眼
+  // 添加一个闪光效果
   &:after {
     @include vendor('animation', 'overlay-hide 1.5s ease-in forwards !important');
     display: block;

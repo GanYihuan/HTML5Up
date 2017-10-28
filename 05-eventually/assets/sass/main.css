@@ -1,4 +1,4 @@
-@import url(font-awesome.min.css);
+@import url("font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
 /*
 	Eventually by HTML5 UP
@@ -46,7 +46,6 @@ body {
 /* Basic */
 @-ms-viewport {
   width: device-width; }
-
 body {
   -ms-overflow-style: scrollbar; }
   body.is-loading *, body.is-loading *:before, body.is-loading *:after {
@@ -62,7 +61,6 @@ body {
 @media screen and (max-width: 480px) {
   html, body {
     min-width: 320px; } }
-
 html, body {
   overflow-x: hidden;
   width: 100%;
@@ -167,7 +165,6 @@ body {
     -webkit-transform: translateX(-25%);
     -ms-transform: translateX(-25%);
     transform: translateX(-25%); } }
-
 @-webkit-keyframes bg {
   0% {
     -moz-transform: translateX(0);
@@ -179,7 +176,6 @@ body {
     -webkit-transform: translateX(-25%);
     -ms-transform: translateX(-25%);
     transform: translateX(-25%); } }
-
 @-ms-keyframes bg {
   0% {
     -moz-transform: translateX(0);
@@ -191,7 +187,6 @@ body {
     -webkit-transform: translateX(-25%);
     -ms-transform: translateX(-25%);
     transform: translateX(-25%); } }
-
 @keyframes bg {
   0% {
     -moz-transform: translateX(0);
@@ -203,7 +198,6 @@ body {
     -webkit-transform: translateX(-25%);
     -ms-transform: translateX(-25%);
     transform: translateX(-25%); } }
-
 /* Type */
 body, input, select, textarea {
   line-height: 1.65em;
@@ -335,32 +329,26 @@ header p {
   color: rgba(255, 255, 255, 0.5);
   position: relative;
   margin: 0 0 1.5em 0; }
-
 header h2 + p {
   font-size: 1.25em;
   margin-top: -1em;
   line-height: 1.5em; }
-
 header h3 + p {
   font-size: 1.1em;
   margin-top: -0.8em;
   line-height: 1.5em; }
-
 header h4 + p,
 header h5 + p,
 header h6 + p {
   font-size: 0.9em;
   margin-top: -0.6em;
   line-height: 1.5em; }
-
 @media screen and (max-width: 980px) {
   header br {
     display: none; } }
-
 @media screen and (max-width: 736px) {
   header br {
     display: inline; } }
-
 @media screen and (max-width: 480px) {
   header br {
     display: none; } }
@@ -471,7 +459,6 @@ label {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1); } }
-
 @-webkit-keyframes focus {
   0% {
     -moz-transform: scale(1);
@@ -488,7 +475,6 @@ label {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1); } }
-
 @-ms-keyframes focus {
   0% {
     -moz-transform: scale(1);
@@ -505,7 +491,6 @@ label {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1); } }
-
 @keyframes focus {
   0% {
     -moz-transform: scale(1);
@@ -522,7 +507,6 @@ label {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1); } }
-
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -745,20 +729,16 @@ button,
 #header h1 {
   margin: 0 0 0.55em 0;
   font-size: 3.25em; }
-
 #header p {
   font-size: 1.35em;
   line-height: 1.65em; }
-
 #header a {
   color: inherit; }
-
 @media screen and (max-width: 736px) {
   #header h1 {
     font-size: 2em; }
   #header p {
     font-size: 1em; } }
-
 @media screen and (max-width: 480px) {
   #header {
     margin: 0 0 1em 0; } }
@@ -851,3 +831,4 @@ button,
       margin: 1em 0 0 0;
       position: relative; } }
 
+/*# sourceMappingURL=main.css.map */

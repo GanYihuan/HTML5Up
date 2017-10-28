@@ -9,16 +9,17 @@
 /* Type */
 
 body, input, textarea, select {
-  //copy start  字体设置
+  // ----- copy start -----  
+  // 字体设置
   font-family: _font(family);
   font-weight: _font(weight);
   font-size: 18pt;
   line-height: 1.75em;
   color: _palette(fg);
   letter-spacing: 0.025em;
-  //copy end
+  // ----- copy end -----
 
-  //self start
+  // ----- self start -----
   @include breakpoint(xxlarge) {
     font-size: 17pt;
   }
@@ -39,10 +40,10 @@ body, input, textarea, select {
     font-size: 12pt;
     line-height: 1.5em;
   }
-  //self end
+  // ----- self end -----
 }
 
-//copy start
+// ----- copy start -----
 h1, h2, h3, h4, h5, h6 {
   color: inherit;
   font-weight: _font(weight-bold);
@@ -90,14 +91,14 @@ hr {
     margin: (_size(element-margin) * 1.5) 0;
   }
 }
-//copy end
+// ----- copy end -----
 
 
-//self start
+// ----- self start -----
 h2 {
   font-size: 2.25em;
-  line-height: 1.25em;
   letter-spacing: -0.05em;
+  line-height: 1.25em;
 }
 
 @include breakpoint(small) {
@@ -114,4 +115,4 @@ a {
 p, ul, ol, dl, table {
   margin-bottom: 1em;
 }
-//self end
+// ----- self end -----

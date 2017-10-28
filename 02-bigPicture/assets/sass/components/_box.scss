@@ -9,7 +9,7 @@
 /* Box */
 
 .box {
-  // unuse copy
+  // ----- unuse copy -----
   border-radius: _size(border-radius);
   border: solid _size(border-width) _palette(border);
   margin-bottom: _size(element-margin);
@@ -25,10 +25,10 @@
     border-radius: 0;
     padding: 0;
   }
-  // unuse copy
+  // ----- unuse copy -----
 
 
-  //self
+  // ----- self start -----
   padding: 2em;
   color: _palette(fg);
   background: _palette(bg);
@@ -45,4 +45,5 @@
       background-color: transparentize(_palette(bg), 0.1);
     }
   }
+  // ----- self end -----
 }

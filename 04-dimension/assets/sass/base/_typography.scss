@@ -1,3 +1,6 @@
+@charset "UTF-8";
+
+
 ///
 /// Dimension by HTML5 UP
 /// html5up.net | @ajlkn
@@ -127,8 +130,6 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 0.5rem;
     //所谓max-content就是值采用宽度大的那个内容的宽度
     width: -moz-max-content;
-    width: -webkit-max-content;
-    width: -ms-max-content;
     width: max-content;
     border-bottom: solid _size(border-width) _palette(border);
   }

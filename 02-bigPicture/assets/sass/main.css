@@ -295,13 +295,13 @@ body {
     margin: -1em 0 0 -1em;
     width: 2em;
     height: 2em;
-    line-height: 2em;
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
     font-size: 2em;
     text-align: center;
     text-transform: none !important;
+    line-height: 2em;
     color: #e5e6e7;
     opacity: 0;
     cursor: default;
@@ -399,8 +399,8 @@ hr {
 
 h2 {
   font-size: 2.25em;
-  line-height: 1.25em;
-  letter-spacing: -0.05em; }
+  letter-spacing: -0.05em;
+  line-height: 1.25em; }
 
 @media screen and (max-width: 736px) {
   h2 {
