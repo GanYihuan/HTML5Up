@@ -22,9 +22,9 @@ button {
   border: 0;
   border-radius: 3.5em;
   height: 3.5em;
-  line-height: 3.5em;
   text-align: center;
   text-decoration: none;
+  line-height: 3.5em;
   color: _palette(accent1, fg);
   background-color: _palette(accent1, bg);
   cursor: pointer;
@@ -39,21 +39,21 @@ button {
   }
   //copy  参数不同
 
-  //self
-  //下拉按钮圆形
+  // ----- self start -----
+  // 下拉按钮圆形
   &.down {
     padding: 0;
     width: 5em;
     height: 5em;
     line-height: 4.5em;
-    //首行文本的缩进。使用负值，那么首行会被缩进到左边
+    overflow: hidden;
+    // 首行文本的缩进。使用负值，那么首行会被缩进到左边
     text-indent: -10em;
-    background-image: url('images/dark-arrow.svg');
+    background-image: url('./../images/dark-arrow.svg');
     background-position: center center;
     background-repeat: no-repeat;
-    overflow: hidden;
 
-    //下拉按钮底部方形
+    // 下拉按钮底部方形
     &.anchored {
       margin-left: -2.5em;
       bottom: 0;
@@ -70,11 +70,11 @@ button {
     left: 50%;
   }
 
-  //颜色边框设置
+  // 颜色边框设置
   &.style2 {
     border: 2px solid _palette(border);
     color: inherit;
-    //变透明
+    // 变透明
     background-color: transparent;
 
     &:hover {
@@ -86,8 +86,8 @@ button {
     }
 
     &.down {
-      background-image: url('images/arrow.svg');
+      background-image: url('./../images/arrow.svg');
     }
   }
-  //self
+  // ----- self end -----
 }

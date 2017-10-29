@@ -682,19 +682,19 @@ button,
   -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
   -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
-  background-color: #1cb495;
-  border-radius: 6px;
-  border: 0;
-  color: #ffffff !important;
-  cursor: pointer;
   display: inline-block;
-  font-weight: 700;
   height: 2.75em;
-  line-height: 2.75em;
   padding: 0 1.125em;
+  background-color: #1cb495;
+  border: 0;
+  border-radius: 6px;
+  font-weight: 700;
   text-align: center;
   text-decoration: none;
-  white-space: nowrap; }
+  line-height: 2.75em;
+  color: #ffffff !important;
+  white-space: nowrap;
+  cursor: pointer; }
   input[type="submit"]:hover,
   input[type="reset"]:hover,
   input[type="button"]:hover,

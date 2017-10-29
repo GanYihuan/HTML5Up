@@ -1,3 +1,6 @@
+@charset "UTF-8";
+
+
 @import '../libs/vars';
 @import '../libs/functions';
 @import '../libs/mixins';
@@ -21,19 +24,19 @@ button,
           'color #{_duration(transition)} ease-in-out',
           'opacity #{_duration(transition)} ease-in-out'
   ));
-  background-color: _palette(accent, bg);
-  border-radius: _size(border-radius);
-  border: 0;
-  color: _palette(accent, fg-bold) !important;
-  cursor: pointer;
   display: inline-block;
-  font-weight: _font(weight-bold);
   height: _size(element-height);
-  line-height: _size(element-height);
   padding: 0 1.125em;
+  background-color: _palette(accent, bg);
+  border: 0;
+  border-radius: _size(border-radius);
+  font-weight: _font(weight-bold);
   text-align: center;
   text-decoration: none;
+  line-height: _size(element-height);
+  color: _palette(accent, fg-bold) !important;
   white-space: nowrap;
+  cursor: pointer;
 
   &:hover {
     background-color: lighten(_palette(accent, bg), 5);

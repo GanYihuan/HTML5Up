@@ -459,9 +459,9 @@ button {
   border: 0;
   border-radius: 3.5em;
   height: 3.5em;
-  line-height: 3.5em;
   text-align: center;
   text-decoration: none;
+  line-height: 3.5em;
   color: #ffffff;
   background-color: #98c593;
   cursor: pointer;
@@ -487,11 +487,11 @@ button {
     width: 5em;
     height: 5em;
     line-height: 4.5em;
+    overflow: hidden;
     text-indent: -10em;
-    background-image: url("images/dark-arrow.svg");
+    background-image: url("./../images/dark-arrow.svg");
     background-position: center center;
-    background-repeat: no-repeat;
-    overflow: hidden; }
+    background-repeat: no-repeat; }
     input[type="button"].down.anchored,
     input[type="submit"].down.anchored,
     input[type="reset"].down.anchored,
@@ -534,7 +534,7 @@ button {
     input[type="reset"].style2.down,
     .button.style2.down,
     button.style2.down {
-      background-image: url("images/arrow.svg"); }
+      background-image: url("./../images/arrow.svg"); }
 
 /* Form */
 form {
@@ -1276,7 +1276,7 @@ body {
 
 /* Intro */
 #intro {
-  background: url("images/overlay.png"), url("../../images/intro.jpg");
+  background: url("images/overlay.png"), url("./../../../images/intro.jpg");
   background-size: 256px 256px, cover;
   background-attachment: fixed, fixed;
   background-position: top left, bottom center;
@@ -1284,14 +1284,14 @@ body {
 
 /* One */
 #one {
-  background: url("images/overlay.png"), url("../../images/one.jpg");
+  background: url("images/overlay.png"), url("../../../images/one.jpg");
   background-size: 256px 256px, cover;
   background-attachment: fixed, fixed;
   background-position: top left, center center; }
 
 /* Two */
 #two {
-  background: url("images/overlay.png"), url("../../images/two.jpg");
+  background: url("images/overlay.png"), url("../../../images/two.jpg");
   background-size: 256px 256px, cover;
   background-attachment: fixed, fixed;
   background-position: top left, center center; }
