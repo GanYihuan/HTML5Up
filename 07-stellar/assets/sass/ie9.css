@@ -8,11 +8,9 @@
   content: '';
   display: block;
   clear: both; }
-
 .spotlight .content {
   float: left;
   width: 60%; }
-
 .spotlight .image {
   float: left; }
 
@@ -21,7 +19,6 @@
   content: '';
   display: block;
   clear: both; }
-
 .features li {
   float: left; }
 
@@ -40,7 +37,7 @@
 /* Footer */
 #footer > * {
   float: left; }
-
 #footer .copyright {
   clear: both; }
 
+/*# sourceMappingURL=ie9.css.map */

@@ -1,3 +1,6 @@
+@charset "UTF-8";
+
+
 ///
 /// Stellar by HTML5 UP
 /// html5up.net | @ajlkn
@@ -11,8 +14,8 @@ body, input, select, textarea {
   font-weight: _font(weight);
   font-size: 17pt;
   line-height: 1.65;
-  color: _palette(fg);
   letter-spacing: _font(letter-spacing);
+  color: _palette(fg);
 
   @include breakpoint(xlarge) {
     font-size: 14pt;

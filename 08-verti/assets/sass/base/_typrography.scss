@@ -1,13 +1,13 @@
 @charset "UTF-8";
 
-
 /* Type */
-
 body, input, select, textarea {
   line-height: 2.25em;
   font-family: 'Open Sans', sans-serif;
   font-size: 13pt;
   font-weight: 300;
+  //letter-spacing 属性增加或减少字符间的空白（字符间距）。
+  letter-spacing: -0.025em;
   color: #696969;
 }
 

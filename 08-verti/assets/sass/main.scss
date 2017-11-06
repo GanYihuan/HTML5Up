@@ -3,25 +3,20 @@
 @import 'libs/vars';
 @import 'libs/functions';
 @import 'libs/mixins';
-
 @import url("font-awesome.min.css");
 @import url("fontset.css");
-
 /*
 	Verti by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
-
 @import "libs/skel";
-
 @include skel-breakpoints((
         xlarge: '(max-width: 1680px)',
         large: '(max-width: 1280px)',
         medium: '(max-width: 980px)',
         small: '(max-width: 736px)'
 ));
-
 @include skel-layout((
         reset: 'full',
         boxModel: 'border',
@@ -45,6 +40,7 @@
                 )
         )
 ));
+
 
 @import "base/page";
 @import "base/typrography";

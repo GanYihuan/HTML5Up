@@ -1,19 +1,20 @@
 @charset "UTF-8";
 
-
+// attribute parameter (self edit)
 @import 'libs/vars';
+// string unit mixed number
 @import 'libs/functions';
+// icon svg padding
 @import 'libs/mixins';
 @import 'libs/skel';
 @import url('font-awesome.min.css');
 @import url('fontset.min.css');
-
 /*
 	Dimension by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
-
+// css 响应式断点
 @include skel-breakpoints((
         xxlarge: '(max-width: 1920px)',
         xlarge: '(max-width: 1680px)',
@@ -23,11 +24,12 @@
         xsmall: '(max-width: 480px)',
         xxsmall: '(max-width: 360px)'
 ));
-
 @include skel-layout((
         reset: 'full',
         boxModel: 'border'
 ));
+
+
 
 // Base.
 

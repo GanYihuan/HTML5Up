@@ -1,29 +1,26 @@
 @charset "UTF-8";
 
-
-//自己手动配置
+// attribute parameter (self edit)
 @import 'libs/vars';
-//copy
+// string unit mixed number
 @import 'libs/functions';
+// icon svg padding
 @import 'libs/mixins';
-
 @import url("font-awesome.min.css");
 @import url("fontset.min.css");
-
 /*
-	Dopetrope by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+  Aerial by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
-
+//A lightweight responsive framework for the www http://skel.io
 @import "libs/skel";
-
+// css 响应式断点
 @include skel-breakpoints((
         desktop: '(min-width: 737px)',
         tablet: '(min-width: 737px) and (max-width: 1200px)',
         mobile: '(max-width: 736px)'
 ));
-
 //参数不理解
 @include skel-layout((
         reset: 'full',
@@ -52,6 +49,7 @@
                 )
         )
 ));
+
 
 /* Basic */
 
