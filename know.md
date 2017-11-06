@@ -66,3 +66,31 @@ typrography 不规范
 
 ## 03
 完全没有按流程
+
+
+## 01
+```
+    // 垂直居中-父元素高度确定的单行文本
+    vertical-align: middle;
+```
+
+
+## 01
+```
+        // 圆
+        border: solid 1px _palette(fg);
+        border-radius: 100%;
+        // ----- 圆的设置start -----
+        width: 2.5em;
+        height: 2.5em;
+        line-height: 2.5em;
+        // ----- 圆的设置end -----
+```
+
+## 01
+垂直居中
+```
+  height: 6em;
+  line-height: 6em;
+  text-align: center;
+```

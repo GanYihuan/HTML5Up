@@ -1,5 +1,76 @@
 @charset "UTF-8";
 
+@mixin bg($width) {
+  /* bg animation */
+  @include keyframes('bg') {
+    0% {
+      // vendor传入属性，返回值
+      @include vendor('transform', 'translate3d(0,0,0)');
+    }
+
+    100% {
+      // 背景无限动画,向左移动
+      @include vendor('transform', 'translate3d(#{$width * -1},0,0)');
+    }
+  }
+
+  #bg {
+    width: ($width * 3);
+    background-size: $width auto;
+  }
+}
+
+// 背景长度拉伸了1.5倍,能造成无限连接感觉
+// _misc处理带有单位 字符
+@include bg(_misc(bg-width) * 1.5);
+
+/* Wrapper animation */
+@include keyframes('wrapper') {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Overlay animation */
+@include keyframes('overlay') {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Header animation */
+@include keyframes('header') {
+  0% {
+    // 向上动画
+    @include vendor('transform', 'translate3d(0,1em,0)');
+    opacity: 0;
+  }
+  100% {
+    @include vendor('transform', 'translate3d(0,0,0)');
+    opacity: 1;
+  }
+}
+
+/* nav-icons animation */
+@include keyframes('nav-icons') {
+  0% {
+    // 向上动画
+    @include vendor('transform', 'translate3d(0,1em,0)');
+    opacity: 0;
+  }
+  100% {
+    @include vendor('transform', 'translate3d(0,0,0)');
+    opacity: 1;
+  }
+}
+
+/* .wrapper */
 #wrapper {
   @include vendor('animation', 'wrapper #{_duration(wrapper)} forwards');
   position: fixed;
@@ -10,7 +81,39 @@
   opacity: 0;
 }
 
-/* Main */
+/* .bg */
+#bg {
+  // animation: name duration timing-function delay iteration-count direction;
+  @include vendor('animation', 'bg #{_duration(bg)} linear infinite');
+  // backface-visibility当元素不面向屏幕时是否可见。
+  @include vendor('backface-visibility', 'hidden');
+  @include vendor('transform', 'translate3d(0,0,0)');
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  // _misc处理带有单位字符
+  background: _misc(bg) repeat-x;
+  opacity: 1;
+}
+
+/* .overlay */
+#overlay {
+  @include vendor('animation', 'overlay #{_duration(overlay)} #{$delay-overlay} forwards');
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-attachment: fixed, fixed;
+  background-image: url('../images/overlay-pattern.png'), url('../images/overlay.svg');
+  background-position: 0% 0%, 50% 50%;
+  background-repeat: repeat, no-repeat;
+  background-size: auto, cover;
+}
+
+/* .main */
 #main {
   position: fixed;
   left: 0;
@@ -24,106 +127,30 @@
     width: 1px;
     height: 100%;
     margin-right: 0;
-    //垂直居中-父元素高度确定的单行文本
+    // 垂直居中-父元素高度确定的单行文本
     vertical-align: middle;
     content: '';
   }
 }
 
-// 背景无限动画,向左移动
-@mixin bg($width) {
-  @include keyframes('bg') {
-    0% {
-      //vendor传入属性，返回值
-      @include vendor('transform', 'translate3d(0,0,0)');
-    }
-
-    100% {
-      @include vendor('transform', 'translate3d(#{$width * -1},0,0)');
-    }
-  }
-
-  #bg {
-    background-size: $width auto;
-    width: ($width * 3);
-  }
-}
-
-// 背景长度拉伸了1.5倍
-@include bg(_misc(bg-width) * 1.5);
-
-/* Wrapper */
-@include keyframes('wrapper') {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-/* Overlay */
-@include keyframes('overlay') {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-/* Header */
-// 向上动画
-@include keyframes('header') {
-  0% {
-    @include vendor('transform', 'translate3d(0,1em,0)');
-    opacity: 0;
-  }
-  100% {
-    @include vendor('transform', 'translate3d(0,0,0)');
-    opacity: 1;
-  }
-}
-
-// nav-icons
-// 向上动画
-@include keyframes('nav-icons') {
-  0% {
-    @include vendor('transform', 'translate3d(0,1em,0)');
-    opacity: 0;
-  }
-  100% {
-    @include vendor('transform', 'translate3d(0,0,0)');
-    opacity: 1;
-  }
-}
-
-/* Wide */
 @include breakpoint(xlarge) {
-  /* Basic */
   body, input, select, textarea {
     font-size: 13pt;
   }
 
-  /* BG */
   @include bg(_misc(bg-width));
 }
 
-/* Normal */
 @include breakpoint(large) {
-  /* Basic */
   body, input, select, textarea {
     //12PT就是12磅 12磅就是小4号字
     font-size: 12pt;
   }
 
-  /* BG */
   @include bg(_misc(bg-width) * 0.5);
 }
 
-/* Mobile */
 @include breakpoint(small) {
-  /* Basic */
   body {
     min-width: 320px;
   }
@@ -132,10 +159,8 @@
     font-size: 11pt;
   }
 
-  /* BG */
   @include bg(_misc(bg-width) * 0.2);
 
-  /* Header */
   #header {
     h1 {
       font-size: 2.5em;
@@ -161,12 +186,9 @@
   }
 }
 
-/* Mobile (Portrait) */
 @include breakpoint(xsmall) {
-  /* BG */
   @include bg(_misc(bg-width) * 0.275);
 
-  /* Header */
   #header {
     nav {
       padding: 0 1em;

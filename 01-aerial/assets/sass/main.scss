@@ -30,7 +30,7 @@
   // ?
         boxModel: 'border'
 ));
-@import "base/typography"; // (self)
+@import "base/typography"; // (有一些self)
 @import "components/icon";
 
 // _mixins  _duration : 带有单位字（符串）处理混合值
@@ -40,7 +40,7 @@ $delay-header: $delay-overlay + _duration(overlay) - 0.75s;
 $delay-nav-icons: $delay-header + _duration(header) - 1s;
 $delay-nav-icon: 0.25s;
 
-@import "layout/bg";
+// .wrapper .bg .overlay .main
 @import "layout/main";
 @import "layout/header";
 @import "layout/footer";
