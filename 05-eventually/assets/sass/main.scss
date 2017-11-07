@@ -29,16 +29,14 @@
 
 // Base.
 @import 'base/page';
-//self
 @import 'base/bg';
 @import 'base/typography';
 
 // Components.
-@import 'components/section';
+@import 'components/form';
 @import 'components/icon';
 @import 'components/list';
-//self
-@import 'components/form';
+@import 'components/section';
 @import 'components/button';
 
 // Layout.

@@ -25,17 +25,19 @@ button,
           'opacity #{_duration(transition)} ease-in-out'
   ));
   display: inline-block;
-  height: _size(element-height);
   padding: 0 1.125em;
-  background-color: _palette(accent, bg);
   border: 0;
   border-radius: _size(border-radius);
-  font-weight: _font(weight-bold);
+  height: _size(element-height);
+  line-height: _size(element-height);
   text-align: center;
   text-decoration: none;
-  line-height: _size(element-height);
-  color: _palette(accent, fg-bold) !important;
+  // font-size: 0.8rem;
+  font-weight: _font(weight-bold);
   white-space: nowrap;
+  color: _palette(accent, fg-bold) !important;
+  background-color: _palette(accent, bg);
+  // outline: 0;
   cursor: pointer;
 
   &:hover {
@@ -46,12 +48,36 @@ button,
     background-color: darken(_palette(accent, bg), 5);
   }
 
+  // &.icon {
+  //   &:before {
+  //     margin-right: 0.5em;
+  //   }
+  // }
+
+  // &.fit {
+  //   display: block;
+  //   margin: 0 0 (_size(element-margin) * 0.5) 0;
+  //   width: 100%;
+  // }
+
+  // &.small {
+  //   font-size: 0.8em;
+  // }
+
+  // &.big {
+  //   font-size: 1.35em;
+  // }
+
   &.disabled,
   &:disabled {
+    // @include vendor('pointer-events', 'none');
+    // cursor: default;
     opacity: 0.5;
   }
 
+// ----- self start -----
   @include breakpoint(xsmall) {
     padding: 0;
   }
+// ----- self end -----
 }

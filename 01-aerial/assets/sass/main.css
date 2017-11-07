@@ -44,13 +44,18 @@ body {
   box-sizing: border-box; }
 
 body {
+  -ms-overflow-style: scrollbar;
   overflow: hidden;
   background: #fff; }
-  body.loading * {
+  body.is-loading *, body.is-loading *:before, body.is-loading *:after {
     -moz-animation: none !important;
     -webkit-animation: none !important;
     -ms-animation: none !important;
-    animation: none !important; }
+    animation: none !important;
+    -moz-transition: none !important;
+    -webkit-transition: none !important;
+    -ms-transition: none !important;
+    transition: none !important; }
 
 body, input, select, textarea {
   line-height: 1.75em;
@@ -455,9 +460,7 @@ hr {
   text-align: center; }
   #main:before {
     display: inline-block;
-    width: 1px;
     height: 100%;
-    margin-right: 0;
     vertical-align: middle;
     content: ''; }
 
@@ -816,8 +819,6 @@ hr {
         #header nav a:active:before {
           color: #fff;
           background-color: rgba(255, 255, 255, 0.35); }
-      #header nav a span {
-        display: none; }
 
 /* Footer */
 #footer {

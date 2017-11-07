@@ -8,29 +8,25 @@ input[type="submit"],
 input[type="reset"],
 button,
 .button {
+  @include vendor('appearance', 'none');
   @include vendor('transition', 'background-color .25s ease-in-out');
-  -webkit-appearance: none;
   display: inline-block;
   position: relative;
   padding: 0.6em 1.5em;
   border: 0;
   border-radius: 6px;
+  //height: 3.5em;
+  //line-height: 3.5em;
+  //text-align: center;
+  text-decoration: none;
   font-size: 1.35em;
   font-weight: 800;
-  text-decoration: none;
+  //letter-spacing: _font(kerning-heading);
+  //white-space: nowrap;
   color: #fff;
   background: #0090c5;
   outline: 0;
   cursor: pointer;
-
-  &.icon {
-
-    &:before {
-      position: relative;
-      margin-right: 0.5em;
-      top: 0.05em;
-    }
-  }
 
   &:hover {
     background: #10a0d5;
@@ -40,7 +36,37 @@ button,
     background: #20b0e5;
   }
 
-  //self
+  &.icon {
+    &:before {
+      position: relative;
+      margin-right: 0.5em;
+      top: 0.05em;
+    }
+  }
+
+  //&.fit {
+  //  display: block;
+  //  margin: 0 0 (_size(element-margin) * 0.5) 0;
+  //  width: 100%;
+  //}
+
+  //&.small {
+  //  font-size: 0.8em;
+  //}
+
+  &.big {
+    font-size: 2.25em;
+    padding: 0.8em 0.9em;
+  }
+
+  //&.disabled,
+  //&:disabled {
+  //  @include vendor('pointer-events', 'none');
+  //  cursor: default;
+  //  opacity: 0.25;
+  //}
+
+// ----- self start -----
   &.alt {
     background: #f1f1f1;
     background: rgba(0, 0, 0, 0.05);
@@ -56,10 +82,5 @@ button,
       background: rgba(0, 0, 0, 0.15);
     }
   }
-
-  &.big {
-    font-size: 2.25em;
-    padding: 0.8em 0.9em;
-  }
-  //self
+// ----- self end -----
 }

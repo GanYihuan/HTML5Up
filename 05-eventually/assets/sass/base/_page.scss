@@ -1,10 +1,5 @@
 @charset "UTF-8";
 
-
-@import '../libs/vars';
-@import '../libs/functions';
-@import '../libs/mixins';
-
 ///
 /// Eventually by HTML5 UP
 /// html5up.net | @ajlkn
@@ -14,8 +9,15 @@
 /* Basic */
 //copy
 // MSIE: Required for IEMobile.
-@-ms-viewport {
-  width: device-width;
+// @-ms-viewport {
+//   width: device-width;
+// }
+
+// Ensures page width is always >=320px.
+@include breakpoint(xsmall) {
+  html, body {
+    min-width: 320px;
+  }
 }
 
 // MSIE: Prevents scrollbar from overlapping content.
@@ -27,13 +29,6 @@ body {
       @include vendor('animation', 'none !important');
       @include vendor('transition', 'none !important');
     }
-  }
-}
-
-// Ensures page width is always >=320px.
-@include breakpoint(xsmall) {
-  html, body {
-    min-width: 320px;
   }
 }
 //copy

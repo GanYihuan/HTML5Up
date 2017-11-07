@@ -47,23 +47,17 @@
 }
 
 // Base.
-
 @import 'base/page';
 @import 'base/typography';
 
 // Component.
-
 @import 'components/box';
 @import 'components/button';
 @import 'components/form';
-//  small icon transfer to big icon
 @import 'components/icon';
 @import 'components/image';
-//  dl setting
 @import 'components/list';
-//  dig a groove
 @import 'components/section';
-//  set footer table
 @import 'components/table';
 
 // Layout.

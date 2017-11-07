@@ -68,6 +68,7 @@ typrography 不规范
 完全没有按流程
 
 
+
 ## 01
 ```
     // 垂直居中-父元素高度确定的单行文本
@@ -87,6 +88,8 @@ typrography 不规范
         // ----- 圆的设置end -----
 ```
 
+
+
 ## 01
 垂直居中
 ```
@@ -94,3 +97,29 @@ typrography 不规范
   line-height: 6em;
   text-align: center;
 ```
+
+
+
+## 02
+```scss
+  // 添加一个闪光效果
+  &:after {
+    @include vendor('animation', 'overlay-hide 1.5s ease-in forwards !important');
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: #fff;
+    opacity: 0;
+    content: '';
+  }
+```
+
+
+## 02 _image.scss error
+由于图片途径不对而造成
+但是该scss是合并到main里面，不会被用到，所以不用修改
+对于main来说是正确图片路径

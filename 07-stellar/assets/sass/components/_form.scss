@@ -10,31 +10,61 @@
 
 form {
   margin: 0 0 _size(element-margin) 0;
+
+  //.field {
+  //  margin: 0 0 (_size(element-margin) * 0.75) 0;
+  //
+  //  &.half {
+  //    float: left;
+  //    padding: 0 0 0 (_size(element-margin) * 0.75 * 0.5);
+  //    width: 50%;
+  //
+  //    &.first {
+  //      padding: 0 (_size(element-margin) * 0.75 * 0.5) 0 0;
+  //    }
+  //  }
+  //}
+
+  //> .actions {
+  //  //send message
+  //  margin: (_size(element-margin) * 0.75) 0 0 0 !important;
+  //}
 }
 
 label {
   display: block;
   margin: 0 0 (_size(element-margin) * 0.5) 0;
+  //line-height: 1.5;
   font-size: 0.9em;
   font-weight: _font(weight-bold);
   text-transform: uppercase;
   letter-spacing: _font(letter-spacing-alt);
+  //letter-spacing: _font(letter-spacing);
   color: _palette(fg-bold);
 }
 
 input[type="text"],
 input[type="password"],
 input[type="email"],
+//input[type="tel"],
+//input[type="search"],
+//input[type="url"],
 select,
 textarea {
   @include vendor('appearance', 'none');
+  //@include vendor('transition', (
+  //        'border-color #{_duration(transition)} ease-in-out',
+  //        'background-color #{_duration(transition)} ease'.
+  //        'color #{_duration(transition)} ease-in-out'
+  //));
   display: block;
-  width: 100%;
-  padding: 0 1em;
   border: solid 1px;
   border-radius: _size(border-radius);
+  padding: 0 1em;
+  width: 100%;
   text-decoration: none;
   color: inherit;
+  //background: transparent;
   outline: 0;
 
   &:invalid {
@@ -44,6 +74,7 @@ textarea {
   &:focus {
     border-color: _palette(highlight);
     box-shadow: 0 0 0 2px _palette(highlight);
+    //background: _palette(border-bg);
   }
 }
 
@@ -53,16 +84,16 @@ textarea {
   position: relative;
 
   &:before {
-    content: '\f078';
     display: block;
-    height: _size(element-height);
-    line-height: _size(element-height);
-    pointer-events: none;
     position: absolute;
     right: 0;
-    text-align: center;
     top: 0;
     width: _size(element-height);
+    height: _size(element-height);
+    line-height: _size(element-height);
+    text-align: center;
+    content: '\f078';
+    pointer-events: none;
   }
 
   select::-ms-expand {
@@ -73,6 +104,9 @@ textarea {
 input[type="text"],
 input[type="password"],
 input[type="email"],
+//input[type="tel"],
+//input[type="search"],
+//input[type="url"],
 select {
   height: _size(element-height);
 }
@@ -87,39 +121,42 @@ input[type="radio"] {
   display: block;
   float: left;
   z-index: -1;
-  width: 1em;
   margin-right: -2em;
+  width: 1em;
   opacity: 0;
 
   & + label {
     @include icon;
-    cursor: pointer;
     display: inline-block;
-    font-size: 1em;
-    font-weight: _font(weight);
+    position: relative;
+    //margin: 0 0 (_size(element-margin) * 0.25) 0;
     padding-left: (_size(element-height) * 0.6) + 0.75em;
     padding-right: 0.75em;
-    position: relative;
+    font-size: 1em;
+    font-weight: _font(weight);
+    //color: _palette(fg);
+    cursor: pointer;
 
     &:before {
-      border-radius: _size(border-radius);
-      border: solid 1px;
-      content: '';
       display: inline-block;
-      height: (_size(element-height) * 0.6);
-      left: 0;
-      line-height: (_size(element-height) * 0.575);
       position: absolute;
-      text-align: center;
       top: 0;
+      left: 0;
+      border: solid 1px;
+      border-radius: _size(border-radius);
       width: (_size(element-height) * 0.6);
+      height: (_size(element-height) * 0.6);
+      line-height: (_size(element-height) * 0.575);
+      text-align: center;
+      //background: _palette(border-bg);
+      content: '';
     }
   }
 
   &:checked + label {
     &:before {
-      background: _palette(fg-bold);
       border-color: _palette(highlight);
+      background: _palette(fg-bold);
       color: _palette(bg);
       content: '\f00c';
     }
@@ -127,7 +164,9 @@ input[type="radio"] {
 
   &:focus + label {
     &:before {
+      //border-color: _palette(fg-bold);
       box-shadow: 0 0 0 2px _palette(highlight);
+      //background: _palette(border-bg);
     }
   }
 }
@@ -169,7 +208,7 @@ input[type="radio"] {
   opacity: 1.0;
 }
 
-//self start
+// ----- self start ------
 @mixin color-form($p: null) {
   label {
     color: _palette($p, fg-bold);
@@ -244,4 +283,4 @@ input[type="radio"] {
 }
 
 @include color-form;
-//self end
+// ----- self end ------

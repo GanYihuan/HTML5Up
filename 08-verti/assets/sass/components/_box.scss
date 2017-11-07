@@ -9,7 +9,19 @@
   box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.05);
   background: #fff;
 
-  //self
+  > :last-child,
+  > :last-child > :last-child,
+  > :last-child > :last-child > :last-child {
+    margin-bottom: 0;
+  }
+
+  &.alt {
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  // ----- self -----
   &.feature {
     padding: 0;
 
@@ -35,5 +47,5 @@
       }
     }
   }
-  //self
+  // ----- self -----
 }

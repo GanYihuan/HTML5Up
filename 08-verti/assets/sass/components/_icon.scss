@@ -1,23 +1,31 @@
 @charset "UTF-8";
 
+///
+/// Big Picture by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
 
 /* Icons */
-
 .icon {
+  //@include icon;
   position: relative;
-  text-decoration: none;
-
-  &:before {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-transform: none !important;
-  }
+  border-bottom: none;
+  //text-decoration: none;
 
   > .label {
     display: none;
   }
+
+  // ---- self start -----
+  &:before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-transform: none !important;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+  }
+  // ---- self end -----
 }
 

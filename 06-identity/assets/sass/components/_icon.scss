@@ -1,10 +1,5 @@
 @charset "UTF-8";
 
-
-@import '../libs/vars';
-@import '../libs/functions';
-@import '../libs/mixins';
-
 ///
 /// Identity by HTML5 UP
 /// html5up.net | @ajlkn
@@ -16,6 +11,7 @@
   @include icon;
   position: relative;
   border-bottom: none;
+  //text-decoration: none;
 
   > .label {
     display: none;

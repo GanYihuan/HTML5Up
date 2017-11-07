@@ -7,21 +7,21 @@
 ///
 
 /* Icon */
-
 .icon {
   @include icon;
   @include vendor('transition', (
           'background-color #{_duration(transition)} ease-in-out',
           'color #{_duration(transition)} ease-in-out'
   ));
-  border-bottom: none;
   position: relative;
+  border-bottom: none;
+  //text-decoration: none;
 
   > .label {
     display: none;
   }
 
-  //self start
+  // ---- self start -----
   //Magna veroeros icon border
   // $skill samll icon transfer to big icon
   &.major {
@@ -142,5 +142,5 @@
 }
 
 @include color-icon;
-//self end
+// ---- self end -----
 

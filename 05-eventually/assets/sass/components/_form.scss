@@ -1,10 +1,5 @@
 @charset "UTF-8";
 
-
-@import '../libs/vars';
-@import '../libs/functions';
-@import '../libs/mixins';
-
 ///
 /// Eventually by HTML5 UP
 /// html5up.net | @ajlkn
@@ -16,7 +11,26 @@
 form {
   margin: 0 0 _size(element-margin) 0;
 
-  //self
+  //.field {
+  //  margin: 0 0 (_size(element-margin) * 0.75) 0;
+  //
+  //  &.half {
+  //    float: left;
+  //    padding: 0 0 0 (_size(element-margin) * 0.75 * 0.5);
+  //    width: 50%;
+  //
+  //    &.first {
+  //      padding: 0 (_size(element-margin) * 0.75 * 0.5) 0 0;
+  //    }
+  //  }
+  //}
+  
+  // > .actions {
+  //   //send message
+  //   margin: (_size(element-margin) * 0.75) 0 0 0 !important;
+  // }
+
+  // ----- self start ------
   .message {
     @include icon;
     @include vendor('transition', (
@@ -53,15 +67,18 @@ form {
       }
     }
   }
-  //self
+  // ----- self start ------
 }
 
 label {
   display: block;
   margin: 0 0 (_size(element-margin) * 0.5) 0;
+  //line-height: 1.5;
   font-size: 0.9em;
   font-weight: _font(weight-bold);
+  //text-transform: uppercase;
   color: _palette(fg-bold);
+  //letter-spacing: _font(letter-spacing);
 }
 
 @include keyframes(focus) {
@@ -79,38 +96,36 @@ label {
 input[type="text"],
 input[type="password"],
 input[type="email"],
+// input[type="tel"],
+// input[type="search"],
+// input[type="url"],
 select,
 textarea {
   @include vendor('appearance', 'none');
-  //self
   @include vendor('transform', 'scale(1)');
   @include vendor('transition', (
           'border-color #{_duration(transition)} ease',
           'background-color #{_duration(transition)} ease'
   ));
-  //self
   display: block;
-  width: 100%;
-  padding: 0 1em;
-  //self
-  border-radius: _size(border-radius);
   border: solid _size(border-width) _palette(border);
-  //self
-  outline: 0;
+  border-radius: _size(border-radius);
+  padding: 0 1em;
+  width: 100%;
   text-decoration: none;
-  color: inherit;
   background-color: transparent;
+  color: inherit;
+  outline: 0;
 
   &:invalid {
     box-shadow: none;
   }
 
   &:focus {
-    //self
     @include vendor('animation', 'focus 0.1s');
-    background-color: _palette(border-bg);
     border-color: _palette(accent, bg);
-  //  self
+    // box-shadow: 0 0 0 _size(border-width) _palette(fg-bold);
+    background-color: _palette(border-bg);
   }
 }
 
@@ -141,6 +156,9 @@ textarea {
 input[type="text"],
 input[type="password"],
 input[type="email"],
+//input[type="tel"],
+//input[type="search"],
+//input[type="url"],
 select {
   height: _size(element-height);
 }
@@ -154,35 +172,36 @@ input[type="radio"]{
   @include vendor('appearance', 'none');
   display: block;
   float: left;
-  margin-right: -2em;
-  opacity: 0;
-  width: 1em;
   z-index: -1;
+  margin-right: -2em;
+  width: 1em;
+  opacity: 0;
 
   & + label {
     @include icon;
-    color: _palette(fg);
-    cursor: pointer;
     display: inline-block;
-    font-size: 1em;
-    font-weight: _font(weight);
+    position: relative;
+    // margin: 0 0 (_size(element-margin) * 0.25) 0;
     padding-left: (_size(element-height) * 0.6) + 0.75em;
     padding-right: 0.75em;
-    position: relative;
+    font-size: 1em;
+    font-weight: _font(weight);
+    color: _palette(fg);
+    cursor: pointer;
 
     &:before {
-      background: _palette(border-bg);
-      border-radius: _size(border-radius);
-      border: solid _size(border-width) _palette(border);
-      content: '';
       display: inline-block;
-      height: (_size(element-height) * 0.6);
-      left: 0;
-      line-height: (_size(element-height) * 0.575);
       position: absolute;
-      text-align: center;
-      top: 0;
       width: (_size(element-height) * 0.6);
+      top: 0;
+      left: 0;
+      border: solid _size(border-width) _palette(border);
+      border-radius: _size(border-radius);
+      height: (_size(element-height) * 0.6);
+      line-height: (_size(element-height) * 0.575);
+      text-align: center;
+      background: _palette(border-bg);
+      content: '';
     }
   }
 
@@ -199,6 +218,7 @@ input[type="radio"]{
     &:before {
       border-color: _palette(accent, bg);
       box-shadow: 0 0 0 _size(border-width) _palette(accent, bg);
+      // background: _palette(border-bg);
     }
   }
 }

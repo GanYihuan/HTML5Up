@@ -9,21 +9,16 @@
 /* Form */
 
 form {
-  //copy
   margin: 0 0 _size(element-margin) 0;
-  //copy
 
-  //self start
   .field {
     margin: 0 0 (_size(element-margin) * 0.75) 0;
 
-    //name email
     &.half {
-      width: 50%;
       float: left;
       padding: 0 0 0 (_size(element-margin) * 0.75 * 0.5);
+      width: 50%;
 
-      //name
       &.first {
         padding: 0 (_size(element-margin) * 0.75 * 0.5) 0 0;
       }
@@ -35,6 +30,7 @@ form {
     margin: (_size(element-margin) * 0.75) 0 0 0 !important;
   }
 
+  // ----- self start ------
   @include breakpoint(small) {
     .field {
       margin: 0 0 (_size(element-margin) * 0.5) 0;
@@ -66,12 +62,19 @@ form {
       }
     }
   }
-  //self end
+  // ----- self end ------
 }
 
 //copy start  参数改写
 label {
   display: block;
+  //margin: 0 0 (_size(element-margin) * 0.5) 0;
+  //line-height: 1.5;
+  //text-transform: uppercase;
+  //font-size: 0.8rem;
+  //font-weight: _font(weight);
+  //letter-spacing: _font(letter-spacing);
+  //color: _palette(fg-bold);
 }
 
 input[type="text"],
@@ -85,18 +88,19 @@ textarea {
   @include vendor('appearance', 'none');
   @include vendor('transition', (
           'border-color #{_duration(transition)} ease-in-out',
+          //'background-color #{_duration(transition)} ease',
           'color #{_duration(transition)} ease-in-out'
   ));
   display: block;
-  padding: 0.65em 0.75em;
-  //self
   border: solid 2px _palette(border);
   border-radius: 0.5em;
-  //self
+  padding: 0.65em 0.75em;
   width: 100%;
-  color: _palette(fg);
+  //text-decoration: none;
   background: none;
+  color: _palette(fg);
   outline: none;
+
 
   &:invalid {
     box-shadow: none;
@@ -104,10 +108,35 @@ textarea {
 
   &:focus {
     border-color: _palette(accent2, bg);
+    //box-shadow: 0 0 0 _size(border-width) _palette(fg-bold);
+    //background: _palette(border-bg);
   }
 }
 
-//self start
+//.select-wrapper {
+//  @include icon;
+//  display: block;
+//  position: relative;
+//
+//  &:before {
+//    display: block;
+//    position: absolute;
+//    top: 0;
+//    width: _size(element-height);
+//    right: 0;
+//    height: _size(element-height);
+//    line-height: calc(#{_size(element-height)} + 0em);
+//    text-align: center;
+//    color: _palette(border);
+//    content: '\f107';
+//    pointer-events: none;
+//  }
+//
+//  select::-ms-expand {
+//    display: none;
+//  }
+//}
+
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -115,13 +144,95 @@ input[type="tel"],
 input[type="search"],
 input[type="url"],
 select {
+  //height: _size(element-height);
   line-height: 1.35em;
 }
 
 textarea {
+  //padding: 0.75em 1em;
   min-height: 8em;
 }
-//self end
+
+//input[type="checkbox"],
+//input[type="radio"] {
+//  @include vendor('appearance', 'none');
+//  display: block;
+//  float: left;
+//  z-index: -1;
+//  margin-right: -2rem;
+//  width: 1rem;
+//  opacity: 0;
+//
+//  & + label {
+//    @include icon;
+//    @include vendor('user-select', 'none');
+//    display: inline-block;
+//    position: relative;
+//    margin: 0 0 (_size(element-margin) * 0.25) 0;
+//    padding-left: (_size(element-height) * 0.6) + 1rem;
+//    padding-right: 0.75rem;
+//    font-size: 0.8rem;
+//    font-weight: _font(weight);
+//    color: _palette(fg);
+//    cursor: pointer;
+//
+//
+//    &:before {
+//      @include vendor('transition', (
+//              'border-color #{_duration(transition)} ease-in-out',
+//              'box-shadow #{_duration(transition)} ease-in-out',
+//              'background-color #{_duration(transition)} ease-in-out'
+//      ));
+//      display: inline-block;
+//      position: absolute;
+//      width: (_size(element-height) * 0.6);
+//      top: -0.125rem;
+//      // top: 0;
+//      left: 0;
+//      border: solid _size(border-width) _palette(border);
+//      border-radius: _size(border-radius);
+//      height: (_size(element-height) * 0.6);
+//      // line-height: (_size(element-height) * 0.575);
+//      line-height: calc(#{_size(element-height) * 0.575} + 0em);
+//      text-align: center;
+//      background: _palette(border-bg);
+//      content: '';
+//    }
+//  }
+//
+//  &:checked + label {
+//    &:before {
+//      background: _palette(fg-bold) !important;
+//      border-color: _palette(fg-bold) !important;
+//      color: _palette(bg);
+//      content: '\f00c';
+//    }
+//  }
+//
+//  &:focus + label {
+//    &:before {
+//      background: _palette(border-bg);
+//      border-color: _palette(fg-bold);
+//      box-shadow: 0 0 0 _size(border-width) _palette(fg-bold);
+//    }
+//  }
+//}
+//
+//input[type="checkbox"] {
+//  & + label {
+//    &:before {
+//      border-radius: _size(border-radius);
+//    }
+//  }
+//}
+//
+//input[type="radio"] {
+//  & + label {
+//    &:before {
+//      border-radius: 100%;
+//    }
+//  }
+//}
 
 ::-moz-focus-inner {
   border: 0;
@@ -146,4 +257,3 @@ textarea {
 .formerize-placeholder {
   opacity: 0.375;
 }
-//copy end

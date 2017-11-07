@@ -10,9 +10,9 @@
 
 // ----- copy start -----
 // MSIE: Required for IEMobile.
-@-ms-viewport {
-  //width: device-width;
-}
+//@-ms-viewport {
+//  width: device-width;
+//}
 
 // Ensures page width is always >=320px.
 @include breakpoint(xsmall) {
@@ -40,13 +40,12 @@ body {
     }
   }
 }
-// ----- copy end -----
 
-// ----- self -----
 html {
   //配置成每个界面占一屏幕
   height: 100%;
 }
+// ----- copy end -----
 
 /* Spinner */
 // 动画效果

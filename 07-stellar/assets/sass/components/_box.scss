@@ -27,7 +27,7 @@
   }
 }
 
-//self start
+// ----- self -----
 @mixin color-box($p: null) {
   .box {
     border-color: _palette($p, border);
@@ -35,5 +35,5 @@
 }
 
 @include color-box;
-//self end
+// ----- self -----
 

@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 #header {
-  // 3个@include 包含状态
   // forwards:是停在动画最后的的那个画面
   @include vendor('animation', 'header #{_duration(header)} #{$delay-header} forwards');
   // backface-visibility 属性定义当元素不面向屏幕时是否可见
@@ -16,6 +15,7 @@
   text-align: center;
   vertical-align: middle;
   opacity: 0;
+  // 光标的类型
   cursor: default;
 
   h1 {
@@ -96,15 +96,16 @@
         font-size: 0.95em;
         background: none;
 
+        // :before是css中的一种伪元素，可用于在某个元素之前插入某些内容。
         &:before {
           color: _palette(nav-icon, active-fg);
           background-color: _palette(nav-icon, active-bg);
         }
       }
 
-      span {
-        display: none;
-      }
+      //span {
+      //  display: none;
+      //}
     }
   }
 }

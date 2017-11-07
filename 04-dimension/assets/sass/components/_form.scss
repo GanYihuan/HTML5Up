@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-
 ///
 /// Dimension by HTML5 UP
 /// html5up.net | @ajlkn
@@ -21,8 +20,8 @@ form {
 
     &.half {
       float: left;
-      width: 50%;
       padding: 0 0 0 ($gutter * 1 * 0.5);
+      width: 50%;
 
       &.first {
         padding: 0 ($gutter * 1 * 0.5) 0 0;
@@ -34,7 +33,7 @@ form {
     margin: ($gutter * 1.25) 0 0 0 !important;
   }
 
-  //  self start
+  // ----- self start ------
   @include breakpoint(small) {
     .field {
       margin: 0 0 ($gutter * 0.75) 0;
@@ -66,7 +65,7 @@ form {
       }
     }
   }
-  //  self end
+  // ----- self start ------
 }
 
 // self start
@@ -98,36 +97,31 @@ input[type="url"],
 select,
 textarea {
   @include vendor('appearance', 'none');
-
-  // self start
   @include vendor('transition', (
           'border-color #{_duration(transition)} ease-in-out',
           'box-shadow #{_duration(transition)} ease-in-out',
           'background-color #{_duration(transition)} ease-in-out'
   ));
   display: block;
-  // self end
-  width: 100%;
-  padding: 0 1rem;
+  border: solid _size(border-width) _palette(border);
   border-radius: _size(border-radius);
-  outline: 0;
+  padding: 0 1rem;
+  width: 100%;
   text-decoration: none;
   color: inherit;
   background: transparent;
-  border: solid _size(border-width) _palette(border);
+  outline: 0;
 
   &:invalid {
     box-shadow: none;
   }
 
   &:focus {
-    background: _palette(border-bg);
     border-color: _palette(fg-bold);
     box-shadow: 0 0 0 _size(border-width) _palette(fg-bold);
+    background: _palette(border-bg);
   }
 }
-
-
 
 .select-wrapper {
   @include icon;
@@ -139,7 +133,6 @@ textarea {
     content: '\f107';
     display: block;
     height: _size(element-height);
-    //line-height: _size(element-height);
     line-height: calc(#{_size(element-height)} + 0em);
     pointer-events: none;
     position: absolute;
@@ -157,6 +150,9 @@ textarea {
 input[type="text"],
 input[type="password"],
 input[type="email"],
+//input[type="tel"],
+//input[type="search"],
+//input[type="url"],
 select {
   height: _size(element-height);
 }
@@ -171,22 +167,23 @@ input[type="radio"] {
   display: block;
   float: left;
   z-index: -1;
-  width: 1rem;
   margin-right: -2rem;
+  width: 1rem;
   opacity: 0;
 
   & + label {
     @include icon;
     @include vendor('user-select', 'none');
-    color: _palette(fg);
-    cursor: pointer;
     display: inline-block;
-    font-size: 0.8rem;
-    font-weight: _font(weight);
+    position: relative;
     margin: 0 0 (_size(element-margin) * 0.25) 0;
     padding-left: (_size(element-height) * 0.6) + 1rem;
     padding-right: 0.75rem;
-    position: relative;
+    font-size: 0.8rem;
+    font-weight: _font(weight);
+    color: _palette(fg);
+    cursor: pointer;
+    
 
     &:before {
       @include vendor('transition', (
@@ -194,18 +191,20 @@ input[type="radio"] {
               'box-shadow #{_duration(transition)} ease-in-out',
               'background-color #{_duration(transition)} ease-in-out'
       ));
-      border-radius: _size(border-radius);
-      border: solid _size(border-width) _palette(border);
-      content: '';
       display: inline-block;
-      height: (_size(element-height) * 0.6);
-      left: 0;
-      //line-height: (_size(element-height) * 0.575);
-      line-height: calc(#{_size(element-height) * 0.575} + 0em);
       position: absolute;
-      text-align: center;
-      top: -0.125rem;
       width: (_size(element-height) * 0.6);
+      top: -0.125rem;
+      // top: 0;
+      left: 0;
+      border: solid _size(border-width) _palette(border);
+      border-radius: _size(border-radius);
+      height: (_size(element-height) * 0.6);
+      // line-height: (_size(element-height) * 0.575);
+      line-height: calc(#{_size(element-height) * 0.575} + 0em);
+      text-align: center;
+      background: _palette(border-bg);
+      content: '';
     }
   }
 

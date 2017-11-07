@@ -8,15 +8,53 @@
 
 /* List */
 
+//ol {
+//  list-style: decimal;
+//  margin: 0 0 _size(element-margin) 0;
+//  padding-left: 1.25em;
+//
+//  li {
+//    padding-left: 0.25em;
+//  }
+//}
+
 ul {
-  //unuse
-  //默认带有 实心圆点的 li标签
+  //margin: 0 0 _size(element-margin) 0;
+  //padding-left: 1em;
+  //list-style: disc;
+  //
+  //li {
+  //  padding-left: 0.5em;
+  //}
+
+  //&.alt {
+  //  padding-left: 0;
+  //  list-style: none;
+  //
+  //  li {
+  //    border-top: solid _size(border-width) _palette(border);
+  //    padding: 0.5em 0;
+  //
+  //    &:first-child {
+  //      border-top: 0;
+  //      padding-top: 0;
+  //    }
+  //  }
+  //}
+  // 替换alt
+  // 默认带有 实心圆点的 li标签
   &.default {
     padding-left: 1em;
     list-style: disc;
 
     li {
+      // border-top: solid _size(border-width) _palette(border);
       padding-left: 0.5em;
+
+      //    &:first-child {
+      //      border-top: 0;
+      //      padding-top: 0;
+      //    }
     }
   }
 
@@ -25,27 +63,39 @@ ul {
 
     li {
       display: inline-block;
+      //padding: 0 0.75em 0 0;
+
+      //&:last-child {
+      //  padding-right: 0 !important;
+      //}
     }
 
+    // ----- self ------
     a {
       display: inline-block;
+      border: 0;
       width: 2em;
       height: 2em;
       line-height: 2em;
       text-align: center;
-      border: 0;
     }
+    // ----- self ------
   }
-  //unuse
 
-  //facebook icon
   &.actions {
     cursor: default;
+    //list-style: none;
+    //padding-left: 0;
 
     li {
-      //横排
       display: inline-block;
       margin: 0 0 0 0.5em;
+      //padding: 0 (_size(element-margin) * 0.5) 0 0;
+      //vertical-align: middle;
+
+      //&:last-child {
+      //  padding-right: 0;
+      //}
 
       &:first-child {
         margin-left: 0;
@@ -53,17 +103,14 @@ ul {
     }
   }
 
-  //copyright
   &.menu {
     cursor: default;
 
     li {
-      //横排
       display: inline-block;
+      border-left: solid 1px _palette(border);
       padding: 0 0 0 0.5em;
       margin: 0 0 0 0.5em;
-      //竖线
-      border-left: solid 1px _palette(border);
       line-height: 1em;
 
       &:first-child {
@@ -75,14 +122,24 @@ ul {
   }
 }
 
-//copy
-//unuse
-ol.default {
-  list-style: decimal;
-  padding-left: 1.25em;
+ol {
+  //margin: 0 0 _size(element-margin) 0;
 
-  li {
-    padding-left: 0.25em;
+  &.default {
+    list-style: decimal;
+    padding-left: 1.25em;
+    li {
+      padding-left: 0.25em;
+    }
   }
+
+  //dt {
+  //  display: block;
+  //  margin: 0 0 (_size(element-margin) * 0.5) 0;
+  //  font-weight: _font(weight-bold);
+  //}
+  //
+  //dd {
+  //  margin-left: _size(element-margin);
+  //}
 }
-//unuse

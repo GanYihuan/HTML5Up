@@ -8,11 +8,10 @@
 ///
 
 /* Icon */
-
 .icon {
-  @include icon;
-  border-bottom: none;
   position: relative;
+  border-bottom: none;
+  // text-decoration: none;
 
   > .label {
     display: none;

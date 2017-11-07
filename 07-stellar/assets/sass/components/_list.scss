@@ -19,9 +19,9 @@ ol {
 }
 
 ul {
-  list-style: disc;
   margin: 0 0 _size(element-margin) 0;
   padding-left: 1em;
+  list-style: disc;
 
   li {
     padding-left: 0.5em;
@@ -65,6 +65,7 @@ ul {
     li {
       display: inline-block;
       padding: 0 (_size(element-margin) * 0.5) 0 0;
+      //margin: 0 0 0 0.5em;
       vertical-align: middle;
 
       &:last-child {
@@ -72,6 +73,7 @@ ul {
       }
     }
 
+    // ---- self start ----
     &.small {
       li {
         padding: 0 (_size(element-margin) * 0.25) 0 0;
@@ -159,42 +161,57 @@ ul {
       }
     }
   }
+
+  //&.menu {
+  //  cursor: default;
+  //
+  //  li {
+  //    display: inline-block;
+  //    border-left: solid 1px #e0e0e0;
+  //    padding: 0 0 0 0.75em;
+  //    margin: 0 0 0 0.75em;
+  //    //line-height: 1em;
+  //
+  //    &:first-child {
+  //      border-left: 0;
+  //      margin-left: 0;
+  //      padding-left: 0;
+  //    }
+  //  }
+  //}
 }
 
 dl {
   margin: 0 0 _size(element-margin) 0;
 
+  //&.default {
+  //  list-style: decimal;
+  //  padding-left: 1.25em;
+  //  li {
+  //    padding-left: 0.25em;
+  //  }
+  //}
+
   dt {
     display: block;
-    font-weight: _font(weight-bold);
     margin: 0 0 (_size(element-margin) * 0.5) 0;
+    font-weight: _font(weight-bold);
   }
 
   dd {
     margin-left: _size(element-margin);
   }
 
-  //self start
   &.alt {
     dt {
       float: left;
-      //clear: left;
-      //display: block;
-      //width: 3em;
       margin: 0;
     }
 
     dd {
       margin: 0 0 0.85em 5.5em;
     }
-
-    //&:after {
-    //  clear: both;
-    //  display: block;
-    //  content: '';
-    //}
   }
-  //self end
 }
 
 @mixin color-list($p: null) {

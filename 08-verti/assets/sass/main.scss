@@ -41,10 +41,11 @@
         )
 ));
 
-
+// Base.
 @import "base/page";
 @import "base/typrography";
 
+// Component.
 @import "components/box";
 @import "components/button";
 @import "components/form";

@@ -19,24 +19,36 @@ button,
           'color #{_duration(transition)} ease-in-out'
   ));
   display: inline-block;
+  position: relative;
   padding: 0 1.5em;
-  height: 2.75em;
-  min-width: 9.25em;
-  border-radius: _size(border-radius);
   border: 0;
-  font-family: _font(family-heading);
-  font-size: 0.8em;
-  font-weight: _font(weight);
+  border-radius: _size(border-radius);
+  height: 2.75em;
+  line-height: 2.75em;
   text-align: center;
   text-decoration: none;
-  line-height: 2.75em;
+  font-size: 0.8em;
+  font-weight: _font(weight);
   letter-spacing: _font(kerning-heading);
   white-space: nowrap;
+  //color: #fff;
+  //background: #0090c5;
+  outline: 0;
   cursor: pointer;
+
+  min-width: 9.25em;
+  font-family: _font(family-heading);
+
+  //&:hover {
+  //  background-color: lighten(_palette(accent1, bg), 5);
+  //}
+  //
+  //&:active {
+  //  background-color: darken(_palette(accent1, bg), 5);
+  //}
 
   &.icon {
     padding-left: 1.35em;
-
     &:before {
       margin-right: 0.5em;
     }
@@ -59,15 +71,16 @@ button,
   &.disabled,
   &:disabled {
     @include vendor('pointer-events', 'none');
+    //cursor: default;
     opacity: 0.25;
   }
 
+// ----- self start -----
   @include breakpoint(small) {
     min-width: 0;
   }
 }
 
-//self start
 @mixin color-button($p: null) {
   input[type="submit"],
   input[type="reset"],
@@ -115,4 +128,5 @@ button,
 }
 
 @include color-button;
-//self end
+// ----- self start -----
+

@@ -22,13 +22,17 @@ button {
   border: 0;
   border-radius: 3.5em;
   height: 3.5em;
+  line-height: 3.5em;
   text-align: center;
   text-decoration: none;
-  line-height: 3.5em;
+  //font-size: 0.8em;
+  //font-weight: _font(weight);
+  //letter-spacing: _font(kerning-heading);
+  //white-space: nowrap;
   color: _palette(accent1, fg);
   background-color: _palette(accent1, bg);
-  cursor: pointer;
   outline: 0;
+  cursor: pointer;
 
   &:hover {
     background-color: lighten(_palette(accent1, bg), 5);
@@ -37,9 +41,37 @@ button {
   &:active {
     background-color: darken(_palette(accent1, bg), 5);
   }
-  //copy  参数不同
 
-  // ----- self start -----
+  //&.icon {
+  //  &:before {
+  //    position: relative;
+  //    margin-right: 0.5em;
+  //    top: 0.05em;
+  //  }
+  //}
+
+  //&.fit {
+  //  display: block;
+  //  margin: 0 0 (_size(element-margin) * 0.5) 0;
+  //  width: 100%;
+  //}
+
+  //&.small {
+  //  font-size: 0.8em;
+  //}
+
+  //&.big {
+  //  font-size: 1.35em;
+  //}
+
+  //&.disabled,
+  //&:disabled {
+  //  @include vendor('pointer-events', 'none');
+  //  cursor: default;
+  //  opacity: 0.25;
+  //}
+
+// ----- self start -----
   // 下拉按钮圆形
   &.down {
     padding: 0;
@@ -89,5 +121,5 @@ button {
       background-image: url('./../images/arrow.svg');
     }
   }
-  // ----- self end -----
+// ----- self end -----
 }

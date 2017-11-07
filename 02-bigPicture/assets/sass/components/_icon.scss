@@ -7,13 +7,17 @@
 ///
 
 /* Icon */
-
 .icon {
   @include icon;
-  border-bottom: none;
   position: relative;
+  border-bottom: none;
   text-decoration: none;
 
+  > .label {
+    display: none;
+  }
+
+  // ---- self start -----
   &:before {
     display: inline-block;
     line-height: 1;
@@ -25,9 +29,5 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  //self
-
-  > .label {
-    display: none;
-  }
+  // ---- self end -----
 }

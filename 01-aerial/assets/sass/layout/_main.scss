@@ -124,9 +124,9 @@
 
   &:before {
     display: inline-block;
-    width: 1px;
+    //width: 1px;
     height: 100%;
-    margin-right: 0;
+    //margin-right: 0;
     // 垂直居中-父元素高度确定的单行文本
     vertical-align: middle;
     content: '';

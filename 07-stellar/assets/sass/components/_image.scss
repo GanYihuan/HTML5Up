@@ -13,10 +13,12 @@
   position: relative;
   border: 0;
   border-radius: _size(border-radius);
+  //outline: 0;
 
   img {
     display: block;
     border-radius: _size(border-radius);
+    //width: 100%;
   }
 
   &.left,
@@ -49,6 +51,12 @@
       width: 100%;
     }
   }
+
+  //&.featured {
+  //  display: block;
+  //  margin: 0 0 2em 0;
+  //  width: 100%;
+  //}
 
   &.main {
     display: block;

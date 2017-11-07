@@ -44,8 +44,6 @@ body {
   box-sizing: border-box; }
 
 /* Basic */
-@-ms-viewport {
-  width: device-width; }
 @media screen and (max-width: 480px) {
   html, body {
     min-width: 320px; } }
@@ -255,18 +253,20 @@ button,
   -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   display: inline-block;
+  position: relative;
   padding: 0 1.5em;
-  height: 2.75em;
-  min-width: 9.25em;
-  border-radius: 8px;
   border: 0;
-  font-size: 0.8em;
-  font-weight: 300;
+  border-radius: 8px;
+  height: 2.75em;
+  line-height: 2.75em;
   text-align: center;
   text-decoration: none;
-  line-height: 2.75em;
+  font-size: 0.8em;
+  font-weight: 300;
   white-space: nowrap;
-  cursor: pointer; }
+  outline: 0;
+  cursor: pointer;
+  min-width: 9.25em; }
   input[type="submit"].icon,
   input[type="reset"].icon,
   input[type="button"].icon,
@@ -396,10 +396,10 @@ textarea {
   -ms-appearance: none;
   appearance: none;
   display: block;
-  width: 100%;
-  padding: 0 1em;
   border: solid 1px;
   border-radius: 8px;
+  padding: 0 1em;
+  width: 100%;
   text-decoration: none;
   color: inherit;
   outline: 0; }
@@ -428,16 +428,16 @@ textarea {
     font-weight: normal;
     text-transform: none !important; }
   .select-wrapper:before {
-    content: '\f078';
     display: block;
-    height: 2.75em;
-    line-height: 2.75em;
-    pointer-events: none;
     position: absolute;
     right: 0;
-    text-align: center;
     top: 0;
-    width: 2.75em; }
+    width: 2.75em;
+    height: 2.75em;
+    line-height: 2.75em;
+    text-align: center;
+    content: '\f078';
+    pointer-events: none; }
   .select-wrapper select::-ms-expand {
     display: none; }
 
@@ -459,19 +459,19 @@ input[type="radio"] {
   display: block;
   float: left;
   z-index: -1;
-  width: 1em;
   margin-right: -2em;
+  width: 1em;
   opacity: 0; }
   input[type="checkbox"] + label,
   input[type="radio"] + label {
     text-decoration: none;
-    cursor: pointer;
     display: inline-block;
-    font-size: 1em;
-    font-weight: 300;
+    position: relative;
     padding-left: 2.4em;
     padding-right: 0.75em;
-    position: relative; }
+    font-size: 1em;
+    font-weight: 300;
+    cursor: pointer; }
     input[type="checkbox"] + label:before,
     input[type="radio"] + label:before {
       -moz-osx-font-smoothing: grayscale;
@@ -482,17 +482,17 @@ input[type="radio"] {
       text-transform: none !important; }
     input[type="checkbox"] + label:before,
     input[type="radio"] + label:before {
-      border-radius: 8px;
-      border: solid 1px;
-      content: '';
       display: inline-block;
-      height: 1.65em;
-      left: 0;
-      line-height: 1.58125em;
       position: absolute;
-      text-align: center;
       top: 0;
-      width: 1.65em; }
+      left: 0;
+      border: solid 1px;
+      border-radius: 8px;
+      width: 1.65em;
+      height: 1.65em;
+      line-height: 1.58125em;
+      text-align: center;
+      content: ''; }
   input[type="checkbox"]:checked + label:before,
   input[type="radio"]:checked + label:before {
     background: #ffffff;
@@ -584,8 +584,8 @@ input[type="radio"]:focus + label:before {
   -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  border-bottom: none;
-  position: relative; }
+  position: relative;
+  border-bottom: none; }
   .icon:before {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -700,9 +700,9 @@ ol {
     padding-left: 0.25em; }
 
 ul {
-  list-style: disc;
   margin: 0 0 2em 0;
-  padding-left: 1em; }
+  padding-left: 1em;
+  list-style: disc; }
   ul li {
     padding-left: 0.5em; }
   ul.alt {
@@ -784,8 +784,8 @@ dl {
   margin: 0 0 2em 0; }
   dl dt {
     display: block;
-    font-weight: 400;
-    margin: 0 0 1em 0; }
+    margin: 0 0 1em 0;
+    font-weight: 400; }
   dl dd {
     margin-left: 2em; }
   dl.alt dt {

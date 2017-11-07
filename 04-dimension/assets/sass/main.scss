@@ -32,23 +32,15 @@
 
 
 // Base.
-
-//change litter
 @import 'base/page';
-//change
 @import 'base/typography';
 
 // Component.
-
 //change
 @import 'components/form';
-//copy
 @import 'components/box';
-//copy
 @import 'components/icon';
-//change
 @import 'components/image';
-//change
 @import 'components/list';
 
 @import 'components/table';
@@ -57,11 +49,7 @@
 // Layout.
 // 背景动态图 配合wrapper使用才起作用
 @import 'layout/bg';
-//
 @import 'layout/wrapper';
-//
 @import 'layout/header';
-//
 @import 'layout/main';
-//
 @import 'layout/footer';
