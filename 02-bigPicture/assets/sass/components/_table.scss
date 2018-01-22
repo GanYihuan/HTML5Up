@@ -7,15 +7,78 @@
 ///
 
 /* Table */
-//self 参数不同
+
+//.table-wrapper {
+//  -webkit-overflow-scrolling: touch;
+//  overflow-x: auto;
+//}
+
 table {
+  //margin: 0 0 _size(element-margin) 0;
   width: 100%;
 
+  //tbody {
+  //  tr {
+  //    border: solid 1px;
+  //    border-left: 0;
+  //    border-right: 0;
+  //
+  //    &:nth-child(2n + 1) {
+  //      background-color: _palette(border-bg);
+  //    }
+  //  }
+  //}
+  //
+  //td {
+  //  padding: 0.75em 0.75em;
+  //}
+  //
+  //th {
+  //  padding: 0 0.75em 0.75em 0.75em;
+  //  text-align: left;
+  //  font-size: 0.9em;
+  //  font-weight: _font(weight-bold);
+  //}
+  //
+  //thead {
+  //  border-bottom: solid 2px;
+  //  //color: _palette(bg);
+  //  //background: _palette(fg);
+  //}
+  //
+  //tfoot {
+  //  border-top: solid 2px;
+  //  //background: _palette(border);
+  //}
+
+  //&.alt 替换为default
   &.default {
+    //border-collapse: separate;
     width: 100%;
 
-    tbody tr:nth-child(2n+2) {
-      background: transparentize(_palette(border), 0.5);
+    tbody {
+      tr {
+        //td {
+        //  border: solid 1px;
+        //  border-left-width: 0;
+        //  border-top-width: 0;
+        //
+        //  &:first-child {
+        //    border-left-width: 1px;
+        //  }
+        //}
+        //
+        //&:first-child {
+        //  td {
+        //    border-top-width: 1px;
+        //  }
+        //}
+
+        &:nth-child(2n+2) {
+          //border-top-width: 1px;
+          background: transparentize(_palette(border), 0.5);
+        }
+      }
     }
 
     td {
@@ -26,14 +89,17 @@ table {
       padding: 0.5em 1em 0.5em 1em;
       text-align: left;
       font-weight: 900;
+      //font-weight: _font(weight-bold);
     }
 
     thead {
+      //border-bottom: solid (_size(border-width) * 2) _palette(border);
       color: _palette(bg);
       background: _palette(fg);
     }
 
     tfoot {
+      //border-top: solid (_size(border-width) * 2) _palette(border);
       background: _palette(border);
     }
   }

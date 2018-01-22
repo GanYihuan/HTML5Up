@@ -16,6 +16,7 @@ body {
 /* List */
 ul.icons li a:before {
   color: #c8cccf; }
+
 ul.icons li a:hover:before {
   color: #ff7496; }
 
@@ -27,4 +28,3 @@ ul.icons li a:hover:before {
 #main {
   display: inline-block; }
 
-/*# sourceMappingURL=ie9.css.map */

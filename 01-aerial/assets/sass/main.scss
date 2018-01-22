@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-// attribute parameter (self edit)
+// attribute parameter
 @import 'libs/vars';
 // string unit mixed number
 @import 'libs/functions';
@@ -32,12 +32,14 @@
 ));
 
 // Base.
-@import 'base/page'; // (有一些self)
-@import "base/typography"; // (有一些self)
+@import 'base/page'; // self
+@import "base/typography";
 
 // Component.
 @import "components/icon";
 
+
+// --------- self ----------
 // _mixins  _duration : 带有单位字（符串）处理混合值
 $delay-wrapper: _duration(wrapper) - 1s;
 $delay-overlay: $delay-wrapper - 0.5s;

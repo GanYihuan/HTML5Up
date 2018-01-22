@@ -1347,10 +1347,10 @@ table {
     table.default td {
       padding: 0.5em 1em 0.5em 1em; }
     table.default th {
-      text-align: left;
+      margin: 0 0 1em 0;
       padding: 0.5em 1em 0.5em 1em;
-      font-weight: 800;
-      margin: 0 0 1em 0; }
+      text-align: left;
+      font-weight: 800; }
     table.default thead {
       background: #404248;
       color: #fff; }

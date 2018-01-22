@@ -29,8 +29,6 @@
         boxModel: 'border'
 ));
 
-
-
 // Base.
 @import 'base/page';
 @import 'base/typography';
@@ -42,12 +40,11 @@
 @import 'components/icon';
 @import 'components/image';
 @import 'components/list';
-
+// @import 'components/section'; // (self)
 @import 'components/table';
 @import 'components/button';
 
-// Layout.
-// 背景动态图 配合wrapper使用才起作用
+// Layout. self
 @import 'layout/bg';
 @import 'layout/wrapper';
 @import 'layout/header';

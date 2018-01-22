@@ -37,15 +37,14 @@ body {
       @include vendor('transition', 'none !important');
     }
   }
+}
 
-  //self start
+// ----- self -----
+body {
   background-color: _palette(bg);
   //bg left bottom pink, right top purple   important!!!
   @include vendor('background-image', (
           'url("images/overlay.png")',
           'linear-gradient(45deg, #{_palette(bg1)} 15%, #{_palette(bg2) 85%})'
   ));
-  //  self end
 }
-
-

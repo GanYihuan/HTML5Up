@@ -26,7 +26,6 @@
         boxModel: 'border'
 ));
 
-
 // Base.
 @import 'base/page';
 @import 'base/bg';
@@ -36,10 +35,11 @@
 @import 'components/form';
 @import 'components/icon';
 @import 'components/list';
-@import 'components/section';
+@import 'components/section'; // (self)
+// @import 'components/table';
 @import 'components/button';
 
-// Layout.
+// Layout. self
 @import 'layout/header';
 @import 'layout/signup-form';
 @import 'layout/footer';

@@ -43,12 +43,14 @@
 @import 'components/icon'; // 底部图标 要配合'components/list'来写
 @import 'components/image'; // 图片处理
 @import 'components/list'; // 对底部图标处理
-@import 'components/section'; // 对header footer处理
+@import 'components/section'; // 对header footer处理 // (self)
 @import 'components/table';
+//?
 @import 'components/poptrox-popup'; // 针对框架来修改
+// ?
 @import 'components/gallery';
 
-// Layout.
+// Layout. self
 @import 'layout/header';
 @import 'layout/section';
 @import 'layout/main';

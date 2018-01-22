@@ -10,23 +10,31 @@
 /* Type */
 
 body, input, select, textarea {
+  line-height: _font(line-height);
+  font-size: _font(font-size);
   font-family: _font(family);
   font-weight: _font(weight);
-  font-size: 17pt;
-  line-height: 1.65;
   letter-spacing: _font(letter-spacing);
   color: _palette(fg);
 
   @include breakpoint(xlarge) {
-    font-size: 14pt;
+    font-size: _font(xlarge);
   }
 
   @include breakpoint(large) {
-    font-size: 12pt;
+    font-size: _font(large);
   }
 
-  @include breakpoint(xxsmall) {
-    font-size: 11pt;
+  @include breakpoint(medium) {
+    font-size: _font(medium);
+  }
+
+  @include breakpoint(small) {
+    font-size: _font(small);
+  }
+
+  @include breakpoint(xsmall) {
+    font-size: _font(xsmall);
   }
 }
 
@@ -57,26 +65,6 @@ em, i {
 
 p {
   margin: 0 0 _size(element-margin) 0;
-
-  // ------ self start -----
-  // split text screen   important
-  &.content {
-    //columns: column-width column-count;
-    //column-width
-    //column-count
-    //Column-rule   规定列之间的宽度、样式和颜色。
-    -moz-columns: 20em 2;
-    -webkit-columns: 20em 2;
-    -ms-columns: 20em 2;
-    columns: 20em 2;
-    -moz-column-gap: _size(element-margin);
-    -webkit-column-gap: _size(element-margin);
-    -ms-column-gap: _size(element-margin);
-    column-gap: _size(element-margin);
-    //justify	实现两端对齐文本效果。
-    text-align: justify;
-  }
-  // ----- self end -----
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -115,14 +103,6 @@ h5 {
 h6 {
   font-size: 0.7em;
 }
-
-//self
-@include breakpoint(small) {
-  h1 {
-    font-size: 2em;
-  }
-}
-//self
 
 sub {
   font-size: 0.8em;
@@ -230,6 +210,32 @@ hr {
 }
 
 @include color-typography;
+
+@include breakpoint(small) {
+  h1 {
+    font-size: 2em;
+  }
+}
+
+p {
+  // split text screen   important
+  &.content {
+    //columns: column-width column-count;
+    //column-width
+    //column-count
+    //Column-rule   规定列之间的宽度、样式和颜色。
+    -moz-columns: 20em 2;
+    -webkit-columns: 20em 2;
+    -ms-columns: 20em 2;
+    columns: 20em 2;
+    -moz-column-gap: _size(element-margin);
+    -webkit-column-gap: _size(element-margin);
+    -ms-column-gap: _size(element-margin);
+    column-gap: _size(element-margin);
+    //justify	实现两端对齐文本效果。
+    text-align: justify;
+  }
+}
 //self end
 
 

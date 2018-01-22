@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-
 @import '../libs/vars';
 @import '../libs/functions';
 @import '../libs/mixins';
@@ -40,8 +39,8 @@ a {
           'color #{_duration(transition)} ease',
           'border-color #{_duration(transition)} ease'
   ));
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 
   //self
   &:before {
@@ -71,13 +70,13 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 (_size(element-margin) * 0.5) 0;
-  line-height: 1.5;
   color: _palette(fg-bold);
+  line-height: 1.5;
   //font-weight: _font(weight-bold);
 
   a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
   }
 }
 

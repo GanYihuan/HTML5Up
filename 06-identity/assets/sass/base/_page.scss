@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+@import '../libs/vars';
+@import '../libs/functions';
+@import '../libs/mixins';
+
 ///
 /// Identity by HTML5 UP
 /// html5up.net | @ajlkn
@@ -8,11 +12,6 @@
 
 /* Basic */
 // Ensures page width is always >=320px.
-
-// MSIE: Required for IEMobile.
-//@-ms-viewport {
-//  width: device-width;
-//}
 
 //copy
 @include breakpoint(xsmall) {

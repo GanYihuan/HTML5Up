@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
-@import '../libs/vars';
-@import '../libs/functions';
-@import '../libs/mixins';
-
 .icon {
   @include icon;
+  @include vendor('transition', (
+          'background-color #{_duration(transition)} ease-in-out',
+          'color #{_duration(transition)} ease-in-out'
+  ));
   border-bottom: none;
   position: relative;
   text-decoration: none;

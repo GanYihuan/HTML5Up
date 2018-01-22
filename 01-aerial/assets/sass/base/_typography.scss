@@ -1,33 +1,31 @@
 @charset "UTF-8";
 
 body, input, select, textarea {
-  line-height: 1.75em;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 15pt;
-  //font-weight 属性设置文本的粗细。 !important优先级最高
-  font-weight: 300 !important;
-  //letter-spacing 属性增加或减少字符间的空白（字符间距）。
-  letter-spacing: -0.025em;
+  line-height: _font(line-height);
+  font-size: _font(font-size);
+  font-family: _font(family);
+  font-weight: _font(weight);
+  letter-spacing: _font(letter-spacing);
   color: _palette(fg);
 
   @include breakpoint(xlarge) {
-    font-size: 12pt;
+    font-size: _font(xlarge);
   }
 
   @include breakpoint(large) {
-    font-size: 11pt;
+    font-size: _font(large);
   }
 
   @include breakpoint(medium) {
-    font-size: 12pt;
+    font-size: _font(medium);
   }
 
   @include breakpoint(small) {
-    font-size: 12pt;
+    font-size: _font(small);
   }
 
   @include breakpoint(xsmall) {
-    font-size: 12pt;
+    font-size: _font(xsmall);
   }
 }
 
@@ -45,7 +43,9 @@ a {
   color: inherit;
 
   &:hover {
-    border-color: transparent;
+    border-bottom-color: transparent;
+    text-decoration: none;
+    color: _palette(accent1) !important;
   }
 }
 
@@ -130,6 +130,7 @@ code {
 
 pre {
   margin: 0 0 _size(element-margin) 0;
+  // 快速滚动和回弹的效果
   -webkit-overflow-scrolling: touch;
   font-family: _font(family-fixed);
   font-size: 0.9rem;

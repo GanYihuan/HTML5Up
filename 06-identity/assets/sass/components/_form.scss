@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+@import '../libs/vars';
+@import '../libs/functions';
+@import '../libs/mixins';
+
 ///
 /// Identity by HTML5 UP
 /// html5up.net | @ajlkn
@@ -11,66 +15,40 @@
 form {
   margin: 0 0 _size(element-margin) 0;
 
-  .field {
-    margin: 0 0 (_size(element-margin) * 0.75) 0;
+  //self
+  > .field {
+    margin: 0 0 _size(element-margin) 0;
 
-    //&.half {
-    //  float: left;
-    //  padding: 0 0 0 (_size(element-margin) * 0.75 * 0.5);
-    //  width: 50%;
-    //
-    //  &.first {
-    //    padding: 0 (_size(element-margin) * 0.75 * 0.5) 0 0;
-    //  }
-    //}
-
-    :last-child {
+    > :last-child {
       margin-bottom: 0;
     }
   }
-
-  //> .actions {
-  //  //send message
-  //  margin: (_size(element-margin) * 0.75) 0 0 0 !important;
-  //}
+//  self
 }
 
 label {
   color: _palette(fg-bold);
   display: block;
-  margin: 0 0 (_size(element-margin) * 0.5) 0;
-  //line-height: 1.5;
   font-size: 0.9em;
   //font-weight: _font(weight-bold);
-  //text-transform: uppercase;
-  //letter-spacing: _font(letter-spacing);
-  //color: _palette(fg-bold);
+  margin: 0 0 (_size(element-margin) * 0.5) 0;
 }
 
 input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="tel"],
-//input[type="search"],
-//input[type="url"],
 select,
 textarea {
   @include vendor('appearance', 'none');
-  //@include vendor('transition', (
-  //        'border-color #{_duration(transition)} ease-in-out',
-  //        'background-color #{_duration(transition)} ease'.
-  //        'color #{_duration(transition)} ease-in-out'
-  //));
-  display: block;
-  border: solid 1px _palette(border);
   border-radius: _size(border-radius);
-  padding: 0 1em;
-  width: 100%;
-  text-decoration: none;
+  border: solid 1px _palette(border);
   color: inherit;
-  //background: transparent;
+  display: block;
   outline: 0;
-
+  padding: 0 1em;
+  text-decoration: none;
+  width: 100%;
 
   &:invalid {
     box-shadow: none;
@@ -78,8 +56,6 @@ textarea {
 
   &:focus {
     border-color: _palette(highlight);
-    //box-shadow: 0 0 0 _size(border-width) _palette(fg-bold);
-    //background: _palette(border-bg);
   }
 }
 
@@ -89,16 +65,16 @@ textarea {
   position: relative;
 
   &:before {
+    color: _palette(border);
     display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: _size(element-height);
     height: _size(element-height);
     line-height: _size(element-height);
-    text-align: center;
-    color: _palette(border);
     pointer-events: none;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: _size(element-height);
   }
 
   select::-ms-expand {
@@ -109,9 +85,6 @@ textarea {
 input[type="text"],
 input[type="password"],
 input[type="email"],
-//input[type="tel"],
-//input[type="search"],
-//input[type="url"],
 select {
   height: _size(element-height);
 }
@@ -125,45 +98,41 @@ input[type="radio"]{
   @include vendor('appearance', 'none');
   display: block;
   float: left;
-  z-index: -1;
   margin-right: -2em;
   opacity: 0;
   width: 1em;
+  z-index: -1;
 
   & + label {
     @include icon;
-    display: inline-block;
-    position: relative;
-    margin: 0 0 (_size(element-margin) * 0.25) 0;
-    padding-left: (_size(element-height) * 0.6) + 0.75em;
-    padding-right: 0.75em;
-    font-size: 1em;
-    font-weight: _font(weight);
     color: _palette(fg);
     cursor: pointer;
-
+    display: inline-block;
+    font-size: 1em;
+    font-weight: _font(weight);
+    padding-left: (_size(element-height) * 0.6) + 0.75em;
+    padding-right: 0.75em;
+    position: relative;
 
     &:before {
-      display: inline-block;
-      position: absolute;
-      top: 0.15em;
-      left: 0;
-      border: solid 1px _palette(border);
-      border-radius: _size(border-radius);
-      width: (_size(element-height) * 0.6);
-      height: (_size(element-height) * 0.6);
-      line-height: (_size(element-height) * 0.575);
-      text-align: center;
       background: _palette(border-bg);
+      border-radius: _size(border-radius);
+      border: solid 1px _palette(border);
       content: '';
+      display: inline-block;
+      height: (_size(element-height) * 0.6);
+      left: 0;
+      line-height: (_size(element-height) * 0.575);
+      position: absolute;
+      text-align: center;
+      top: 0.15em;
+      width: (_size(element-height) * 0.6);
     }
   }
 
   &:checked + label {
     &:before {
-      border-color: _palette(accent, bg);
       color: _palette(highlight);
-      background: _palette(accent, bg);
       content: '\f00c';
     }
   }
@@ -171,8 +140,6 @@ input[type="radio"]{
   &:focus + label {
     &:before {
       border-color: _palette(highlight);
-      //background: _palette(border-bg);
-      //box-shadow: 0 0 0 _size(border-width) _palette(fg-bold);
     }
   }
 }

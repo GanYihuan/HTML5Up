@@ -35,19 +35,22 @@ table {
   }
 
   th {
-    color: _palette(fg-bold);
-    font-size: 0.9em;
-    font-weight: _font(weight-bold);
     padding: 0 0.75em 0.75em 0.75em;
     text-align: left;
+    font-size: 0.9em;
+    font-weight: _font(weight-bold);
+    color: _palette(fg-bold);
   }
 
   thead {
     border-bottom: solid (_size(border-width) * 2) _palette(border);
+    // color: _palette(bg);
+    // background: _palette(fg);
   }
 
   tfoot {
     border-top: solid (_size(border-width) * 2) _palette(border);
+    // background: _palette(border);
   }
 
   &.alt {
@@ -73,12 +76,26 @@ table {
       }
     }
 
+    // td {
+    //   padding: 0.5em 1em 0.5em 1em;
+    // }
+
+    // th {
+    //   padding: 0.5em 1em 0.5em 1em;
+    //   text-align: left;
+    //   font-weight: 900;
+    //   //font-weight: _font(weight-bold);
+    // }
+
     thead {
       border-bottom: 0;
+      // color: _palette(bg);
+      // background: _palette(fg);
     }
 
     tfoot {
       border-top: 0;
+      // background: _palette(border);
     }
   }
 }

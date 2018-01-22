@@ -1,5 +1,18 @@
 @charset "UTF-8";
 
+///
+/// Stellar by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* Basic */
+
+// MSIE: Required for IEMobile.
+//@-ms-viewport {
+//  width: device-width;
+//}
+
 body {
   //http://www.w3school.com.cn/cssref/pr_overflow-style.asp
   //overflow-style 规定溢出元素的首选滚动方法。
@@ -8,18 +21,20 @@ body {
   //marquee	内容自主移动，不需任何用户代理对其控制。
   -ms-overflow-style: scrollbar;
 
-  // ----- self -----
-  //overflow 属性规定当内容溢出元素框时发生的事情。
-  overflow: hidden;
-  //reset白色背景
-  background: _palette(bg);
-  // ----- self -----
-
-  //最高层级动画
+  // Prevents animation/transition "flicker" on page load.
+  // Automatically added/removed by js/main.js.
   &.is-loading {
     *, *:before, *:after {
       @include vendor('animation', 'none !important');
       @include vendor('transition', 'none !important');
     }
   }
+}
+
+// ----- self -----
+body {
+  // overflow 属性规定当内容溢出元素框时发生的事情。
+  overflow: hidden;
+  // reset白色背景
+  background: _palette(bg);
 }

@@ -25,7 +25,14 @@ $font: (
         family-fixed: ('Courier New', monospace),
         weight: 300,
         weight-bold: 400,
-        letter-spacing: -0.025em
+        letter-spacing: -0.025em,
+        line-height: 1.65em,
+        font-size: 15pt,
+        xlarge: 14pt,
+        large: 12pt,
+        medium: 12pt,
+        small: 12pt,
+        xsmall: 10pt,
 );
 
 // Palette.

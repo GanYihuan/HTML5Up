@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+@import '../libs/vars';
+@import '../libs/functions';
+@import '../libs/mixins';
+
 ///
 /// Identity by HTML5 UP
 /// html5up.net | @ajlkn
@@ -19,17 +23,17 @@ ol {
 }
 
 ul {
+  list-style: disc;
   margin: 0 0 _size(element-margin) 0;
   padding-left: 1em;
-  list-style: disc;
 
   li {
     padding-left: 0.5em;
   }
 
   &.alt {
-    padding-left: 0;
     list-style: none;
+    padding-left: 0;
 
     li {
       border-top: solid 1px _palette(border);
@@ -52,21 +56,17 @@ ul {
       display: inline-block;
       padding: 0.675em 0.5em;
 
-      //&:last-child {
-      //  padding-right: 0 !important;
-      //}
-
-      // ----- self ------
+      //self
       a {
         @include icon-alt(false, true);
         display: block;
         position: relative;
-        border-radius: 100%;
-        border: solid _size(border-width) _palette(border);
         width: 3.75em;
         height: 3.75em;
         line-height: 3.75em;
         overflow: hidden;
+        border-radius: 100%;
+        border: solid _size(border-width) _palette(border);
         text-align: center;
         text-indent: 3.75em;
         white-space: nowrap;
@@ -87,7 +87,7 @@ ul {
           border-color: _palette(highlight);
         }
       }
-      // ----- self ------
+      //self
     }
 
     //self
@@ -111,7 +111,6 @@ ul {
     li {
       display: inline-block;
       padding: 0 (_size(element-margin) * 0.5) 0 0;
-      //margin: 0 0 0 0.5em;
       vertical-align: middle;
 
       &:last-child {
@@ -119,41 +118,15 @@ ul {
       }
     }
   }
-
-  //&.menu {
-  //  cursor: default;
-  //
-  //  li {
-  //    display: inline-block;
-  //    border-left: solid 1px #e0e0e0;
-  //    padding: 0 0 0 0.75em;
-  //    margin: 0 0 0 0.75em;
-  //    //line-height: 1em;
-  //
-  //    &:first-child {
-  //      border-left: 0;
-  //      margin-left: 0;
-  //      padding-left: 0;
-  //    }
-  //  }
-  //}
 }
 
 dl {
   margin: 0 0 _size(element-margin) 0;
 
-  //&.default {
-  //  list-style: decimal;
-  //  padding-left: 1.25em;
-  //  li {
-  //    padding-left: 0.25em;
-  //  }
-  //}
-
   dt {
     display: block;
-    margin: 0 0 (_size(element-margin) * 0.5) 0;
     font-weight: _font(weight-bold);
+    margin: 0 0 (_size(element-margin) * 0.5) 0;
   }
 
   dd {

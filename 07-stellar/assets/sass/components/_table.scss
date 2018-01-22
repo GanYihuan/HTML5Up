@@ -34,21 +34,23 @@ table {
   }
 
   th {
-    font-size: 0.9em;
-    font-weight: _font(weight-bold);
     padding: 0 0.75em 0.75em 0.75em;
     text-align: left;
+    font-size: 0.9em;
+    font-weight: _font(weight-bold);
   }
 
   thead {
     border-bottom: solid 2px;
+    //color: _palette(bg);
+    //background: _palette(fg);
   }
 
   tfoot {
     border-top: solid 2px;
+    //background: _palette(border);
   }
 
-  //self start
   &.alt {
     //border-collapse 属性设置表格的边框是否被合并为一个单一的边框
     //separate	默认值。边框会被分开。不会忽略 border-spacing 和 empty-cells 属性。
@@ -76,17 +78,31 @@ table {
       }
     }
 
+    //td {
+    //  padding: 0.5em 1em 0.5em 1em;
+    //}
+    //
+    //th {
+    //  padding: 0.5em 1em 0.5em 1em;
+    //  text-align: left;
+    //  font-weight: 900;
+    //  //font-weight: _font(weight-bold);
+    //}
+
     thead {
       border-bottom: 0;
+      //color: _palette(bg);
+      //background: _palette(fg);
     }
 
     tfoot {
       border-top: 0;
+      //background: _palette(border);
     }
   }
-  //  self end
 }
 
+// ---- self start -----
 @mixin color-table($p: null) {
   table {
     tbody {
@@ -124,3 +140,4 @@ table {
 }
 
 @include color-table;
+// ------ self end ------

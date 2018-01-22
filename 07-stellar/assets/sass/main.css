@@ -863,10 +863,10 @@ table {
   table td {
     padding: 0.75em 0.75em; }
   table th {
-    font-size: 0.9em;
-    font-weight: 400;
     padding: 0 0.75em 0.75em 0.75em;
-    text-align: left; }
+    text-align: left;
+    font-size: 0.9em;
+    font-weight: 400; }
   table thead {
     border-bottom: solid 2px; }
   table tfoot {
