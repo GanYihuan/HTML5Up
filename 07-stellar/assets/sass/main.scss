@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-
 @import 'libs/vars';
 @import 'libs/functions';
 @import 'libs/mixins';
@@ -12,27 +11,27 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 @import 'libs/skel';
+
 @include skel-breakpoints((
-        xlarge: '(max-width: 1680px)',
-        large: '(max-width: 1280px)',
-        medium: '(max-width: 980px)',
-        small: '(max-width: 736px)',
-        xsmall: '(max-width: 480px)',
-        xxsmall: '(max-width: 360px)'
+  xlarge: '(max-width: 1680px)',
+  large: '(max-width: 1280px)',
+  medium: '(max-width: 980px)',
+  small: '(max-width: 736px)',
+  xsmall: '(max-width: 480px)',
+  xxsmall: '(max-width: 360px)'
 ));
 @include skel-layout((
-        //css reset
-        reset: 'full',
-        //limit size
-        boxModel: 'border',
-        //grid: (gutters: 1.5em),
-        //breakpoints: (
-        //        small: (
-        //                grid: (gutters: 1em),
-        //        )
-        //)
+  //css reset
+  reset: 'full',
+  //limit size
+  boxModel: 'border',
+  //grid: (gutters: 1.5em),
+  //breakpoints: (
+  //        small: (
+  //                grid: (gutters: 1em),
+  //        )
+  //)
 ));
-
 
 @mixin color($p) {
   @include color-typography($p);

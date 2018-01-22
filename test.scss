@@ -1,5 +1,19 @@
 @mixin bg($width) {
   @include keyframes('bg') {
+    0% {
+      @include vendor('transform', 'translated3d(0, 0, 0)');
+    }
 
+    100% {
+      @include vendor('transform', 'translated3d(#{$width * -1}, 0, 0)')
+    }
+  }
+
+  #bg {
+    width: ($width * 3);
+    background-size: $width auto;
   }
 }
+
+@include bg(_misc(bg-width) * 1.5);
+

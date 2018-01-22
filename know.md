@@ -1,6 +1,6 @@
 ## 03 
 main.scss 需要搞懂其参数
-```scss
+```
 @include skel-layout((
         reset: 'full',
         boxModel: 'border',
@@ -32,29 +32,32 @@ main.scss 需要搞懂其参数
 
 
 ## 08
-```scss
+```
 @include skel-layout((
-        reset: 'full',
-        boxModel: 'border',
-        grid: (gutters: (40px, 40px)),
-        conditionals: true,
-        containers: 1400px,
-        breakpoints: (
-                xlarge: (
-                        containers: 1200px
-                ),
-                large: (
-                        containers: 960px,
-                        grid: (gutters: (25px, 25px))
-                ),
-                medium: (
-                        containers: (90%, true)
-                ),
-                small: (
-                        containers: (100%, true),
-                        grid: (gutters: (20px, 20px))
-                )
-        )
+  // css reset
+  reset: 'full',
+  // apply a box model
+  boxModel: 'border',
+  // Use [column, row] to set both column and row gutters.
+  grid: (gutters: (40px, 40px)),
+  conditionals: true,
+  containers: 1400px,
+  breakpoints: (
+    xlarge: (
+      containers: 1200px
+    ),
+    large: (
+      containers: 960px,
+      grid: (gutters: (25px, 25px))
+    ),
+    medium: (
+      containers: (90%, true)
+    ),
+    small: (
+      containers: (100%, true),
+      grid: (gutters: (20px, 20px))
+    )
+  )
 ));
 ```
 
@@ -101,7 +104,7 @@ typrography 不规范
 
 
 ## 02
-```scss
+```
   // 添加一个闪光效果
   &:after {
     @include vendor('animation', 'overlay-hide 1.5s ease-in forwards !important');

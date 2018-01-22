@@ -11,34 +11,38 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 @import "libs/skel";
+
 @include skel-breakpoints((
-        xlarge: '(max-width: 1680px)',
-        large: '(max-width: 1280px)',
-        medium: '(max-width: 980px)',
-        small: '(max-width: 736px)'
+  xlarge: '(max-width: 1680px)',
+  large: '(max-width: 1280px)',
+  medium: '(max-width: 980px)',
+  small: '(max-width: 736px)'
 ));
 @include skel-layout((
-        reset: 'full',
-        boxModel: 'border',
-        grid: (gutters: (40px, 40px)),
-        conditionals: true,
-        containers: 1400px,
-        breakpoints: (
-                xlarge: (
-                        containers: 1200px
-                ),
-                large: (
-                        containers: 960px,
-                        grid: (gutters: (25px, 25px))
-                ),
-                medium: (
-                        containers: (90%, true)
-                ),
-                small: (
-                        containers: (100%, true),
-                        grid: (gutters: (20px, 20px))
-                )
-        )
+  // css reset
+  reset: 'full',
+  // apply a box model
+  boxModel: 'border',
+  // Use [column, row] to set both column and row gutters.
+  grid: (gutters: (40px, 40px)),
+  conditionals: true,
+  containers: 1400px,
+  breakpoints: (
+    xlarge: (
+      containers: 1200px
+    ),
+    large: (
+      containers: 960px,
+      grid: (gutters: (25px, 25px))
+    ),
+    medium: (
+      containers: (90%, true)
+    ),
+    small: (
+      containers: (100%, true),
+      grid: (gutters: (20px, 20px))
+    )
+  )
 ));
 
 // Base.

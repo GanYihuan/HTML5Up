@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 @mixin bg($width) {
-  /* bg animation */
+  /* animation */
   @include keyframes('bg') {
     0% {
       // vendor传入属性，返回值
@@ -15,42 +15,47 @@
   }
 
   #bg {
+    // 背景宽度拉伸了3倍，能造成无限连接感觉
     width: ($width * 3);
     background-size: $width auto;
   }
 }
 
-// 背景长度拉伸了1.5倍,能造成无限连接感觉
+/* bg animation */
+// 背景宽度拉伸了1.5倍
 // _misc处理带有单位 字符
 @include bg(_misc(bg-width) * 1.5);
 
-/* Wrapper animation */
+/* define wrapper animation */
 @include keyframes('wrapper') {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
 }
 
-/* Overlay animation */
+/* define overlay animation */
 @include keyframes('overlay') {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
 }
 
-/* Header animation */
+/* define Header animation */
 @include keyframes('header') {
   0% {
     // 向上动画
     @include vendor('transform', 'translate3d(0,1em,0)');
     opacity: 0;
   }
+
   100% {
     @include vendor('transform', 'translate3d(0,0,0)');
     opacity: 1;
@@ -64,14 +69,16 @@
     @include vendor('transform', 'translate3d(0,1em,0)');
     opacity: 0;
   }
+
   100% {
     @include vendor('transform', 'translate3d(0,0,0)');
     opacity: 1;
   }
 }
 
-/* .wrapper */
+/* wrapper animation */
 #wrapper {
+  // animation: name duration timing-function delay iteration-count direction;
   @include vendor('animation', 'wrapper #{_duration(wrapper)} forwards');
   position: fixed;
   left: 0;
@@ -81,11 +88,10 @@
   opacity: 0;
 }
 
-/* .bg */
 #bg {
   // animation: name duration timing-function delay iteration-count direction;
   @include vendor('animation', 'bg #{_duration(bg)} linear infinite');
-  // backface-visibility当元素不面向屏幕时是否可见。
+  // backface-visibility当元素不面向屏幕时,是否可见。
   @include vendor('backface-visibility', 'hidden');
   @include vendor('transform', 'translate3d(0,0,0)');
   position: fixed;
@@ -97,7 +103,6 @@
   opacity: 1;
 }
 
-/* .overlay */
 #overlay {
   @include vendor('animation', 'overlay #{_duration(overlay)} #{$delay-overlay} forwards');
   position: fixed;
@@ -124,9 +129,7 @@
 
   &:before {
     display: inline-block;
-    //width: 1px;
     height: 100%;
-    //margin-right: 0;
     // 垂直居中-父元素高度确定的单行文本
     vertical-align: middle;
     content: '';

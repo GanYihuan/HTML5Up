@@ -17,18 +17,18 @@
 @import "libs/skel";
 // 框架 断点设置,相当与css的@media
 @include skel-breakpoints((
-        xxlarge: '(max-width: 1920px)',
-        xlarge: '(max-width: 1680px)',
-        large: '(max-width: 1280px)',
-        medium: '(max-width: 1000px)',
-        small: '(max-width: 736px)',
-        xsmall: '(max-width: 480px)'
+  xxlarge: '(max-width: 1920px)',
+  xlarge: '(max-width: 1680px)',
+  large: '(max-width: 1280px)',
+  medium: '(max-width: 1000px)',
+  small: '(max-width: 736px)',
+  xsmall: '(max-width: 480px)'
 ));
 @include skel-layout((
   // css reset
-        reset: 'full',
-  // ?
-        boxModel: 'border'
+  reset: 'full',
+  // apply a box model
+  boxModel: 'border'
 ));
 
 // Base.
@@ -37,7 +37,6 @@
 
 // Component.
 @import "components/icon";
-
 
 // --------- self ----------
 // _mixins  _duration : 带有单位字（符串）处理混合值
