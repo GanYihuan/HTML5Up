@@ -1,12 +1,16 @@
 # CSS write order
+
 ## role
-- 1. Display & Flow
-- 2. Positioning
-- 3. Dimensions
-- 4. Margins, Padding, Borders, Outline
-- 5. Typographic Styles
-- 6. Backgrounds
-- 7. Opacity, Cursors, Generated Content
+
+1. Display & Flow
+2. Positioning
+3. Dimensions
+4. Margins, Padding, Borders, Outline
+5. Typographic Styles
+6. Backgrounds
+7. Opacity, Cursors, Generated Content
+
+```css
 el {
     //  1：流相关
     display: ;                      dis
@@ -66,17 +70,17 @@ el {
     empty-cells: ;                  ecells    是否显示表格中的空单元格
 
     // 6：字体
-    font: ;                         f       
+    font: ;                         f
     font-family: ;                  ff
     font-size: ;                    fsize
     font-weight: ;                  fw700
-    text-align: ;                   
+    text-align: ;
     text-indent: ;
     text-transform: ;
     text-decoration: ;
     letter-spacing: ;
     word-spacing: ;
-    white-space: ;                  
+    white-space: ;
     line-height: ;                  lh10px
     vertical-align: ;               vta //行内元素的基线相对于该元素所在行的基线的垂直对齐
     color: ;                        cr
@@ -94,3 +98,4 @@ el {
     transition: ;                   trs
     transform: ;                    trf
 }
+```

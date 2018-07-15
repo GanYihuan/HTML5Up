@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
-// attribute parameter
+// (custom) attribute parameter
 @import 'libs/vars';
-// string unit mixed number
+// (fix) string unit mixed number
 @import 'libs/functions';
-// icon svg padding
+// (fix) icon svg padding
 @import 'libs/mixins';
 @import url("fontset.css");
 @import url("font-awesome.min.css");
@@ -15,7 +15,7 @@
 */
 //A lightweight responsive framework for the www http://skel.io
 @import "libs/skel";
-// 框架 断点设置,相当与css的@media
+// (fix) 框架 断点设置,相当与css的@media
 @include skel-breakpoints((
   xxlarge: '(max-width: 1920px)',
   xlarge: '(max-width: 1680px)',
@@ -24,6 +24,7 @@
   small: '(max-width: 736px)',
   xsmall: '(max-width: 480px)'
 ));
+// (custom)
 @include skel-layout((
   // css reset
   reset: 'full',
@@ -31,14 +32,14 @@
   boxModel: 'border'
 ));
 
-// Base.
-@import 'base/page'; // self
+// Base (custom)
+@import 'base/page';
 @import "base/typography";
 
 // Component.
 @import "components/icon";
 
-// --------- self ----------
+// (custom)
 // _mixins  _duration : 带有单位字（符串）处理混合值
 $delay-wrapper: _duration(wrapper) - 1s;
 $delay-overlay: $delay-wrapper - 0.5s;
@@ -49,6 +50,6 @@ $delay-nav-icon: 0.25s;
 @import "layout/main";
 @import "layout/header";
 @import "layout/footer";
-
+// (custom)
 
 

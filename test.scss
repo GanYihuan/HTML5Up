@@ -1,17 +1,105 @@
-#header {
-  @include vendor('animation', 'header #{_duration(header)} #{$delay-header}');
-  @include vendor('backface-visibility', 'hidden');
-  @include vendor('transform', 'translated3d(0, 0, 0)');
-  display: inline-block;
-  position: relative;
-  top: -1em;
-  width: 90%;
-  text-align: center;
-  vertical-align: middle;
-  opacity: 0;
-  cursor: default;
+﻿@charset 'UTF-8';
 
-  h1 {
-    line-height: 1em;
+$duration: (
+  wrapper: 3s,
+  bg: 60s,
+  header: 1s
+);
+
+$palette: (
+  bg: #f00,
+  nav-icon: (
+    hover-bg: #f00,
+    active-bg: #00f
+  )
+);
+
+$delay-wrapper: _duration(wrapper) - 1s;
+
+@mixin bg($width) {
+  @include keyframes("bg") {
+    0% {
+      @include vendor("transform", "translate3d(0,0,0)");
+    }
+    100% {
+      @include vendor("transform", "tranaslate3d(#{$width * -1}, 0, 0)");
+    }
   }
+  #bg {
+    width: ($width * 3);
+    background-size: $width auto;
+  }
+}
+@include bg(_misc(bg-width) * 1.5);
+
+@include keyframes("wrapper") {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@include keyframes("overlay") {
+  0% {
+    @include vendor("transform", "translate3d(0, 1em, 0)");
+    opacity: 0;
+  }
+  100% {
+    @include vendor("transform", "translate3d(0, 0, 0)");
+    opacity: 1;
+  }
+}
+
+@include keyframes("nav-icons") {
+  0% {
+    @include vendor("transform", "translate3d(0, 1em, 0)");
+    opacity: 0;
+  }
+  100% {
+    @include vendor("transform", "translate3d(0, 0, 0)");
+    opacity: 1;
+  }
+}
+
+#wrapper {
+  @include vendor("animation", "wrapper #{_duration(wrapper)} forwards");
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+#bg {
+  @include vendor("animation", "bg #{_duration(bg)} linear infinite");
+  @include vendor("backface-visibility", "hidden");
+  @include vendor("transform", "traslate3d(0, 0, 0)");
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: _misc(bg) repeat-x;
+  opacity: 1;
+}
+
+#overlay {
+  @include vendor("animation", "overlay #{_duration(overlay)} #{$delay-overlay} forwards");
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+@include breakpoint(xlarge) {
+
+}
+
+@include breakpoint(large) {
+  
 }

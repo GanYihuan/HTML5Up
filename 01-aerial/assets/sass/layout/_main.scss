@@ -1,84 +1,70 @@
 @charset "UTF-8";
 
 @mixin bg($width) {
-  /* animation */
-  @include keyframes('bg') {
+  @include keyframes("bg") {
     0% {
-      // vendor传入属性，返回值
-      @include vendor('transform', 'translate3d(0,0,0)');
+      // vendor: Incoming property, return value
+      @include vendor("transform", "translate3d(0,0,0)");
     }
-
     100% {
-      // 背景无限动画,向左移动
-      @include vendor('transform', 'translate3d(#{$width * -1},0,0)');
+      // Background infinite animation, left moving
+      @include vendor("transform", "translate3d(#{$width * -1},0,0)");
     }
   }
 
   #bg {
-    // 背景宽度拉伸了3倍，能造成无限连接感觉
+    // The background width stretched three times, creating an infinite connection
     width: ($width * 3);
     background-size: $width auto;
   }
 }
-/* bg animation */
-// 背景宽度拉伸了1.5倍
-// _misc处理带有单位 字符
+// The background width stretched 1.5 times
+// _misc Processing with unit characters
 @include bg(_misc(bg-width) * 1.5);
 
-/* define wrapper animation */
-@include keyframes('wrapper') {
+@include keyframes("wrapper") {
   0% {
     opacity: 0;
   }
-
   100% {
     opacity: 1;
   }
 }
 
-/* define overlay animation */
-@include keyframes('overlay') {
+@include keyframes("overlay") {
   0% {
     opacity: 0;
   }
-
   100% {
     opacity: 1;
   }
 }
 
-/* define Header animation */
-@include keyframes('header') {
+@include keyframes("header") {
   0% {
-    // 向上动画
-    @include vendor('transform', 'translate3d(0,1em,0)');
+    @include vendor("transform", "translate3d(0,1em,0)");
     opacity: 0;
   }
-
   100% {
-    @include vendor('transform', 'translate3d(0,0,0)');
+    @include vendor("transform", "translate3d(0,0,0)");
     opacity: 1;
   }
 }
 
-/* nav-icons animation */
-@include keyframes('nav-icons') {
+@include keyframes("nav-icons") {
   0% {
-    // 向上动画
-    @include vendor('transform', 'translate3d(0,1em,0)');
+    @include vendor("transform", "translate3d(0,1em,0)");
     opacity: 0;
   }
-
   100% {
-    @include vendor('transform', 'translate3d(0,0,0)');
+    @include vendor("transform", "translate3d(0,0,0)");
     opacity: 1;
   }
 }
 
-/* wrapper animation */
 #wrapper {
   // animation: name duration timing-function delay iteration-count direction;
-  @include vendor('animation', 'wrapper #{_duration(wrapper)} forwards');
+  @include vendor("animation", "wrapper #{_duration(wrapper)} forwards");
   position: fixed;
   left: 0;
   top: 0;
@@ -89,30 +75,30 @@
 
 #bg {
   // animation: name duration timing-function delay iteration-count direction;
-  @include vendor('animation', 'bg #{_duration(bg)} linear infinite');
-  // backface-visibility当元素不面向屏幕时,是否可见。
-  @include vendor('backface-visibility', 'hidden');
-  @include vendor('transform', 'translate3d(0,0,0)');
+  @include vendor("animation", "bg #{_duration(bg)} linear infinite");
+  // backface-visibility: Whether the element is visible when it is not facing the screen
+  @include vendor("backface-visibility", "hidden");
+  @include vendor("transform", "translate3d(0,0,0)");
   position: fixed;
   left: 0;
   top: 0;
   height: 100%;
-  // _misc处理带有单位字符
+  // _misc: Processing with unit characters.
   background: _misc(bg) repeat-x;
   opacity: 1;
 }
 
 #overlay {
-  @include vendor('animation', 'overlay #{_duration(overlay)} #{$delay-overlay} forwards');
+  @include vendor("animation", "overlay #{_duration(overlay)} #{$delay-overlay} forwards");
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   opacity: 0;
-  // 两张图
+  // Two pictures
   background-attachment: fixed, fixed;
-  background-image: url('../images/overlay-pattern.png'), url('../images/overlay.svg');
+  background-image: url("../images/overlay-pattern.png"), url("../images/overlay.svg");
   background-position: 0% 0%, 50% 50%;
   background-repeat: repeat, no-repeat;
   background-size: auto, cover;
@@ -130,9 +116,9 @@
   &:before {
     display: inline-block;
     height: 100%;
-    // 垂直居中-父元素高度确定的单行文本
+    // A single line of text that is highly defined in the vertical center - parent element.
     vertical-align: middle;
-    content: '';
+    content: "";
   }
 }
 
@@ -146,7 +132,7 @@
 
 @include breakpoint(large) {
   body, input, select, textarea {
-    //12PT就是12磅 12磅就是小4号字
+    // 12pt: Twelve pounds is a small four
     font-size: 12pt;
   }
 
