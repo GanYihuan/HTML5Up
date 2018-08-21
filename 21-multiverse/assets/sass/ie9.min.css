@@ -1,0 +1,1 @@
+.panel>.inner.split:after{clear:both;content:'';display:block}.panel>.inner.split>div{float:left;margin-left:0;padding-left:0}.panel>.inner.split>:first-child{padding-left:0}#wrapper:before{display:none}#main:after{clear:both;content:'';display:block}#main .thumb{float:left}

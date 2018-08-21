@@ -5,7 +5,8 @@
 */
 /* Basic */
 body:after {
-  display: none; }
+  display: none;
+}
 
 /* Main */
 #main {
@@ -13,5 +14,5 @@ body:after {
   -webkit-transform: none !important;
   -ms-transform: none !important;
   transform: none !important;
-  opacity: 1 !important; }
-
+  opacity: 1 !important;
+}

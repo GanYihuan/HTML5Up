@@ -1,166 +1,180 @@
 @charset "UTF-8";
 
-body, input, select, textarea {
-  line-height: _font(line-height);
-  font-size: _font(font-size);
-  font-family: _font(family);
-  font-weight: _font(weight);
-  letter-spacing: _font(letter-spacing);
-  color: _palette(fg);
+body,
+input,
+select,
+textarea {
+	line-height: _font(line-height);
+	font-size: _font(font-size);
+	font-family: _font(family);
+	font-weight: _font(weight);
+	letter-spacing: _font(letter-spacing);
+	color: _palette(fg);
 
-  @include breakpoint(xlarge) {
-    font-size: _font(xlarge);
-  }
+	@include breakpoint(xlarge) {
+		font-size: _font(xlarge);
+	}
 
-  @include breakpoint(large) {
-    font-size: _font(large);
-  }
+	@include breakpoint(large) {
+		font-size: _font(large);
+	}
 
-  @include breakpoint(medium) {
-    font-size: _font(medium);
-  }
+	@include breakpoint(medium) {
+		font-size: _font(medium);
+	}
 
-  @include breakpoint(small) {
-    font-size: _font(small);
-  }
+	@include breakpoint(small) {
+		font-size: _font(small);
+	}
 
-  @include breakpoint(xsmall) {
-    font-size: _font(xsmall);
-  }
+	@include breakpoint(xsmall) {
+		font-size: _font(xsmall);
+	}
 }
 
 a {
-  // vendor 声明属性和值
-  // @param {string} $property Property.
-  // @param {mixed} $value String/list of value(s).
-  @include vendor('transition', (
-          'color #{_duration(transition)} ease-in-out',
-          'background-color #{_duration(transition)} ease-in-out',
-          'border-color 0.2s ease-in-out'
-  ));
-  border-bottom: dotted 1px;
-  text-decoration: none;
-  color: inherit;
+	// vendor 声明属性和值
+	// @param {string} $property Property.
+	// @param {mixed} $value String/list of value(s).
+	@include vendor(
+		'transition',
+		(
+			'color #{_duration(transition)} ease-in-out',
+			'background-color #{_duration(transition)} ease-in-out',
+			'border-color 0.2s ease-in-out'
+		)
+	);
+	border-bottom: dotted 1px;
+	text-decoration: none;
+	color: inherit;
 
-  &:hover {
-    border-bottom-color: transparent;
-    text-decoration: none;
-    color: _palette(accent1) !important;
-  }
+	&:hover {
+		border-bottom-color: transparent;
+		text-decoration: none;
+		color: _palette(accent1) !important;
+	}
 }
 
-strong, b {
-  font-weight: _font(weight-bold);
-  color: _palette(fg-bold);
+strong,
+b {
+	font-weight: _font(weight-bold);
+	color: _palette(fg-bold);
 }
 
-em, i {
-  font-style: italic;
+em,
+i {
+	font-style: italic;
 }
 
 p {
-  margin: 0 0 _size(element-margin) 0;
+	margin: 0 0 _size(element-margin) 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 (_size(element-margin) * 0.35) 0;
-  font-weight: _font(weight);
-  line-height: 1.5;
-  letter-spacing: _font(letter-spacing);
-  color: _palette(fg-bold);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0 0 (_size(element-margin) * 0.35) 0;
+	font-weight: _font(weight);
+	line-height: 1.5;
+	letter-spacing: _font(letter-spacing);
+	color: _palette(fg-bold);
 
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
 }
 
 h1 {
-  font-size: 2.5em;
+	font-size: 2.5em;
 }
 
 h2 {
-  font-size: 1.5em;
+	font-size: 1.5em;
 }
 
 h3 {
-  font-size: 1.25em;
+	font-size: 1.25em;
 }
 
 h4 {
-  font-size: 1.1em;
+	font-size: 1.1em;
 }
 
 h5 {
-  font-size: 0.9em;
+	font-size: 0.9em;
 }
 
 h6 {
-  font-size: 0.7em;
+	font-size: 0.7em;
 }
 
 sub {
-  font-size: 0.8em;
-  position: relative;
-  top: 0.5em;
+	font-size: 0.8em;
+	position: relative;
+	top: 0.5em;
 }
 
 sup {
-  font-size: 0.8em;
-  position: relative;
-  top: -0.5em;
+	font-size: 0.8em;
+	position: relative;
+	top: -0.5em;
 }
 
 blockquote {
-  padding: (_size(element-margin) / 4) 0 (_size(element-margin) / 4) _size(element-margin);
-  margin: 0 0 _size(element-margin) 0;
-  border-left: solid 4px;
-  font-style: italic;
+	padding: (_size(element-margin) / 4) 0 (_size(element-margin) / 4)
+		_size(element-margin);
+	margin: 0 0 _size(element-margin) 0;
+	border-left: solid 4px;
+	font-style: italic;
 }
 
 code {
-  padding: 0.25em 0.65em;
-  margin: 0 0.25em;
-  border-radius: _size(border-radius);
-  border: solid _size(border-width) _palette(border);
-  font-family: _font(family-fixed);
-  font-size: 0.9em;
-  background: _palette(border-bg);
+	padding: 0.25em 0.65em;
+	margin: 0 0.25em;
+	border-radius: _size(border-radius);
+	border: solid _size(border-width) _palette(border);
+	font-family: _font(family-fixed);
+	font-size: 0.9em;
+	background: _palette(border-bg);
 }
 
 pre {
-  margin: 0 0 _size(element-margin) 0;
-  // 快速滚动和回弹的效果
-  -webkit-overflow-scrolling: touch;
-  font-family: _font(family-fixed);
-  font-size: 0.9rem;
+	margin: 0 0 _size(element-margin) 0;
+	// 快速滚动和回弹的效果
+	-webkit-overflow-scrolling: touch;
+	font-family: _font(family-fixed);
+	font-size: 0.9rem;
 
-  code {
-    display: block;
-    line-height: 1.75;
-    padding: 1rem 1.5rem;
-    overflow-x: auto;
-  }
+	code {
+		display: block;
+		line-height: 1.75;
+		padding: 1rem 1.5rem;
+		overflow-x: auto;
+	}
 }
 
 hr {
-  border: 0;
-  border-bottom: solid 1px;
-  margin: _size(element-margin) 0;
+	border: 0;
+	border-bottom: solid 1px;
+	margin: _size(element-margin) 0;
 
-  &.major {
-    margin: (_size(element-margin) * 1.5) 0;
-  }
+	&.major {
+		margin: (_size(element-margin) * 1.5) 0;
+	}
 }
 
 .align-left {
-  text-align: left;
+	text-align: left;
 }
 
 .align-center {
-  text-align: center;
+	text-align: center;
 }
 
 .align-right {
-  text-align: right;
+	text-align: right;
 }

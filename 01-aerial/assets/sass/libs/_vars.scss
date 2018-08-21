@@ -2,78 +2,82 @@
 
 // Misc.
 $misc: (
-  bg: #348cb2 url("images/bg.jpg") 0% 100%,
-  bg-width: 1500px
+	bg: #348cb2 url('images/bg.jpg') 0% 100%,
+	bg-width: 1500px
 );
 
 // Duration.
 $duration: (
-  wrapper: 3s,
-  bg: 60s,
-  overlay: 1.5s,
-  header: 1s,
-  nav-icons: 0.5s,
-  transition: 0.2s,
+	wrapper: 3s,
+	bg: 60s,
+	overlay: 1.5s,
+	header: 1s,
+	nav-icons: 0.5s,
+	transition: 0.2s
 );
 
 // Size.
 $size: (
-  nav-icon-wrapper: 5.35em,
-  nav-icon: 1.75em,
-  border-radius: 8px,
-  border-radius-main: 0.25em,
-  element-height: 2.75em,
-  element-margin: 2em,
-  inner: 64em,
+	nav-icon-wrapper: 5.35em,
+	nav-icon: 1.75em,
+	border-radius: 8px,
+	border-radius-main: 0.25em,
+	element-height: 2.75em,
+	element-margin: 2em,
+	inner: 64em
 );
 
 // Font.
 $font: (
-  line-height: 1.75em,
-  font-size: 15pt,
-  family: ('Source Sans Pro', Helvetica, sans-serif),
-  weight: 300 !important,
-  letter-spacing: -0.025em,
-  xlarge: 14pt,
-  large: 12pt,
-  medium: 12pt,
-  small: 12pt,
-  xsmall: 10pt,
+	line-height: 1.75em,
+	font-size: 15pt,
+	family: (
+		'Source Sans Pro',
+		Helvetica,
+		sans-serif
+	),
+	weight: 300 !important,
+	letter-spacing: -0.025em,
+	xlarge: 14pt,
+	large: 12pt,
+	medium: 12pt,
+	small: 12pt,
+	xsmall: 10pt
 );
 
 // Palette.
 $palette: (
-  bg: #fff,
-  fg: #fff,
-  nav-icon: (
-    hover-bg: rgba(255, 255, 255, 0.175),
-    hover-fg: #fff,
-    active-bg: rgba(255, 255, 255, 0.35),
-    active-fg: #fff
-  ),
-  fg-bold: #ffffff,
-  fg-light: rgba(255, 255, 255, 0.5),
-  border: rgba(255, 255, 255, 0.35),
-  border-bg: rgba(255, 255, 255, 0.075),
-  border2: rgba(255, 255, 255, 0.75),
-  border2-bg: rgba(255, 255, 255, 0.2),
-  invert: (
-    bg: #fff,
-    bg-alt: #f7f7f7,
-    fg: #636363,
-    fg-bold: #636363,
-    fg-light: rgba(99, 99, 99, 0.25),
-    border: #dddddd,
-    border-bg: rgba(222, 222, 222, 0.25),
-    border2: #dddddd,
-    border2-bg: rgba(222, 222, 222, 0.5),
-  ),
-  accent: #8cc9f0,
-  accent1: #efa8b0,
-  accent2: #c79cc8,
-  accent3: #a89cc8,
-  accent4: #9bb2e1,
-  accent5: #8cc9f0,
-  bg1: #e37682,
-  bg2: #5f4d93
+	bg: #fff,
+	fg: #fff,
+	nav-icon: (
+		hover-bg: rgba(255, 255, 255, 0.175),
+		hover-fg: #fff,
+		active-bg: rgba(255, 255, 255, 0.35),
+		active-fg: #fff
+	),
+	fg-bold: #ffffff,
+	fg-light: rgba(255, 255, 255, 0.5),
+	border: rgba(255, 255, 255, 0.35),
+	border-bg: rgba(255, 255, 255, 0.075),
+	border2: rgba(255, 255, 255, 0.75),
+	border2-bg: rgba(255, 255, 255, 0.2),
+	invert: (
+		bg: #fff,
+		bg-alt: #f7f7f7,
+		fg: #636363,
+		fg-bold: #636363,
+		fg-light: rgba(99, 99, 99, 0.25),
+		border: #dddddd,
+		border-bg: rgba(222, 222, 222, 0.25),
+		border2: #dddddd,
+		border2-bg: rgba(222, 222, 222, 0.5)
+	),
+	accent: #8cc9f0,
+	accent1: #efa8b0,
+	accent2: #c79cc8,
+	accent3: #a89cc8,
+	accent4: #9bb2e1,
+	accent5: #8cc9f0,
+	bg1: #e37682,
+	bg2: #5f4d93
 );

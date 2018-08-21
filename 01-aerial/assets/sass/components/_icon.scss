@@ -1,28 +1,31 @@
 @charset "UTF-8";
 
 .icon {
-  @include icon;
-  @include vendor('transition', (
-          'background-color #{_duration(transition)} ease-in-out',
-          'color #{_duration(transition)} ease-in-out'
-  ));
-  border-bottom: none;
-  position: relative;
-  text-decoration: none;
+	@include icon;
+	@include vendor(
+		'transition',
+		(
+			'background-color #{_duration(transition)} ease-in-out',
+			'color #{_duration(transition)} ease-in-out'
+		)
+	);
+	border-bottom: none;
+	position: relative;
+	text-decoration: none;
 
-  &:before {
-    display: inline-block;
-    line-height: 1;
-    text-decoration: none;
-    font-family: FontAwesome;
-    font-size: 1.25em;
-    font-style: normal;
-    font-weight: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+	&:before {
+		display: inline-block;
+		line-height: 1;
+		text-decoration: none;
+		font-family: FontAwesome;
+		font-size: 1.25em;
+		font-style: normal;
+		font-weight: normal;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
 
-  > .label {
-    display: none;
-  }
+	> .label {
+		display: none;
+	}
 }

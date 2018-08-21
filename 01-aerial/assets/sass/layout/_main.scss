@@ -1,186 +1,199 @@
 @charset "UTF-8";
 
 @mixin bg($width) {
-  @include keyframes("bg") {
-    0% {
-      // vendor: Incoming property, return value
-      @include vendor("transform", "translate3d(0,0,0)");
-    }
-    100% {
-      // Background infinite animation, left moving
-      @include vendor("transform", "translate3d(#{$width * -1},0,0)");
-    }
-  }
+	@include keyframes('bg') {
+		0% {
+			// vendor: Incoming property, return value
+			@include vendor('transform', 'translate3d(0,0,0)');
+		}
+		100% {
+			// Background infinite animation, left moving
+			@include vendor('transform', 'translate3d(#{$width * -1}, 0, 0)');
+		}
+	}
 
-  #bg {
-    // The background width stretched three times, creating an infinite connection
-    width: ($width * 3);
-    background-size: $width auto;
-  }
+	#bg {
+		// The background width stretched three times, creating an infinite connection
+		width: ($width * 3);
+		background-size: $width auto;
+	}
 }
 // The background width stretched 1.5 times
 // _misc Processing with unit characters
 @include bg(_misc(bg-width) * 1.5);
 
-@include keyframes("wrapper") {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+@include keyframes('wrapper') {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
-@include keyframes("overlay") {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+@include keyframes('overlay') {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
-@include keyframes("header") {
-  0% {
-    @include vendor("transform", "translate3d(0,1em,0)");
-    opacity: 0;
-  }
-  100% {
-    @include vendor("transform", "translate3d(0,0,0)");
-    opacity: 1;
-  }
+@include keyframes('header') {
+	0% {
+		@include vendor('transform', 'translate3d(0,1em,0)');
+		opacity: 0;
+	}
+	100% {
+		@include vendor('transform', 'translate3d(0,0,0)');
+		opacity: 1;
+	}
 }
 
-@include keyframes("nav-icons") {
-  0% {
-    @include vendor("transform", "translate3d(0,1em,0)");
-    opacity: 0;
-  }
-  100% {
-    @include vendor("transform", "translate3d(0,0,0)");
-    opacity: 1;
-  }
+@include keyframes('nav-icons') {
+	0% {
+		@include vendor('transform', 'translate3d(0,1em,0)');
+		opacity: 0;
+	}
+	100% {
+		@include vendor('transform', 'translate3d(0,0,0)');
+		opacity: 1;
+	}
 }
 
 #wrapper {
-  // animation: name duration timing-function delay iteration-count direction;
-  @include vendor("animation", "wrapper #{_duration(wrapper)} forwards");
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
+	// animation: name duration timing-function delay iteration-count direction;
+	@include vendor('animation', 'wrapper #{_duration(wrapper)} forwards');
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
 }
 
 #bg {
-  // animation: name duration timing-function delay iteration-count direction;
-  @include vendor("animation", "bg #{_duration(bg)} linear infinite");
-  // backface-visibility: Whether the element is visible when it is not facing the screen
-  @include vendor("backface-visibility", "hidden");
-  @include vendor("transform", "translate3d(0,0,0)");
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100%;
-  // _misc: Processing with unit characters.
-  background: _misc(bg) repeat-x;
-  opacity: 1;
+	// animation: name duration timing-function delay iteration-count direction;
+	@include vendor('animation', 'bg #{_duration(bg)} linear infinite');
+	// backface-visibility: Whether the element is visible when it is not facing the screen
+	@include vendor('backface-visibility', 'hidden');
+	@include vendor('transform', 'translate3d(0,0,0)');
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	// _misc: Processing with unit characters.
+	background: _misc(bg) repeat-x;
+	opacity: 1;
 }
 
 #overlay {
-  @include vendor("animation", "overlay #{_duration(overlay)} #{$delay-overlay} forwards");
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  // Two pictures
-  background-attachment: fixed, fixed;
-  background-image: url("../images/overlay-pattern.png"), url("../images/overlay.svg");
-  background-position: 0% 0%, 50% 50%;
-  background-repeat: repeat, no-repeat;
-  background-size: auto, cover;
+	@include vendor(
+		'animation',
+		'overlay #{_duration(overlay)} #{$delay-overlay} forwards'
+	);
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	// Two pictures
+	background-attachment: fixed, fixed;
+	background-image: url('../images/overlay-pattern.png'),
+		url('../images/overlay.svg');
+	background-position: 0% 0%, 50% 50%;
+	background-repeat: repeat, no-repeat;
+	background-size: auto, cover;
 }
 
 /* .main */
 #main {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  text-align: center;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
 
-  &:before {
-    display: inline-block;
-    height: 100%;
-    // A single line of text that is highly defined in the vertical center - parent element.
-    vertical-align: middle;
-    content: "";
-  }
+	&:before {
+		display: inline-block;
+		height: 100%;
+		// A single line of text that is highly defined in the vertical center - parent element.
+		vertical-align: middle;
+		content: '';
+	}
 }
 
 @include breakpoint(xlarge) {
-  body, input, select, textarea {
-    font-size: 13pt;
-  }
+	body,
+	input,
+	select,
+	textarea {
+		font-size: 13pt;
+	}
 
-  @include bg(_misc(bg-width));
+	@include bg(_misc(bg-width));
 }
 
 @include breakpoint(large) {
-  body, input, select, textarea {
-    // 12pt: Twelve pounds is a small four
-    font-size: 12pt;
-  }
+	body,
+	input,
+	select,
+	textarea {
+		// 12pt: Twelve pounds is a small four
+		font-size: 12pt;
+	}
 
-  @include bg(_misc(bg-width) * 0.5);
+	@include bg(_misc(bg-width) * 0.5);
 }
 
 @include breakpoint(small) {
-  body {
-    min-width: 320px;
-  }
+	body {
+		min-width: 320px;
+	}
 
-  body, input, select, textarea {
-    font-size: 11pt;
-  }
+	body,
+	input,
+	select,
+	textarea {
+		font-size: 11pt;
+	}
 
-  @include bg(_misc(bg-width) * 0.2);
+	@include bg(_misc(bg-width) * 0.2);
 
-  #header {
-    h1 {
-      font-size: 2.5em;
-    }
+	#header {
+		h1 {
+			font-size: 2.5em;
+		}
 
-    p {
-      font-size: 1em;
-    }
+		p {
+			font-size: 1em;
+		}
 
-    nav {
-      font-size: 1em;
+		nav {
+			font-size: 1em;
 
-      a {
-        &:hover {
-          font-size: 1em;
-        }
+			a {
+				&:hover {
+					font-size: 1em;
+				}
 
-        &:active {
-          font-size: 1em;
-        }
-      }
-    }
-  }
+				&:active {
+					font-size: 1em;
+				}
+			}
+		}
+	}
 }
 
 @include breakpoint(xsmall) {
-  @include bg(_misc(bg-width) * 0.275);
+	@include bg(_misc(bg-width) * 0.275);
 
-  #header {
-    nav {
-      padding: 0 1em;
-    }
-  }
+	#header {
+		nav {
+			padding: 0 1em;
+		}
+	}
 }
