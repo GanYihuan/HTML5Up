@@ -423,7 +423,7 @@
 								}
 
 						// Create @media block.
-							@media screen and #{map-get($breakpoints, $name)} {
+							@media screen and (#{map-get($breakpoints, $name)}) {
 								@include containers($containers);
 							}
 
@@ -512,7 +512,7 @@
 								}
 
 						// Create @media block.
-							@media screen and #{map-get($breakpoints, $name)} {
+							@media screen and (#{map-get($breakpoints, $name)}) {
 								@include grid($grid-gutters, $name);
 							}
 
@@ -571,7 +571,7 @@
 			}
 
 		// Expand just the value?
-			@elseif $expandValue {
+			@else if $expandValue {
 			    @each $vendor in $vendor-prefixes {
 			        #{$property}: #{str-replace-all($value, '-prefix-', $vendor)};
 			    }

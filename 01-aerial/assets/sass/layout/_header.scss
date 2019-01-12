@@ -1,116 +1,116 @@
 @charset "UTF-8";
 
 #header {
-	// forwards:是停在动画最后的的那个画面
-	@include vendor(
-		'animation',
-		'header #{_duration(header)} #{$delay-header} forwards'
-	);
-	// backface-visibility 属性定义当元素不面向屏幕时是否可见
-	@include vendor('backface-visibility', 'hidden');
-	@include vendor('transform', 'translate3d(0,0,0)');
-	// 水平居中设置-行内元素   inline方便水平居中
-	display: inline-block;
-	position: relative;
-	// 预备动画空间
-	top: -1em;
-	width: 90%;
-	text-align: center;
-	vertical-align: middle;
-	opacity: 0;
-	// 光标的类型
-	cursor: default;
+  // forwards:是停在动画最后的的那个画面
+  @include vendor(
+    "animation",
+    "header #{_duration(header)} #{$delay-header} forwards"
+  );
+  // backface-visibility 属性定义当元素不面向屏幕时是否可见
+  @include vendor("backface-visibility", "hidden");
+  @include vendor("transform", "translate3d(0,0,0)");
+  // 水平居中设置-行内元素   inline方便水平居中
+  display: inline-block;
+  position: relative;
+  // 预备动画空间
+  top: -1em;
+  width: 90%;
+  text-align: center;
+  vertical-align: middle;
+  opacity: 0;
+  // 光标的类型
+  cursor: default;
 
-	h1 {
-		line-height: 1em;
-		font-size: 4.35em;
-		font-weight: 900;
-		// letter-spacing 属性增加或减少字符间的空白（字符间距）。
-		letter-spacing: -0.035em;
-	}
+  h1 {
+    line-height: 1em;
+    font-size: 4.35em;
+    font-weight: 900;
+    // letter-spacing 属性增加或减少字符间的空白（字符间距）。
+    letter-spacing: -0.035em;
+  }
 
-	p {
-		margin: 0.75em 0 0.25em 0;
-		font-size: 1.25em;
-		opacity: 0.75;
-	}
+  p {
+    margin: 0.75em 0 0.25em 0;
+    font-size: 1.25em;
+    opacity: 0.75;
+  }
 
-	nav {
-		margin: 1.5em 0 0 0;
+  nav {
+    margin: 1.5em 0 0 0;
 
-		li {
-			@include vendor(
-				'animation',
-				'nav-icons #{_duration(nav-icons)} ease-in-out forwards'
-			);
-			// backface-visibility 属性定义当元素不面向屏幕时是否可见
-			@include vendor('backface-visibility', 'hidden');
-			@include vendor('transform', 'translate3d(0,0,0)');
-			display: inline-block;
-			position: relative;
-			top: 0;
-			width: _size(nav-icon-wrapper);
-			height: _size(nav-icon-wrapper);
-			line-height: _size(nav-icon-wrapper) * 1.1;
-			opacity: 0;
+    li {
+      @include vendor(
+        "animation",
+        "nav-icons #{_duration(nav-icons)} ease-in-out forwards"
+      );
+      // backface-visibility 属性定义当元素不面向屏幕时是否可见
+      @include vendor("backface-visibility", "hidden");
+      @include vendor("transform", "translate3d(0,0,0)");
+      display: inline-block;
+      position: relative;
+      top: 0;
+      width: _size(nav-icon-wrapper);
+      height: _size(nav-icon-wrapper);
+      line-height: _size(nav-icon-wrapper) * 1.1;
+      opacity: 0;
 
-			// 这两个的区别是关键字 through 表示包括 end 这个数，而 to 则不包括 end 这个数。
-			@for $x from 1 through 10 {
-				&:nth-child(#{$x}) {
-					@include vendor(
-						'animation-delay',
-						($delay-nav-icons + ($x * $delay-nav-icon)) + ''
-					);
-				}
-			}
-		}
+      // 这两个的区别是关键字 through 表示包括 end 这个数，而 to 则不包括 end 这个数。
+      @for $x from 1 through 10 {
+        &:nth-child(#{$x}) {
+          @include vendor(
+            "animation-delay",
+            ($delay-nav-icons + ($x * $delay-nav-icon)) + ""
+          );
+        }
+      }
+    }
 
-		a {
-			display: inline-block;
-			border: 0;
-			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-			// When a target is touched and held on iPhone OS, Safari displays a callout information about the link.
-			// This property allows disabling that behavior.
-			-webkit-touch-callout: none;
+    a {
+      display: inline-block;
+      border: 0;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      // When a target is touched and held on iPhone OS, Safari displays a callout information about the link.
+      // This property allows disabling that behavior.
+      -webkit-touch-callout: none;
 
-			&:before {
-				@include vendor('transition', 'all 0.2s ease-in-out');
-				// a 为行间元素，为了能对a进行设计
-				display: block;
-				position: relative;
-				top: 0;
-				// 圆
-				border: solid 1px _palette(fg);
-				border-radius: 100%;
-				// ----- 圆的设置start -----
-				width: 2.5em;
-				height: 2.5em;
-				line-height: 2.5em;
-				// ----- 圆的设置end -----
-				font-size: _size(nav-icon);
-				text-align: center;
-			}
+      &:before {
+        @include vendor("transition", "all 0.2s ease-in-out");
+        // a 为行间元素，为了能对a进行设计
+        display: block;
+        position: relative;
+        top: 0;
+        // 圆
+        border: solid 1px _palette(fg);
+        border-radius: 100%;
+        // ----- 圆的设置start -----
+        width: 2.5em;
+        height: 2.5em;
+        line-height: 2.5em;
+        // ----- 圆的设置end -----
+        font-size: _size(nav-icon);
+        text-align: center;
+      }
 
-			&:hover {
-				font-size: 1.1em;
+      &:hover {
+        font-size: 1.1em;
 
-				&:before {
-					// 处理带单位的_palette 颜色值
-					color: _palette(nav-icon, hover-fg);
-					background-color: _palette(nav-icon, hover-bg);
-				}
-			}
+        &:before {
+          // 处理带单位的_palette 颜色值
+          color: _palette(nav-icon, hover-fg);
+          background-color: _palette(nav-icon, hover-bg);
+        }
+      }
 
-			&:active {
-				font-size: 0.95em;
-				background: none;
+      &:active {
+        font-size: 0.95em;
+        background: none;
 
-				// :before是css中的一种伪元素，可用于在某个元素之前插入某些内容。
-				&:before {
-					color: _palette(nav-icon, active-fg);
-					background-color: _palette(nav-icon, active-bg);
-				}
-			}
-		}
-	}
+        // :before是css中的一种伪元素，可用于在某个元素之前插入某些内容。
+        &:before {
+          color: _palette(nav-icon, active-fg);
+          background-color: _palette(nav-icon, active-bg);
+        }
+      }
+    }
+  }
 }

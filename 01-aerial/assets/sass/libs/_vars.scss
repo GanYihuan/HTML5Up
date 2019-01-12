@@ -8,6 +8,12 @@ $misc: (
 
 // Duration.
 $duration: (
+  // _mixins  _duration : 带有单位字（符串）处理混合值
+  $delay-wrapper: _duration(wrapper) - 1s,
+  $delay-overlay: $delay-wrapper - 0.5s,
+  $delay-header: $delay-overlay + _duration(overlay) - 0.75s,
+  $delay-nav-icons: $delay-header + _duration(header) - 1s,
+  $delay-nav-icon: 0.25s,
 	wrapper: 3s,
 	bg: 60s,
 	overlay: 1.5s,

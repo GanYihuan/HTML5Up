@@ -1,48 +1,41 @@
 @charset "UTF-8";
-
-@import 'libs/vars'; // (custom) attribute param
-@import 'libs/functions'; // (fix) string unit mixed number
-@import 'libs/mixins'; // (fix) icon svg padding
-@import url('fontset.css');
-@import url('font-awesome.min.css');
+@import "libs/vars"; // attribute param
+@import "libs/functions"; // string unit mixed number
+@import "libs/mixins"; // icon svg padding
+@import "base/page";
+@import "base/typography";
+@import "components/icon";
+@import url("fontset.css");
+@import url("font-awesome.min.css");
 /*
 	Aerial by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 // A lightweight responsive framework for the www http://skel.io
-@import 'libs/skel';
-// (fix) 断点设置, 相当与 css @media
+@import "libs/skel";
+// 断点设置, 相当与 css @media
 @include skel-breakpoints(
-	(
-		xxlarge: '(max-width: 1920px)',
-		xlarge: '(max-width: 1680px)',
-		large: '(max-width: 1280px)',
-		medium: '(max-width: 1000px)',
-		small: '(max-width: 736px)',
-		xsmall: '(max-width: 480px)'
-	)
+  (
+    xxlarge: "(max-width: 1920px)",
+    xlarge: "(max-width: 1680px)",
+    large: "(max-width: 1280px)",
+    medium: "(max-width: 1000px)",
+    small: "(max-width: 736px)",
+    xsmall: "(max-width: 480px)"
+  )
 );
 // [参数说明](https://github.com/ajlkn/skel/blob/master/docs/skel-layout.md)
 @include skel-layout(
-	(
-		reset: 'full',
-		boxModel: 'border'
-	)
+  (
+      // 完全nuke所有浏览器风格与埃里克迈耶的CSS重置。如果您打算从头开始设计所有东西，并且不希望任何默认设置妨碍您的工作，那么它非常有用。
+      reset: "full",
+      // box-sizing: border
+      boxModel: "border"
+  )
 );
 
-@import 'base/page';
-@import 'base/typography';
-@import 'components/icon';
-
 // (custom)
-// _mixins  _duration : 带有单位字（符串）处理混合值
-$delay-wrapper: _duration(wrapper) - 1s;
-$delay-overlay: $delay-wrapper - 0.5s;
-$delay-header: $delay-overlay + _duration(overlay) - 0.75s;
-$delay-nav-icons: $delay-header + _duration(header) - 1s;
-$delay-nav-icon: 0.25s;
-
-@import 'layout/main';
-@import 'layout/header';
-@import 'layout/footer';
+@import "layout/main";
+@import "layout/header";
+@import "layout/footer";
