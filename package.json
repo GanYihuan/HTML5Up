@@ -1,0 +1,25 @@
+{
+  "name": "html5up",
+  "version": "1.0.0",
+  "description": "## 03",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GanYihuan/HTML5Up.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GanYihuan/HTML5Up/issues"
+  },
+  "homepage": "https://github.com/GanYihuan/HTML5Up#readme",
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-html": "^5.0.0"
+  }
+}
