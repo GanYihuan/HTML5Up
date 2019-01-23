@@ -14,30 +14,30 @@
 //}
 
 body {
-	//http://www.w3school.com.cn/cssref/pr_overflow-style.asp
-	//overflow-style 规定溢出元素的首选滚动方法。
-	//scrollbar为溢出元素添加滚动条。
-	//move	用户能够直接移动元素的内容。通常，用户能够用鼠标拖动内容。
-	//marquee	内容自主移动，不需任何用户代理对其控制。
-	-ms-overflow-style: scrollbar;
+  //http://www.w3school.com.cn/cssref/pr_overflow-style.asp
+  //overflow-style 规定溢出元素的首选滚动方法。
+  //scrollbar为溢出元素添加滚动条。
+  //move	用户能够直接移动元素的内容。通常，用户能够用鼠标拖动内容。
+  //marquee	内容自主移动，不需任何用户代理对其控制。
+  -ms-overflow-style: scrollbar;
 
-	// Prevents animation/transition "flicker" on page load.
-	// Automatically added/removed by js/main.js.
-	&.is-loading {
-		*,
-		*:before,
-		*:after {
-			@include vendor('animation', 'none !important');
-			@include vendor('transition', 'none !important');
-		}
-	}
+  // Prevents animation/transition "flicker" on page load.
+  // Automatically added/removed by js/main.js.
+  &.is-loading {
+    *,
+    *:before,
+    *:after {
+      @include vendor('animation', 'none !important');
+      @include vendor('transition', 'none !important');
+    }
+  }
 }
 
 // ---
 body {
-	// overflow 属性规定当内容溢出元素框时发生的事情。
-	overflow: hidden;
-	// reset白色背景
-	background: _palette(bg);
+  // overflow 属性规定当内容溢出元素框时发生的事情。
+  overflow: hidden;
+  // reset白色背景
+  background: _palette(bg);
 }
 // ---

@@ -3,12 +3,12 @@
 #header {
   // forwards:是停在动画最后的的那个画面
   @include vendor(
-    "animation",
-    "header #{_duration(header)} #{$delay-header} forwards"
+    'animation',
+    'header #{_duration(header)} #{$delay-header} forwards'
   );
   // backface-visibility 属性定义当元素不面向屏幕时是否可见
-  @include vendor("backface-visibility", "hidden");
-  @include vendor("transform", "translate3d(0,0,0)");
+  @include vendor('backface-visibility', 'hidden');
+  @include vendor('transform', 'translate3d(0,0,0)');
   // 水平居中设置-行内元素   inline方便水平居中
   display: inline-block;
   position: relative;
@@ -40,12 +40,12 @@
 
     li {
       @include vendor(
-        "animation",
-        "nav-icons #{_duration(nav-icons)} ease-in-out forwards"
+        'animation',
+        'nav-icons #{_duration(nav-icons)} ease-in-out forwards'
       );
       // backface-visibility 属性定义当元素不面向屏幕时是否可见
-      @include vendor("backface-visibility", "hidden");
-      @include vendor("transform", "translate3d(0,0,0)");
+      @include vendor('backface-visibility', 'hidden');
+      @include vendor('transform', 'translate3d(0,0,0)');
       display: inline-block;
       position: relative;
       top: 0;
@@ -58,8 +58,8 @@
       @for $x from 1 through 10 {
         &:nth-child(#{$x}) {
           @include vendor(
-            "animation-delay",
-            ($delay-nav-icons + ($x * $delay-nav-icon)) + ""
+            'animation-delay',
+            ($delay-nav-icons + ($x * $delay-nav-icon)) + ''
           );
         }
       }
@@ -74,7 +74,7 @@
       -webkit-touch-callout: none;
 
       &:before {
-        @include vendor("transition", "all 0.2s ease-in-out");
+        @include vendor('transition', 'all 0.2s ease-in-out');
         // a 为行间元素，为了能对a进行设计
         display: block;
         position: relative;

@@ -2,14 +2,14 @@
 
 @mixin bg($width) {
   // 动画, 动画名称
-  @include keyframes("bg") {
+  @include keyframes('bg') {
     0% {
       // vendor: Incoming property, return value
-      @include vendor("transform", "translate3d(0,0,0)");
+      @include vendor('transform', 'translate3d(0, 0, 0)');
     }
     100% {
       // Background infinite animation, left moving
-      @include vendor("transform", "translate3d(#{$width * -1}, 0, 0)");
+      @include vendor('transform', 'translate3d(#{$width * -1}, 0, 0)');
     }
   }
   #bg {
@@ -22,7 +22,7 @@
 // _misc Processing with unit characters
 @include bg(_misc(bg-width) * 1.5);
 
-@include keyframes("wrapper") {
+@include keyframes('wrapper') {
   0% {
     opacity: 0;
   }
@@ -31,7 +31,7 @@
   }
 }
 
-@include keyframes("overlay") {
+@include keyframes('overlay') {
   0% {
     opacity: 0;
   }
@@ -40,31 +40,31 @@
   }
 }
 
-@include keyframes("header") {
+@include keyframes('header') {
   0% {
-    @include vendor("transform", "translate3d(0,1em,0)");
+    @include vendor('transform', 'translate3d(0, 1em, 0)');
     opacity: 0;
   }
   100% {
-    @include vendor("transform", "translate3d(0,0,0)");
+    @include vendor('transform', 'translate3d(0, 0, 0)');
     opacity: 1;
   }
 }
 
-@include keyframes("nav-icons") {
+@include keyframes('nav-icons') {
   0% {
-    @include vendor("transform", "translate3d(0,1em,0)");
+    @include vendor('transform', 'translate3d(0, 1em, 0)');
     opacity: 0;
   }
   100% {
-    @include vendor("transform", "translate3d(0,0,0)");
+    @include vendor('transform', 'translate3d(0, 0, 0)');
     opacity: 1;
   }
 }
 
 #wrapper {
   // animation: name duration timing-function delay iteration-count direction;
-  @include vendor("animation", "wrapper #{_duration(wrapper)} forwards");
+  @include vendor('animation', 'wrapper #{_duration(wrapper)} forwards');
   position: fixed;
   left: 0;
   top: 0;
@@ -75,10 +75,10 @@
 
 #bg {
   // animation: name duration timing-function delay iteration-count direction;
-  @include vendor("animation", "bg #{_duration(bg)} linear infinite");
+  @include vendor('animation', 'bg #{_duration(bg)} linear infinite');
   // backface-visibility: Whether the element is visible when it is not facing the screen
-  @include vendor("backface-visibility", "hidden");
-  @include vendor("transform", "translate3d(0,0,0)");
+  @include vendor('backface-visibility', 'hidden');
+  @include vendor('transform', 'translate3d(0, 0, 0)');
   position: fixed;
   left: 0;
   top: 0;
@@ -90,8 +90,8 @@
 
 #overlay {
   @include vendor(
-    "animation",
-    "overlay #{_duration(overlay)} #{$delay-overlay} forwards"
+    'animation',
+    'overlay #{_duration(overlay)} #{$delay-overlay} forwards'
   );
   position: fixed;
   left: 0;
@@ -101,8 +101,8 @@
   opacity: 0;
   // Two pictures
   background-attachment: fixed, fixed;
-  background-image: url("../images/overlay-pattern.png"),
-    url("../images/overlay.svg");
+  background-image: url('../images/overlay-pattern.png'),
+    url('../images/overlay.svg');
   background-position: 0% 0%, 50% 50%;
   background-repeat: repeat, no-repeat;
   background-size: auto, cover;
@@ -121,7 +121,7 @@
     height: 100%;
     // A single line of text that is highly defined in the vertical center - parent element.
     vertical-align: middle;
-    content: "";
+    content: '';
   }
 }
 
