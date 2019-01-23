@@ -22,6 +22,7 @@
 // _misc Processing with unit characters
 @include bg(_misc(bg-width) * 1.5);
 
+// 显示
 @include keyframes('wrapper') {
   0% {
     opacity: 0;
@@ -31,6 +32,7 @@
   }
 }
 
+// 显示
 @include keyframes('overlay') {
   0% {
     opacity: 0;
@@ -40,6 +42,7 @@
   }
 }
 
+// 向上
 @include keyframes('header') {
   0% {
     @include vendor('transform', 'translate3d(0, 1em, 0)');
@@ -51,6 +54,7 @@
   }
 }
 
+// 向上
 @include keyframes('nav-icons') {
   0% {
     @include vendor('transform', 'translate3d(0, 1em, 0)');
@@ -101,8 +105,7 @@
   opacity: 0;
   // Two pictures
   background-attachment: fixed, fixed;
-  background-image: url('../images/overlay-pattern.png'),
-    url('../images/overlay.svg');
+  background-image: url('../images/overlay-pattern.png'), url('../images/overlay.svg');
   background-position: 0% 0%, 50% 50%;
   background-repeat: repeat, no-repeat;
   background-size: auto, cover;
